@@ -262,3 +262,51 @@ a
 {
   color:#105D6D;
 }
+
+/*ifeanyi's additions here */
+.grid .tick {
+    stroke: lightgrey;
+    opacity: 0.7;
+    shape-rendering: crispEdges;
+}
+
+.grid path {
+    stroke-width: 0;
+   
+}
+
+/*.axis path {
+    fill: none;
+    stroke: #bbb;
+    shape-rendering: crispEdges;
+} */
+
+.axis text {
+    fill: #555;
+}
+
+.axis line {	
+    stroke: #e7e7e7;
+    shape-rendering: crispEdges;  
+} 
+
+.axis {
+    font-size: 12px;
+}
+
+.axis-label {
+    margin-right: 5px;
+    font-size: 11px;
+}
+
+div.tooltip {
+    position: absolute;	
+    text-align: center;	
+    width: auto;	
+    height: auto;		
+    padding: 5px;	
+    font: 10px sans-serif;	
+    background: lightsteelblue;	
+    border: 0px;					
+    border-radius: 5px;
+}
