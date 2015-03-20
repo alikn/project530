@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>CICS 530- Group 5</title>
+		<script type="text/javascript" src="libs/jquery.js"></script>
+		<script type="text/javascript" src="scripts/require.config.js"></script>
+		<script data-main="scripts/main" src="libs/require.min.js"></script>
+		<link href="css/style.css" type="text/css" rel="stylesheet"> </link>
+		<link href="css/bootstrap.min.css" type="text/css" rel="stylesheet"> </link>
+	</head>
+	<body>
+		<div class="pageContainer">
+			<div class="headerContainer">
+				<div class="header">
+					<h1>Air Pollutant Emission Summaries and Trends</h1>
+					<p>National Pollutant Release Inventory</p>
+				</div>
+			</div>
+			<div class="pageBody">
+				<div class="page-header">
+				  	<h1>Interactive Graphs<br/></h1>
+				</div>
+				<div class="materialSelect">
+					<select class="form-control">
+					</select>
+				</div>
+
+				<h4>Ugly labels which Yasmin will change:</h4>
+				<div id="filters">
+					<span id="INS" class="clickable label label-default">Industrial Sources</span>
+					<span id="NIS" class="clickable label label-default">Non-industrial Sources</span>
+					<span id="MOS" class="clickable label label-default">Mobile Sources</span>
+					<span id="INCS" class="clickable label label-default">Incineration Sources</span>
+					<span id="MIS" class="clickable label label-default">Miscellaneous Sources</span>
+					<span id="OPS" class="clickable label label-default">Open Sources</span>
+					<span id="NAS" class="clickable label label-default">Natural Sources</span>
+				</div>
+
+
+				<div id="lineGraph">
+					<div id="blurb">
+					<div id="default-blurb">
+						<h2>PM2.5</h2>
+					</div>
+					<div id="blurb-content"></div>
+					</div>
+					<div id="vis"></div>
+				</div>
+
+
+				<div id="barChart">
+				</div>
+
+
+				<div id="infoBox">
+				</div>
+
+
+				<div id="colorCodedMap">
+				</div>
+				
+			</div>
+		</div>
+	</body>
+</html>

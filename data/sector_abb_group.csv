@@ -1,0 +1,64 @@
+Industrial Sources,Sector Abbreviation,Sector Group Abbreviation
+Abrasives Manufacture,ABM,INS
+Aluminum Industry,ALI,INS
+Asbestos Industry,ASI,INS
+Asphalt Paving Industry,API,INS
+Bakeries,BAK,INS
+Cement and Concrete Industry,CACI,INS
+Chemicals Industry,CHI,INS
+Mineral Products Industry,MPI,INS
+Foundries,FOU,INS
+Grain Industries,GRI,INS
+Iron and Steel Industries,IASI,INS
+Iron Ore Mining Industry,IOMI,INS
+Mining and Rock Quarrying,MARQ,INS
+Non-Ferrous Smelting and Refining Industry,NSRI,INS
+Pulp and Paper Industry,PAPI,INS
+Wood Industry,WOI,INS
+Upstream Petroleum Industry,UPI,INS
+Downstream Petroleum Industry,DPI,INS
+Petroleum Product Transportation and Distribution,PPTD,INS
+Other Industries,OTI,INS
+Biofuel Production,BIP,INS
+Commercial Fuel Combustion,CFC,NIS
+Electric Power Generation (Utilities),EPGU,NIS
+Residential Fuel Combustion,RFC,NIS
+Residential Fuel Wood Combustion,RFWC,NIS
+Air Transportation,AIT,MOS
+Heavy-duty diesel vehicles,HDDV,MOS
+Heavy-duty gasoline trucks,HDGT,MOS
+Light-duty diesel trucks,LDDT,MOS
+Light-duty diesel vehicles,LDDV,MOS
+Light-duty gasoline trucks,LDGT,MOS
+Light-duty gasoline vehicles,LDGV,MOS
+Marine Transportation,MAT,MOS
+Motorcycles,MOT,MOS
+Off-road use of diesel,ORUD,MOS
+Off-road use of gasoline/LPG/CNG,ORUG,MOS
+Rail Transportation,RAT,MOS
+Tire wear & Brake Lining,TWBL,MOS
+Crematorium,CRE,INCS
+Industrial & Commercial Incineration,ICI,INCS
+Municipal Incineration,MUI,INCS
+Other Incineration & Utilities,OIU,INCS
+Cigarette Smoking,CIS,MIS
+Dry Cleaning,DRC,MIS
+General Solvent Use,GSU,MIS
+Marine Cargo Handling Industry,MCHI,MIS
+Meat Cooking,MEC,MIS
+Refined Petroleum Products Retail,RPPR,MIS
+Printing,PRI,MIS
+Structural Fires,STF,MIS
+Surface Coatings,SUC,MIS
+Human,HUM,MIS
+Other Miscellaneous Sources,OMS,MIS
+Agriculture,AGR,OPS
+Construction Operations,COO,OPS
+Dust from Paved Roads,DFPR,OPS
+Dust from Unpaved Roads,DFUR,OPS
+Dust from Coal Mining,DFCM,OPS
+Waste,WAS,OPS
+Mine Tailings,MIT,OPS
+Prescribed Burning,PRB,OPS
+"Biogenics (Vegetation,soils)",BIO,NAS
+Forest Fires,FOF,NAS

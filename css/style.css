@@ -1,0 +1,177 @@
+.pageContainer{
+  min-width: 85em;
+}
+.pageBody{
+  width: 80em;
+  margin-right: auto;
+  margin-left: auto;
+  
+}
+
+.headerContainer{
+  height:150px;
+  background-color: #147BDE;
+  padding-top: 2em;
+}
+
+.header{
+    width: 80em;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.header h1 {
+  font-size: 42px;
+  line-height: 1;
+  margin-top: 0;
+
+  color: #fff;
+}
+
+.header p{
+  margin-bottom: 0;
+  font-weight: 300;
+  line-height: 1.4;
+  font-size: 24px;
+  text-align: left;
+  color: #cdbfe3;
+}
+
+#vis {
+    min-height: 550px;
+}
+
+#blurb {
+    height: 60px;
+    border-top: 1px solid #e2e2e2;
+    padding-top: 20px;
+}
+
+path {
+    stroke: #999999;
+    stroke-width: 0.9;
+    fill: none;
+}
+
+path.current,path.highlight.current {
+    stroke: black;
+    stroke-width: 1.7;
+}
+
+path.selected{
+    stroke: red;
+    stroke-width: 2;
+}
+
+.highlight {
+    stroke-width: 1px;
+}
+
+line {
+    stroke: black;
+}
+
+text {
+    font-family: Helvetica,Arial,sans-serif;
+    font-size: 11px;
+}
+
+.axis {
+    stroke-width: 0.8;
+    stroke: #000;
+}
+
+.xTicks,.yTicks {
+    stroke-width: 0.6;
+    stroke: #000;
+}
+
+#cite {
+    font-size: 0.8em;
+    text-align: right;
+    margin-top: 10px;
+    padding-bottom: 20px;
+}
+
+#cite a {
+    background: #e2e2e2;
+    text-decoration: none;
+    color: #821122;
+}
+
+.yLabel{
+    display: inline-block;
+    position: relative;
+    left: -100px;
+}
+
+.clickable{
+    cursor: pointer;
+}
+
+#filters span.INS {
+    background: #895881;
+    color: #fff;
+}
+
+#filters span.NIS {
+    background: #ED7C31;
+    color: #fff;
+}
+
+#filters span.MOS {
+    background: #82A5C0;
+    color: #fff;
+}
+
+#filters span.INCS {
+    background: #6E9E75;
+    color: #fff;
+}
+
+#filters span.MIS {
+    background: #00BBD6;
+    color: #fff;
+}
+
+#filters span.OPS {
+    background: #1124f2;
+    color: #fff;
+}
+
+#filters span.NAS {
+    background: #dff211;
+    color: #fff;
+}
+
+.INS.highlight {
+    stroke: #895881;
+}
+
+.NIS.highlight {
+    stroke: #ED7C31;
+}
+
+.MOS.highlight {
+    stroke: #82A5C0;
+}
+
+.INCS.highlight {
+    stroke: #6E9E75;
+}
+
+.MIS.highlight {
+    stroke: #00BBD6;
+}
+
+.OPS.highlight {
+    stroke: #1124f2;
+}
+
+.NAS.highlight {
+    stroke: #dff211;
+}
+
+.materialSelect{
+    width: 10em;
+}
