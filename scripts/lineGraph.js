@@ -36,6 +36,7 @@ define(["dataProcess"], function (dataProcess) {
             .tickSize(-height)
             .tickPadding(10)
             .tickSubdivide(true)
+            .tickFormat(d3.format(".0f"))
             .orient("bottom");
 
 //create the y axis
@@ -58,14 +59,19 @@ define(["dataProcess"], function (dataProcess) {
 
     //an object with sectors' abbreviations as the key and sector full name as value
     var sectorCodes = dataProcess.getSectorCodesHashMap();
-
+    
+  
     function init() {
         setupD3();
         drawAllPaths();
         setupAxes();
+        loadInfoBox();
 
         $("body").on("materialChangeEvent", materialChanged);
         $("body").on("sectorChangeEvent", sectorChanged);
+        
+        //set the infoBox to display pm25 by default
+       // $("#infoBox").html(matDesc.pm);
     }
 
     function setupD3() {
@@ -162,7 +168,11 @@ define(["dataProcess"], function (dataProcess) {
         setupD3();
         drawAllPaths();
         setupAxes();
-        d3.select("[sector=" + chosenSector + "]").classed("selected", true);
+        //d3.select("[sector=" + chosenSector + "]").classed("selected", true);
+
+        //change the content in the infoBox        
+         loadInfoBox();
+
     }
 
     function sectorChanged(event, newSector) {
@@ -292,6 +302,19 @@ define(["dataProcess"], function (dataProcess) {
     function redraw() {
         vis.select(".y.axis").call(yAxis);
         vis.selectAll("[ty='line']").attr('d', line);
+    }
+    
+    function loadInfoBox() {
+        var newMaterial = $(".materialSelect option:selected").text();        
+        $.getJSON("data/materialdescriptions.json", function (data) {
+            
+            if (newMaterial === "pm25" || newMaterial === "pm10" || newMaterial === "TPM") {               
+                $("#infoBox").html(data.pm);
+            } else {              
+               $("#infoBox").html(data[newMaterial]);
+                
+            }
+        });
     }
 
     return{
