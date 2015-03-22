@@ -1,10 +1,6 @@
 define(["dataProcess"], function (dataProcess) {
 
-    var materials = dataProcess.getMaterials(),
-            rawData = dataProcess.getRawData(),
-            sectorGroup = dataProcess.getSectorGroup(),
-            chosenMaterial = dataProcess.getChosenMaterial(),
-            chosenSector = dataProcess.getChosenSector;
+    var materials, rawData, sectorGroup, chosenMaterial, chosenSector;
 
     var margin = {top: 20, right: 30, bottom: 30, left: 50};
     var w = 890;
@@ -63,15 +59,15 @@ define(["dataProcess"], function (dataProcess) {
   
     function init() {
         setupD3();
+        getData();
         drawAllPaths();
         setupAxes();
-        loadInfoBox();
+
 
         $("body").on("materialChangeEvent", materialChanged);
         $("body").on("sectorChangeEvent", sectorChanged);
         
-        //set the infoBox to display pm25 by default
-       // $("#infoBox").html(matDesc.pm);
+
     }
 
     function setupD3() {
@@ -125,6 +121,14 @@ define(["dataProcess"], function (dataProcess) {
                 });
     }
 
+    function getData(){
+        materials = dataProcess.getMaterials(),
+        rawData = dataProcess.getRawData(),
+        sectorGroup = dataProcess.getSectorGroup(),
+        chosenMaterial = dataProcess.getChosenMaterial(),
+        chosenSector = dataProcess.getChosenSector();
+    }
+
 
     function drawAllPaths() {
         drawPath(rawData[chosenMaterial]);
@@ -168,10 +172,11 @@ define(["dataProcess"], function (dataProcess) {
         setupD3();
         drawAllPaths();
         setupAxes();
-        //d3.select("[sector=" + chosenSector + "]").classed("selected", true);
+        console.log(chosenSector);
+        d3.select("[sector=" + chosenSector + "]").classed("selected", true);
 
-        //change the content in the infoBox        
-         loadInfoBox();
+        $(".substance-title").text(newMaterial.toUpperCase());
+
 
     }
 
@@ -304,18 +309,7 @@ define(["dataProcess"], function (dataProcess) {
         vis.selectAll("[ty='line']").attr('d', line);
     }
     
-    function loadInfoBox() {
-        var newMaterial = $(".materialSelect option:selected").text();        
-        $.getJSON("data/materialdescriptions.json", function (data) {
-            
-            if (newMaterial === "pm25" || newMaterial === "pm10" || newMaterial === "TPM") {               
-                $("#infoBox").html(data.pm);
-            } else {              
-               $("#infoBox").html(data[newMaterial]);
-                
-            }
-        });
-    }
+    
 
     return{
         init: init

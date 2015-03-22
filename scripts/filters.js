@@ -6,7 +6,10 @@ define(["d3"], function(d3){
     }
 
     function materialChanged(event, newMaterial){
-        //$('#filters span').removeClass().addClass("label label-default clickable");
+        $('#filters span div').removeClass("circleSelected")
+                            .removeClass(function(){
+                                return $(this).attr("id");
+                            });
     }
 	
 	function setupSectorGroupSelectors(){
@@ -21,7 +24,7 @@ define(["d3"], function(d3){
     function showSectorGroup(sectorCode) {
         var sectors = d3.selectAll("path." + sectorCode);
         if (sectors.classed('highlight')) {
-            sectors.attr("class", sectorCode);
+            sectors.classed("highlight", false);
         } 
         else {
             sectors.classed('highlight', true);
