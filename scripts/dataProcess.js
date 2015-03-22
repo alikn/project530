@@ -26,11 +26,11 @@ define(["d3"],function(d3){
     var chosenSector;     
 
     function init(){
-    	readAbbreviationData();
-    	return readDataFiles();
-
     	$("body").on("materialChangeEvent", materialChanged);
         $("body").on("sectorChangeEvent", sectorChanged);
+
+        readAbbreviationData();
+    	return readDataFiles();
     }
 
     var dataFolder = '../v2/data/';
@@ -43,7 +43,9 @@ define(["d3"],function(d3){
                 sector_sectorGroup[sectorLinesArray[i][1]] = sectorLinesArray[i][2];
                 sectorCodes[sectorLinesArray[i][1]] = sectorLinesArray[i][0];
             }
-            chosenSector = sectorLinesArray[0][1];
+
+            chosenSector = sectorLinesArray[1][1];
+            console.log(chosenSector);
         });
     }
 
@@ -69,12 +71,31 @@ define(["d3"],function(d3){
         return defer.promise();
     }
 
-    function materialChanged(event, newMaterial){
+    function matEmissionForChosenSector(){
+        var materialValues = {};
+        for(var mat in rawData){
+            for(var j = 1; j < rawData[mat].length - 1; j++){
+                if (rawData[mat][j][0] == chosenSector){    
+                    var ind = rawData[mat][j].length;
+                    while(!materialValues[mat] && ind > 1){
+                        if(rawData[mat][j][ind]){
+                            materialValues[mat] = rawData[mat][j][ind];
+                        }
+                        ind--;
+                    }
+                }
+            }
+        }
+        return materialValues;
+    }
 
+    function materialChanged(event, newMaterial){
+        chosenMaterial = newMaterial;
     }
 
     function sectorChanged(event, newSector){
-    	
+    	chosenSector = newSector;
+        console.log(matEmissionForChosenSector());
     }
 
     function getMaterials(){
@@ -105,6 +126,8 @@ define(["d3"],function(d3){
     	return chosenSector;
     }
 
+
+
 	return{
 		init 							: 		init,
 		getMaterials 					: 		getMaterials,
@@ -113,7 +136,8 @@ define(["d3"],function(d3){
 		getSectorToSectorGroupHashMap 	: 		getSectorToSectorGroupHashMap,
 		getSectorCodesHashMap 			: 		getSectorCodesHashMap,
 		getChosenMaterial 				: 		getChosenMaterial,
-		getChosenSector					: 		getChosenSector
+		getChosenSector					: 		getChosenSector,
+        matEmissionForChosenSector      :       matEmissionForChosenSector
 
 	}
 })

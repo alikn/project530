@@ -28,8 +28,8 @@ path.current,path.highlight.current {
 }
 
 path.selected{
-    stroke: red;
-    stroke-width: 2;
+    stroke: red !important;
+    stroke-width: 2 !important;
 }
 
 .highlight {
