@@ -1,7 +1,7 @@
 define(["worldmap", "dataProcess"], function(worldmap, dataProcess){
 	
 	var map = new Datamap({
-				height: 700,
+				height: 580,
 				width: 1000,
 				projection: 'equirectangular',
 				element: document.getElementById('colorCodedMap'),
@@ -50,7 +50,8 @@ define(["worldmap", "dataProcess"], function(worldmap, dataProcess){
     }
 	function UpdateMap(pollutant){
 				console.log("selected material: " + pollutant);
-				d3.text(pollutant+'.csv', 'text/csv', function(text) {
+				d3.text('data/map/'+pollutant+'.csv', 'text/csv', function(text) {
+					console.log("file path is : data/map/"+pollutant+'.csv');
 					regions = d3.csv.parseRows(text);
 					for (i = 1; i < regions.length; i++) {
 						console.log(regions[i]);
