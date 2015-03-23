@@ -3,7 +3,7 @@ define(["dataProcess","d3"], function (dataProcess,d3) {
 
 	function init(){
 		$("body").on("sectorChangeEvent", sectorChanged);
-	
+		drawBarGraph(dataProcess.getChosenSector());
 	}
 
 	function sectorChanged(event, newSector)
