@@ -33,7 +33,7 @@ define(["d3"],function(d3){
     	return readDataFiles();
     }
 
-    var dataFolder = '../530/data/';
+    var dataFolder = './data/';
 
     function readAbbreviationData(){
 
@@ -126,7 +126,9 @@ define(["d3"],function(d3){
     	return chosenSector;
     }
 
-
+    function getMatEmissionForChosenSector(){
+        return matEmissionForChosenSector();
+    }
 
 	return{
 		init 							: 		init,
@@ -137,7 +139,8 @@ define(["d3"],function(d3){
 		getSectorCodesHashMap 			: 		getSectorCodesHashMap,
 		getChosenMaterial 				: 		getChosenMaterial,
 		getChosenSector					: 		getChosenSector,
-        matEmissionForChosenSector      :       matEmissionForChosenSector
+        matEmissionForChosenSector      :       matEmissionForChosenSector,
+        getMatEmissionForChosenSector   :       getMatEmissionForChosenSector
 
 	}
 })
