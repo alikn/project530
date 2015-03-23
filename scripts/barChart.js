@@ -13,7 +13,13 @@ define(["dataProcess","d3"], function (dataProcess,d3) {
 
 	function drawBarGraph(newSector)
 	{
+		var sector_codes = dataProcess.getSectorCodesHashMap();
+		var sector_desc = sector_codes[newSector];
+
 		$('#barChart').empty();
+		$('#barChart').append("<h3><span class='em-source'>"+ sector_desc +"</span></h3>")
+		
+
 		var matEmissions = dataProcess.getMatEmissionForChosenSector();
 		$.each( matEmissions, function( key, value ) 
 		{
