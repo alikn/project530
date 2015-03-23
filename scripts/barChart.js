@@ -77,16 +77,25 @@ define(["dataProcess","d3"], function (dataProcess,d3) {
 		svg.selectAll(".barsuccess")
 		        .data(d3.entries(matEmissions))
 		    .enter().append("rect")
-		        .attr("class", "barsuccess")
+		        .attr("material", (d3.entries(matEmissions), function(d) { return d.key; }))
 		        .attr("x", function(d) { console.log("X value is " + x(d.key)); return x(d.key) })
 		        .attr("width", x.rangeBand())
 		        .attr("y", function(d) { return y(Math.round(d.value)); })
 		        .attr("height", function(d) { return height - y(Math.round(d.value)); })
-		        .style( "fill", "orange" );
+		        .style( "fill", "orange" )
+		        .on("click", rectClicked);
 
 
 	}
 	
+	function rectClicked(d, i) 
+	{
+        
+        
+        chosenMaterial = d3.select(this).attr("material");
+        $("body").trigger("materialChangeEvent", chosenMaterial);
+    }
+
 	return{
 			init		: 			init
 	};
