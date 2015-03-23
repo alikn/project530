@@ -116,6 +116,7 @@ text {
 
 .materialSelect{
     width: 10em;
+    float:right;
 }
 
 
@@ -179,8 +180,6 @@ h1,h2,h3,h4
   line-height: 25px;
   border-style: double;
 }
-
-
 .INS-default
 {
   background-color: #993366
@@ -318,5 +317,25 @@ div.tooltip {
 
 #legend {
     padding: 1.5em 0 0 1.5em;
+}
+
+.substance-title
+{
+  float:left;
+}
+
+.logo
+{
+  float:left; 
+  margin-right:10px;
+}
+.main-title
+{
+  float:left;"
+}
+.title-blurb
+{
+  clear:both; 
+  margin-left:55px;
 }
 
