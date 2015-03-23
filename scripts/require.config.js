@@ -5,9 +5,10 @@ var require = {
 
 	},
 	paths:{
-		jquery 					: 		"../libs/jquery",
+		jquery				: 		"../libs/jquery",
 		"jquery.bootstrap" 		: 		"../libs/bootstrap.min",
 		"d3" 					: 		"../libs/d3.v3.min",
+		"worldmap"				:		"../libs/worldmap"
 
 	}
 };

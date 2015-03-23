@@ -310,3 +310,13 @@ div.tooltip {
     border: 0px;					
     border-radius: 5px;
 }
+
+#colorCodedMap {
+	display:block;
+    margin:0 auto;
+}
+
+#legend {
+    padding: 1.5em 0 0 1.5em;
+}
+

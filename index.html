@@ -6,9 +6,15 @@
 		<title>CICS 530- Group 5</title>
 		<script type="text/javascript" src="libs/jquery.js"></script>
 		<script type="text/javascript" src="scripts/require.config.js"></script>
+		
+		<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+		<script type="text/javascript" src="libs/worldmap.js"></script>
+		
 		<script data-main="scripts/main" src="libs/require.min.js"></script>
 		<link href="css/style.css" type="text/css" rel="stylesheet"></link>
 		<link href="css/bootstrap.min.css" type="text/css" rel="stylesheet"> </link>
+		
 	</head>
 	<body>
 
@@ -82,8 +88,8 @@
                 <div class="col-md-12">
                     <h3>World Figures <span class="substance-title">PM2.5</span></h3>
                     <div id="colorCodedMap" style="text-align:center">
-                        <img src="images/map-image.gif"/>
                     </div>
+					<legend id="legend"></legend>
                 </div>
             </div>
             <footer class="footer">

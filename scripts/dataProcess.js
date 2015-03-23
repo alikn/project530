@@ -33,7 +33,7 @@ define(["d3"],function(d3){
     	return readDataFiles();
     }
 
-    var dataFolder = '../v2/data/';
+    var dataFolder = '../530/data/';
 
     function readAbbreviationData(){
 

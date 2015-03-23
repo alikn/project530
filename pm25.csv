@@ -1,0 +1,39 @@
+Country,Annual mean PM2.5 ug/m3,Year,level,code
+Greece,27,2008,4,GRC
+Austria,20.4,2008,3,AUT
+Belgium,19.4,2008,1,BEL
+Switzerland,14.7,2008,1,CHE
+Czech Republic,18.8,2008,1,CZE
+Germany,16.9,2008,1,DEU
+Denmark,14.9,2008,1,DNK
+Estonia,5.4,2008,0,EST
+Spain,12.9,2008,1,ESP
+Finland,8.9,2008,0,FIN
+France,20.1,2008,2,FRA
+Italy,25.3,2008,2,ITA
+Latvia,19.4,2008,1,LVA
+Netherlands,17.3,2008,1,NLD
+Norway,9.3,2008,0,NOR
+Poland,28.7,2008,2,POL
+Portugal,10.8,2008,1,PRT
+Sweden,11.8,2008,2,SWE
+Slovakia,25.1,2008,2,SVK
+United Kingdom,13.5,2008,1,GBR
+Canada,7.6,2008,0,CAN
+United States of America,10.9,2008,1,USA
+Australia,7.9,2009,0,AUS
+Mongolia,63,2008,5,MNG
+Philippines,21,2007,2,PHL
+Singapore,19,2009,1,SGP
+Ghana,49.8,2008,4,GHA
+Madagascar,59,2003,5,MDG
+Mauritius,7,2009,0,MUS
+Senegal,38,2010,3,SEN
+Tanzania,23,2006,2,TZA
+Kuwait,51,2003,5,KWT
+Lebanon,31,2004,3,LBN
+Brazil,14.8,2009,1,BRA
+Chile,28.9,2008,2,CHL
+Ecuador,19.4,2009,1,ECU
+Mexico,25.1,2009,2,MEX
+Peru,32.8,2010,3,PER
