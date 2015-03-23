@@ -17,13 +17,13 @@ define(["dataProcess"], function (dataProcess) {
 
     var y = d3.scale.linear()
             .domain([startAge, endAge])
-            .range([height, 0]);
+            .range([height, 0]).clamp(true);
 
     // create the zoom listener
     var zoomListener = d3.behavior.zoom()
             .y(y)
             // .x(x)
-            .scaleExtent([1, 40])
+            .scaleExtent([1, 18])
             .on("zoom", redraw);
 
     //create the x axis
