@@ -1,7 +1,7 @@
 define(["d3"],function(d3){
 	"use strict";
 
-	var materials = ['pm25', 'SOx'];
+	var materials = ['pm25', 'pm10', 'SOx'];
 
     var sectorGroup = {
             'INS'   :   'Industrial Sources',
