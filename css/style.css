@@ -282,6 +282,7 @@ a
 
 .axis text {
     fill: #555;
+    font-size: 11.5px;
 }
 
 .axis line {	
@@ -332,11 +333,10 @@ div.tooltip {
 }
 .main-title
 {
-  float:left;"
+  float:left;
 }
 .title-blurb
 {
   clear:both; 
   margin-left:55px;
 }
-
