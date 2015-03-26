@@ -10,6 +10,18 @@ define(["dataProcess"], function (dataProcess) {
 
     var startYear = 1985, endYear = 2012, startAge = 0, endAge = 455000;
     var years = d3.range(startYear, endYear+1);
+    
+    var drag = d3.behavior.drag()
+            .on("dragstart", function() { d3.event.sourceEvent.stopPropagation(); })
+            .on("drag", null);
+
+    function dragmove(d) {
+        return;
+        var x = d3.event.x;
+        var y = d3.event.y;
+        console.log(x + " " + y);
+        d3.select(this).attr("transform", "translate(0,0)"); /*" + x + "," + y + ")");*/
+    }
 
     var x = d3.scale.linear()
             .domain([startYear, endYear])
@@ -17,30 +29,29 @@ define(["dataProcess"], function (dataProcess) {
 
     var y = d3.scale.linear()
             .domain([startAge, endAge])
-            .range([height, 0]).clamp(true);
+            .range([height, 0])
+            .clamp(true);
 
     // create the zoom listener
     var zoomListener = d3.behavior.zoom()
             .y(y)
             // .x(x)
-            .scaleExtent([1, 18])
+            .scaleExtent([1, 10])
             .on("zoom", redraw);
 
     //create the x axis
     var xAxis = d3.svg.axis()
             .scale(x)
-            .tickSize(-height)
-            .tickPadding(10)
-            .tickSubdivide(true)
+            .tickSize(-height)            
+            .tickPadding(10)        
             .tickFormat(d3.format(".0f"))
             .orient("bottom");
 
 //create the y axis
     var yAxis = d3.svg.axis()
             .scale(y)
-            .tickPadding(2)
-            .tickSize(-width)
-            .tickSubdivide(true)
+            .tickPadding(2)           
+            .tickSize(-width)            
             .orient("left");
 
     //tooltip div
@@ -73,7 +84,8 @@ define(["dataProcess"], function (dataProcess) {
     function setupD3() {
         vis = d3.select("#vis")
                 .append("svg")
-                .call(zoomListener)
+                .call(drag)                     
+                .call(zoomListener)                
                 .attr("width", w)
                 .attr("height", h)
                 .append("g")
@@ -81,8 +93,8 @@ define(["dataProcess"], function (dataProcess) {
 
         vis.append("g")
                 .attr("class", "x axis")
-                .attr("transform", "translate(0," + height + ")")
-                .call(xAxis);
+                .attr("transform", "translate(0," + height + ")")         
+                .call(xAxis);                
 
         vis.append("g")
                 .attr("class", "y axis")
@@ -98,21 +110,23 @@ define(["dataProcess"], function (dataProcess) {
                 .attr("x", -height)
                 .text('Tonnes');
         //label on the x axis
-        vis.append("text")
+        vis.append("g")
+                .attr("class", "x axis")               
+                .append("text")
                 .attr("class", "axis-label")
                 .attr("text-anchor", "end")
                 .attr("x", width + 25)
                 .attr("y", height)
                 .text("Year");
 
-        vis.append("clipPath")
+   /*     vis.append("clipPath")
                 .attr("id", "clip")
                 .append("rect")                
                 .attr("width", width)
-                .attr("height", height);
+                .attr("height", height); */
 
         line = d3.svg.line()
-                .interpolate("linear")
+                .interpolate("basis") //change basis to linear to get back the straight line graph
                 .x(function (d) {
                     return x(d.x);
                 })
