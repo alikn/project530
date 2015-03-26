@@ -23,14 +23,14 @@ define(["dataProcess"], function (dataProcess) {
         d3.select(this).attr("transform", "translate(0,0)"); /*" + x + "," + y + ")");*/
     }
 
-    var x = d3.scale.linear()
+    var x = d3.time.scale()
             .domain([startYear, endYear])
             .range([0, width]);
 
     var y = d3.scale.linear()
             .domain([startAge, endAge])
-            .range([height, 0])
-            .clamp(true);
+            .clamp(true)
+            .range([height, 0]);
 
     // create the zoom listener
     var zoomListener = d3.behavior.zoom()
@@ -42,16 +42,19 @@ define(["dataProcess"], function (dataProcess) {
     //create the x axis
     var xAxis = d3.svg.axis()
             .scale(x)
-            .tickSize(-height)            
-            .tickPadding(10)        
-            .tickFormat(d3.format(".0f"))
+            .tickSize(6)            
+           // .tickPadding(10)        
+          //  .tickFormat(d3.format(".0f"))
+         // .tickValues([])
+          .tickFormat(d3.format("0000"))         
+          // .ticks(d3.time.minute, 1)
             .orient("bottom");
 
 //create the y axis
     var yAxis = d3.svg.axis()
             .scale(y)
-            .tickPadding(2)           
-            .tickSize(-width)            
+           // .tickPadding(2)           
+           // .tickSize(-width)            
             .orient("left");
 
     //tooltip div
@@ -59,7 +62,7 @@ define(["dataProcess"], function (dataProcess) {
             .attr("class", "tooltip")
             .style("opacity", 0);
 
-    var vis, line;
+    var vis, line;   
 
     //an object with sectors' abbreviations as the key and sector group abbreviations as value
     var sector_sectorGroup = dataProcess.getSectorToSectorGroupHashMap();
@@ -91,9 +94,9 @@ define(["dataProcess"], function (dataProcess) {
                 .append("g")
                 .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-        vis.append("g")
+        var xAxisLine = vis.append("g")
                 .attr("class", "x axis")
-                .attr("transform", "translate(0," + height + ")")         
+                .attr("transform", "translate(0," + height + ")")               
                 .call(xAxis);                
 
         vis.append("g")
@@ -132,7 +135,9 @@ define(["dataProcess"], function (dataProcess) {
                 })
                 .y(function (d) {
                     return y(d.y);
-                });
+                });         
+       
+        xAxisLine.selectAll('line').style({ 'stroke-width': '1px'});       
     }
 
     function getData(){
