@@ -29,14 +29,14 @@ define(["dataProcess"], function (dataProcess) {
 
     var y = d3.scale.linear()
             .domain([startAge, endAge])
-            .clamp(true)
+           // .clamp(true)
             .range([height, 0]);
 
     // create the zoom listener
     var zoomListener = d3.behavior.zoom()
             .y(y)
             // .x(x)
-            .scaleExtent([1, 10])
+            .scaleExtent([1, 18])
             .on("zoom", redraw);
 
     //create the x axis
@@ -122,11 +122,11 @@ define(["dataProcess"], function (dataProcess) {
                 .attr("y", height)
                 .text("Year");
 
-   /*     vis.append("clipPath")
+        vis.append("clipPath")
                 .attr("id", "clip")
                 .append("rect")                
                 .attr("width", width)
-                .attr("height", height); */
+                .attr("height", height); 
 
         line = d3.svg.line()
                 .interpolate("basis") //change basis to linear to get back the straight line graph
@@ -195,8 +195,6 @@ define(["dataProcess"], function (dataProcess) {
         d3.select("[sector=" + chosenSector + "]").classed("selected", true);
 
         $(".substance-title").text(newMaterial.toUpperCase());
-
-
     }
 
     function sectorChanged(event, newSector) {
