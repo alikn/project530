@@ -305,8 +305,7 @@ define(["dataProcess"], function (dataProcess) {
         div.transition()
                 .duration(200)
                 .style("opacity", .9);
-        div.html("Sector Group: " + sectorGroup[sector_sectorGroup[sectorCode]]
-                + ", Sector: " + sectorCodes[sectorCode])
+        div.html(sectorCodes[sectorCode])
                 .style("left", (d3.event.pageX) + "px")
                 .style("top", (d3.event.pageY - 28) + "px");
     }
