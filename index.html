@@ -1,80 +1,83 @@
-
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>CICS 530- Group 5</title>
-		<script type="text/javascript" src="libs/jquery.js"></script>
-		<script type="text/javascript" src="scripts/require.config.js"></script>
-		
-		<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
-		<script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
-		<script type="text/javascript" src="libs/worldmap.js"></script>
-		
-		<script data-main="scripts/main" src="libs/require.min.js"></script>
-		<link href="css/bootstrap.min.css" type="text/css" rel="stylesheet"> </link>
-        <link href="css/style.css" type="text/css" rel="stylesheet"></link>
-		
-		
-	</head>
-	<body>
+    <head>
+        <meta charset="utf-8">
+        <title>CICS 530- Group 5</title>
 
-		<div class="container">
+        <link href="css/bootstrap.min.css" rel="stylesheet" />
+        <link href="css/bootstrap-tour.min.css" rel="stylesheet" />
+        <link href="css/style.css" type="text/css" rel="stylesheet" />
+
+        <script type="text/javascript" src="libs/jquery.js"></script>
+        <script type="text/javascript" src="scripts/require.config.js"></script>      
+        <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+        <script type="text/javascript" src="libs/worldmap.js"></script>
+        <script data-main="scripts/main" src="libs/require.min.js"></script>
+        <script src="scripts/bootstrap.min.js"></script>
+        <script src="scripts/bootstrap-tour.min.js"></script>
+
+    </head>
+    <body>
+
+        <div class="container">
             <div class="row">
                 <div class="page-header">
                     <img src="images/logo-ehatlas.png" class="logo"><h1 class="main-title">Emissions : Who How and When ?</h1>
-                    <span style="clear:both; margin-left:55px;">An extensive look into what sources emit what substances into our enviroment</span>
+                    <span style="clear:both; margin-left:55px;">An extensive look into what sources emit what substances into our enviroment</span>                 
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    
+                    <span><button class="btn" onclick="displayTour()">Take a tour</button></span>
                 </div>
                 <div class="col-md-9">
                     <h3 class="substance-title">PM2.5</h3>
                     <div class="materialSelect">
-                        <strong>Select Substance</strong> <select class="form-control" style="float:left;"></select>
+                        <strong>Select Substance</strong> <select class="form-control" style="float:left;"></select>                        
                     </div>
-                </div>
+                </div>             
+
             </div>
+
             <div class="row">
                 <div id="lineGraph" class="col-md-9" >
-					<div id="vis"></div>
-				</div>
+                    <div id="vis"></div>
+                </div>
                 <div class="col-md-3" id="legend">
-                	<div id="filters">
-						<span>
-							<div class="circle clickable INS-default" id="INS">I</div>Industrial Sources
-						</span>
-						<span>
-							<div class="circle clickable NIS-default" id="NIS">N</div>Non-industrial Sources
-						</span>
-						<span>
-							<div class="circle clickable MOS-default" id="MOS">M</div> Mobile Sources
-						</span>
-						<span>
-							<div class="circle clickable INCS-default" id="INCS">I</div> Incineration Sources
-						</span>
-						<span> 
-							<div class="circle clickable OPS-default" id="OPS">O</div>Open Sources
-						</span>
-						<span>
-							<div class="circle clickable NAS-default" id="NAS">N</div>Natural Sources
-						</span>
-						<span>
-							<div class="circle clickable MIS-default" id="MIS">M</div>Miscellaneous Sources
-						</span>
-					</div>
+                    <div id="filters">
+                        <span>
+                            <div class="circle clickable INS-default" id="INS">I</div>Industrial Sources
+                        </span>
+                        <span>
+                            <div class="circle clickable NIS-default" id="NIS">N</div>Non-industrial Sources
+                        </span>
+                        <span>
+                            <div class="circle clickable MOS-default" id="MOS">M</div> Mobile Sources
+                        </span>
+                        <span>
+                            <div class="circle clickable INCS-default" id="INCS">I</div> Incineration Sources
+                        </span>
+                        <span> 
+                            <div class="circle clickable OPS-default" id="OPS">O</div>Open Sources
+                        </span>
+                        <span>
+                            <div class="circle clickable NAS-default" id="NAS">N</div>Natural Sources
+                        </span>
+                        <span>
+                            <div class="circle clickable MIS-default" id="MIS">M</div>Miscellaneous Sources
+                        </span>
+                    </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6">
                     <div id="barChart">
-                       
+
                     </div>
                 </div>
                 <div class="col-md-6">
-                    
+
                     <div id="infoBox">
                         <h3>What is <span class="substance-title">PM2.5</span></h3>
                         <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque feugiat condimentum neque, eu malesuada odio scelerisque sit amet. Nunc a sapien sagittis, pretium lectus sed, feugiat felis. Duis luctus dolor tincidunt metus ultrices, vel rhoncus turpis sollicitudin. Vivamus id mauris ac sapien pulvinar bibendum eget sit amet ligula. Integer facilisis ex vitae nisi aliquet pulvinar. Maecenas nec risus a augue elementum maximus vel eu tortor. Quisque hendrerit auctor nunc, non pretium elit imperdiet id. Nulla ut suscipit libero. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc vulputate volutpat dolor, sit amet aliquam velit accumsan imperdiet. Pellentesque cursus, dui ac accumsan maximus, purus velit dapibus lorem, nec tristique diam ex quis eros. Quisque at est placerat, varius sapien non, consequat tortor. Quisque non tristique enim. Aenean porta elit quis tellus imperdiet, vel
@@ -91,11 +94,53 @@
                     <h3>World Figures <span class="substance-title">PM2.5</span></h3>
                     <div id="colorCodedMap" style="text-align:center">
                     </div>
-					<legend id="legend"></legend>
+                    <legend id="legend"></legend>
                 </div>
             </div>
             <footer class="footer">
                 <p><small>Brought to you by the <a href="http://www.ehatlas.ca">Canadian Environmental Health Atlas</a></small></p> 
             </footer>
-	</body>
+        </div>
+        <script>
+            function displayTour() {
+                console.log('starting tour');
+                // Instance the tour
+                var tour = new Tour({
+                    storage: false,
+                    steps: [
+                        {
+                            element: "#vis",
+                            title: "Graph",
+                            content: "Content for graph",
+                            placement: "top"
+                        },
+                        {
+                            element: "#filters",
+                            title: "Filters",
+                            content: "Content for filters",
+                            placement: "top"
+                        },
+                        {
+                            element: "#infoBox",
+                            title: "Info Box",
+                            content: "Content for infobox",
+                            placement: "top"
+                        },
+                        {
+                            element: "#barChart",
+                            title: "Bar Chart",
+                            content: "Expanation of what bar char does",
+                            placement: "top"
+                        }
+                    ]
+                });
+
+                // Initialize the tour
+                tour.init();
+
+                // Start the tour
+                tour.start();
+            }
+        </script>
+    </body>
 </html>

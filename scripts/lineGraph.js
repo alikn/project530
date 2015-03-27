@@ -11,17 +11,8 @@ define(["dataProcess"], function (dataProcess) {
     var startYear = 1985, endYear = 2012, startAge = 0, endAge = 455000;
     var years = d3.range(startYear, endYear+1);
     
-    var drag = d3.behavior.drag()
-            .on("dragstart", function() { d3.event.sourceEvent.stopPropagation(); })
-            .on("drag", null);
-
-    function dragmove(d) {
-        return;
-        var x = d3.event.x;
-        var y = d3.event.y;
-        console.log(x + " " + y);
-        d3.select(this).attr("transform", "translate(0,0)"); /*" + x + "," + y + ")");*/
-    }
+        var drag = d3.behavior.drag()
+        .on("drag", dragmove);
 
     var x = d3.time.scale()
             .domain([startYear, endYear])
@@ -29,14 +20,14 @@ define(["dataProcess"], function (dataProcess) {
 
     var y = d3.scale.linear()
             .domain([startAge, endAge])
-           // .clamp(true)
+            //.clamp(true)
             .range([height, 0]);
 
     // create the zoom listener
     var zoomListener = d3.behavior.zoom()
             .y(y)
             // .x(x)
-            .scaleExtent([1, 18])
+            .scaleExtent([1, 25])
             .on("zoom", redraw);
 
     //create the x axis
@@ -68,8 +59,7 @@ define(["dataProcess"], function (dataProcess) {
     var sector_sectorGroup = dataProcess.getSectorToSectorGroupHashMap();
 
     //an object with sectors' abbreviations as the key and sector full name as value
-    var sectorCodes = dataProcess.getSectorCodesHashMap();
-    
+    var sectorCodes = dataProcess.getSectorCodesHashMap();    
   
     function init() {
         setupD3();
@@ -77,10 +67,8 @@ define(["dataProcess"], function (dataProcess) {
         drawAllPaths();
         setupAxes();
 
-
         $("body").on("materialChangeEvent", materialChanged);
-        $("body").on("sectorChangeEvent", sectorChanged);
-        
+        $("body").on("sectorChangeEvent", sectorChanged);        
 
     }
 
@@ -147,7 +135,6 @@ define(["dataProcess"], function (dataProcess) {
         chosenMaterial = dataProcess.getChosenMaterial(),
         chosenSector = dataProcess.getChosenSector();
     }
-
 
     function drawAllPaths() {
         drawPath(rawData[chosenMaterial]);
@@ -325,8 +312,20 @@ define(["dataProcess"], function (dataProcess) {
         vis.selectAll("[ty='line']").attr('d', line);
     }
     
+    function dragmove() {
+        
+        console.log("y domain is " + y.domain()[0] + " y[1] " + y.domain()[1] + " d3 event y" + d3.event.dy + " x " + d3.event.dx);
+        if (y.domain()[0] < 0) {
+           // this.dispatchEvent(new Event('mousedown'));
+           // this.dispatchEvent(new Event('mouseup'));
+          
+          /*  d3.select(this).attr("transform", function(){
+                return "translate(100,200)";
+            }); */
+            
+        }
+    }
     
-
     return{
         init: init
     };
