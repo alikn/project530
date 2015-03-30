@@ -15,8 +15,8 @@
         <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
         <script type="text/javascript" src="libs/worldmap.js"></script>
         <script data-main="scripts/main" src="libs/require.min.js"></script>
-        <script src="scripts/bootstrap.min.js"></script>
-        <script src="scripts/bootstrap-tour.min.js"></script>
+        <script src="libs/bootstrap.min.js"></script>
+        <script src="libs/bootstrap-tour.min.js"></script>
 
     </head>
     <body>
@@ -26,7 +26,7 @@
                 <div class="col-md-12">
                     <div class="row">
                         <div class="col-md-12">
-                            <span class="pull-right"><button class="btn" onclick="displayTour()">Take a tour</button></span>
+                            <span class="pull-right"><button class="btn" id="tour">Take a tour</button></span>
                         </div>
                     </div>
                     <div class="row">
@@ -108,47 +108,6 @@
             <footer class="footer">
                 <p><small>Brought to you by the <a href="http://www.ehatlas.ca">Canadian Environmental Health Atlas</a></small></p> 
             </footer>
-        </div>
-        <script>
-            function displayTour() {
-                console.log('starting tour');
-                // Instance the tour
-                var tour = new Tour({
-                    storage: false,
-                    steps: [
-                        {
-                            element: "#vis",
-                            title: "Graph",
-                            content: "Content for graph",
-                            placement: "top"
-                        },
-                        {
-                            element: "#filters",
-                            title: "Filters",
-                            content: "Content for filters",
-                            placement: "top"
-                        },
-                        {
-                            element: "#infoBox",
-                            title: "Info Box",
-                            content: "Content for infobox",
-                            placement: "top"
-                        },
-                        {
-                            element: "#barChart",
-                            title: "Bar Chart",
-                            content: "Expanation of what bar char does",
-                            placement: "top"
-                        }
-                    ]
-                });
-
-                // Initialize the tour
-                tour.init();
-
-                // Start the tour
-                tour.start();
-            }
-        </script>
+        </div>        
     </body>
 </html>

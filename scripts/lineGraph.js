@@ -10,9 +10,6 @@ define(["dataProcess"], function (dataProcess) {
 
     var startYear = 1985, endYear = 2012, startAge = 0, endAge = 455000;
     var years = d3.range(startYear, endYear+1);
-    
-        var drag = d3.behavior.drag()
-        .on("drag", dragmove);
 
     var x = d3.time.scale()
             .domain([startYear, endYear])
@@ -74,8 +71,7 @@ define(["dataProcess"], function (dataProcess) {
 
     function setupD3() {
         vis = d3.select("#vis")
-                .append("svg")
-                .call(drag)                     
+                .append("svg")                                
                 .call(zoomListener)                
                 .attr("width", w)
                 .attr("height", h)
@@ -307,25 +303,25 @@ define(["dataProcess"], function (dataProcess) {
         div.style("display", "none");
     }
 
-    function redraw() {
-        vis.select(".y.axis").call(yAxis);
-        vis.selectAll("[ty='line']").attr('d', line);
-    }
-    
-    function dragmove() {
-        
-        console.log("y domain is " + y.domain()[0] + " y[1] " + y.domain()[1] + " d3 event y" + d3.event.dy + " x " + d3.event.dx);
+    function redraw() {        
+
+        var tx = d3.event.translate[0];
+        var ty = d3.event.translate[1];
+        console.log("y domain   " + y.domain()[0]);
         if (y.domain()[0] < 0) {
            // this.dispatchEvent(new Event('mousedown'));
-           // this.dispatchEvent(new Event('mouseup'));
-          
-          /*  d3.select(this).attr("transform", function(){
-                return "translate(100,200)";
-            }); */
-            
-        }
-    }
-    
+            //this.dispatchEvent(new Event('mouseup'));
+            ty = Math.min(0, Math.max(ty, height - Math.round(y(endAge) - y(0)), height - Math.round(y(endAge) - y(0)) * d3.event.scale));
+            zoomListener.translate([tx, ty]);
+          //  return;
+          vis.select(".y.axis").call(yAxis);
+            vis.selectAll("[ty='line']").attr('d', line);
+        } else {
+            vis.select(".y.axis").call(yAxis);
+            vis.selectAll("[ty='line']").attr('d', line);
+        }  
+    }    
+        
     return{
         init: init
     };

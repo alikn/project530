@@ -1,5 +1,5 @@
-require(["dataProcess", "page", "lineGraph", "filters", "infoBox", "barChart", "colorCodedMap"], 
-	function(dataProcess, page, lineGraph, filters, infoBox, barChart, colorCodedMap){
+require(["dataProcess", "page", "lineGraph", "filters", "infoBox", "barChart", "colorCodedMap", "tour"], 
+	function(dataProcess, page, lineGraph, filters, infoBox, barChart, colorCodedMap, tour){
 	
 	$(document).ready(function(){
 		var deferred = dataProcess.init();
@@ -14,6 +14,7 @@ require(["dataProcess", "page", "lineGraph", "filters", "infoBox", "barChart", "
 		infoBox.init();
 		barChart.init();
 		colorCodedMap.init();
+                tour.init();
 	}
 
 })
