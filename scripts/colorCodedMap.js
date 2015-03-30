@@ -6,14 +6,56 @@ define(["worldmap", "dataProcess"], function(worldmap, dataProcess){
 				projection: 'equirectangular',
 				element: document.getElementById('colorCodedMap'),
 				fills: {
-					0: 'rgb(153,255,153)',
-					1: 'rgb(51,255,51)',
-					2: 'rgb(0,204,0)',
-					3: 'rgb(0,153,0)',
-					4: 'rgb(0,102,0)',
-					5: 'rgb(0,51,0)',
-					UNKNOWN: 'rgb(128,128,128)',
-					defaultFill: 'rgb(128,128,128)'
+					// Color range for pm2.5
+					pm250: 'rgb(255,229,204)',
+					pm251: 'rgb(255,204,153)',
+					pm252: 'rgb(255,153,51)',
+					pm253: 'rgb(204,102,0)',
+					pm254: 'rgb(102,51,0)',
+					pm255: 'rgb(51,25,0)',
+					
+					// Color range for SOx
+					SOx0: 'rgb(255,255,153)',
+					SOx1: 'rgb(255,255,0)',
+					SOx2: 'rgb(204,204,0)',
+					SOx3: 'rgb(153,153,0)',
+					SOx4: 'rgb(102,102,0)',
+					SOx5: 'rgb(51,51,0)',
+					
+					// Color range for pm10
+					pm100: 'rgb(255,204,204)',
+					pm101: 'rgb(255,153,153)',
+					pm102: 'rgb(204,0,0)',
+					pm103: 'rgb(153,0,0)',
+					pm104: 'rgb(102,0,0)',
+					pm105: 'rgb(51,0,0)',
+					
+					// Color range for NOx
+					NOx0: 'rgb(229,255,204)',
+					NOx1: 'rgb(204,255,153)',
+					NOx2: 'rgb(102,204,0)',
+					NOx3: 'rgb(76,153,0)',
+					NOx4: 'rgb(51,102,0)',
+					NOx5: 'rgb(25,51,0)',
+					
+					// Color range for VOC
+					VOC0: 'rgb(255,204,229)',
+					VOC1: 'rgb(255,102,178)',
+					VOC2: 'rgb(204,0,102)',
+					VOC3: 'rgb(153,0,76)',
+					VOC4: 'rgb(102,0,51)',
+					VOC5: 'rgb(51,0,25)',
+					
+					// Color range for NH3
+					NH30: 'rgb(204,229,255)',
+					NH31: 'rgb(153,204,255)',
+					NH32: 'rgb(0,102,204)',
+					NH33: 'rgb(0,76,153)',
+					NH34: 'rgb(0,51,102)',
+					NH35: 'rgb(0,25,51)',
+					
+					UNKNOWN: 'rgb(192,192,192)',
+					defaultFill: 'rgb(192,192,192)'
 				},
 				data: {
 					USA: {
@@ -37,7 +79,63 @@ define(["worldmap", "dataProcess"], function(worldmap, dataProcess){
 				});
 				}
 			});
-	map.legend();
+	map.legend = function (layer, data, options) {
+				var material = dataProcess.getChosenMaterial();
+				var container = d3.select(this.options.element);
+				container.select('svg')
+					.style("float", "left")
+					.style("position", "relative");
+					
+				//remove the previous legend
+				d3.select(".datamaps-legend").remove();
+				
+				//draw new legend
+				data = data || {};
+				//data.legendTitle = "Emissions";
+				var i = 0;
+				var ldata = ['Low', 'High', 'UNKNOWN'];
+				if ( !this.options.fills ) {
+				  return;
+				}
+
+				var html = '<dl>';
+				var label = '';
+				if( material =='pm25' || material == 'pm10'){
+					html = '<b><p style="font-size: 15px">' + material +' (Micrograms per meter cube)' + '</p></b>' + html;
+				}
+				else {
+					html = '<b><p>' + material +' (Kilotonnes)' + '</p></b>' + html;
+				}
+				
+				html += '<dt>' + ldata[0] + '</dt>';
+				for ( var fillKey in this.options.fills ) {
+				if ( fillKey.indexOf( material) > -1) {
+				  if ( fillKey === 'defaultFill') {
+					if (! data.defaultFillName ) {
+					  continue;
+					}
+					label = data.defaultFillName;
+				  } else {
+					if (data.labels && data.labels[fillKey]) {
+					  label = data.labels[fillKey];
+					} else {
+					  label= ldata[i];
+					  i = i+1;
+					}
+				  }
+				  html += '<dd style="background-color:' +  this.options.fills[fillKey] + '">&nbsp;</dd>';
+				}}
+				html += '<dt>' + ldata[1] + '</dt>';
+				html += '<dd style="background-color:' +  this.options.fills['UNKNOWN'] + '">&nbsp;</dd>';
+				html += '<dt>' + ldata[2] + '</dt>';
+				html += '</dl>';
+				var hoverover = d3.select(this.options.element).append('div')
+				  .attr('class', 'datamaps-legend')
+				  .style('float', 'left')
+				  //.style('background-color', 'rgb(128,128,128)')
+				  .style("position", "relative")
+				  .html(html);
+			  }
 	function init(){
 		var pollutant = dataProcess.getChosenMaterial();
 		console.log("selected material: " + pollutant);
@@ -49,12 +147,17 @@ define(["worldmap", "dataProcess"], function(worldmap, dataProcess){
 		UpdateMap(pollutant);
     }
 	function UpdateMap(pollutant){
+				map.legend();
 				console.log("selected material: " + pollutant);
 				d3.text('data/map/'+pollutant+'.csv', 'text/csv', function(text) {
 					console.log("file path is : data/map/"+pollutant+'.csv');
 					regions = d3.csv.parseRows(text);
 					for (i = 1; i < regions.length; i++) {
 						console.log(regions[i]);
+						if(regions[i][3] != 'UNKNOWN'){
+							regions[i][3] = pollutant+regions[i][3];
+						}
+						console.log("level is : " + regions[i][3]);
 						if(regions[i][0] == 'Greece'){
 							map.updateChoropleth({
 									GRC: {fillKey: regions[i][3]},

@@ -1,0 +1,41 @@
+Country,Annual mean PM10 ug/m3,Year,level,code
+Greece,35.97,2006,2,GRC
+Austria,33.03,2006,2,AUT
+Belgium,22.47,2006,2,BEL
+Switzerland,25.51,2006,2,CHE
+Czech Republic,20.95,2006,2,CZE
+Germany,18.58,2006,1,DEU
+Denmark,18.68,2006,1,DNK
+Estonia,12.95,2006,1,EST
+Spain,31.61,2006,2,ESP
+Finland,17.8,2006,1,FIN
+France,13.38,2006,1,FRA
+Italy,26.71,2006,2,ITA
+Latvia,15.55,2006,1,LVA
+Netherlands,33.71,2006,2,NLD
+Norway,14.8,2006,1,NOR
+Poland,37.37,2006,2,POL
+Portugal,23.33,2006,1,PRT
+Sweden,11.62,2006,1,SWE
+Slovakia,30.05,2006,2,SVK
+United Kingdom,15.49,2006,1,GBR
+Canada,17.39,2006,1,CAN
+United States of America,21.34,2006,2,USA
+Australia,15.39,2006,1,AUS
+Mongolia,110.45,2006,5,MNG
+Philippines,22.83,2006,2,PHL
+Singapore,40.97,2006,3,SGP
+Ghana,34.46,2006,2,GHA
+Madagascar,33.84,2006,2,MDG
+Mauritius,17.6,2006,1,MUS
+Senegal,95.01,2006,4,SEN
+Tanzania,25.39,2006,2,TZA
+Kuwait,97.31,2006,4,KWT
+Lebanon,36.36,2006,2,LBN
+Brazil,22.34,2006,2,BRA
+Chile,47.8,2006,3,CHL
+Ecuador,24.76,2006,2,ECU
+Mexico,36.45,2006,2,MEX
+Peru,54.48,2006,3,PER
+Australia,15.39,2006,1,AUS
+Russian Federation*,17.74,2006,1,RSA
