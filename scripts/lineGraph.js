@@ -65,8 +65,7 @@ define(["dataProcess"], function (dataProcess) {
         setupAxes();
 
         $("body").on("materialChangeEvent", materialChanged);
-        $("body").on("sectorChangeEvent", sectorChanged);        
-
+        $("body").on("sectorChangeEvent", sectorChanged);
     }
 
     function setupD3() {
@@ -188,78 +187,7 @@ define(["dataProcess"], function (dataProcess) {
     }
 
     function setupAxes() {
-    } /*{
-     //adding x axis
-     vis.append("svg:line")
-     .attr("x1", x(1985))
-     .attr("y1", y(startValue))
-     .attr("x2", x(2012))
-     .attr("y2", y(startValue))
-     .attr("class", "axis");
-     
-     //adding y axis
-     vis.append("svg:line")
-     .attr("x1", x(startYear))
-     .attr("y1", y(startValue))
-     .attr("x2", x(startYear))
-     .attr("y2", y(endValue))
-     .attr("class", "axis");
-     
-     //adding x axis labels
-     vis.selectAll(".xLabel")
-     .data(x.ticks(5))
-     .enter().append("svg:text")
-     .attr("class", "xLabel")
-     .text(String)
-     .attr("x", function (d) {
-     return x(d)
-     })
-     .attr("y", h - 10)
-     .attr("text-anchor", "middle");
-     
-     //adding y axis labels
-     vis.selectAll(".yLabel")
-     .data(y.ticks(10))
-     .enter()
-     .append("svg:text")
-     .attr("class", "yLabel")
-     .text(String)
-     .attr("x", 0)
-     .attr("y", function (d) {
-     return y(d)
-     })
-     .attr("text-anchor", "right")
-     .attr("dy", 3);
-     
-     //adding the ticks on the x axis
-     vis.selectAll(".xTicks")
-     .data(x.ticks(5))
-     .enter()
-     .append("svg:line")
-     .attr("class", "xTicks")
-     .attr("x1", function (d) {
-     return x(d);
-     })
-     .attr("y1", y(startValue))
-     .attr("x2", function (d) {
-     return x(d);
-     })
-     .attr("y2", y(startValue) + 7);
-     
-     //adding the ticks on the y axis
-     vis.selectAll(".yTicks")
-     .data(y.ticks(10))
-     .enter()
-     .append("svg:line")
-     .attr("class", "yTicks")
-     .attr("y1", function (d) {
-     return y(d);
-     })
-     .attr("x1", x(1984.5))
-     .attr("y2", function (d) {
-     return y(d);
-     }).attr("x2", x(1985));
-     }*/
+    } 
 
     function pathClicked(d, i) {
         //d3.select(".selected").classed("selected", false);
