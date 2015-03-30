@@ -2,8 +2,12 @@ body
 {
   margin:0;
   padding:0;
+  background-size: 100%;
   font-family:Arial,sans-serif;
-  color:#333333;  
+  color:#333333;
+  background-image: url("../images/background.jpg");
+  background-color: #fefefe;
+  background-repeat: no-repeat;  
 }
 
 #vis {
@@ -142,8 +146,7 @@ text {
 
 h1,h2,h3,h4
 {
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-  
+  font-family: "Open Sans", Arial,sans-serif;
 }
 
 #legend ul
