@@ -2,8 +2,12 @@ body
 {
   margin:0;
   padding:0;
+  background-size: 100%;
   font-family:Arial,sans-serif;
-  color:#333333;  
+  color:#333333;
+  background-image: url("../images/background.jpg");
+  background-color: #fefefe;
+  background-repeat: no-repeat;  
 }
 
 #vis {
@@ -128,10 +132,17 @@ text {
   height:800px;
 }
 
+.page-header
+{
+  margin-top:0;
+}
 .page-header span
 {
   margin:0 auto;
-  display: block
+  display: block;
+  font-style: italic;
+  font-family: "Georgia", Arial, sans-serif;
+  
 }
 
 .page-header h1
@@ -140,10 +151,20 @@ text {
   padding:0;
 }
 
+.btn
+{
+  background-color:#b6c8e0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  color:#666;
+
+}
+
 h1,h2,h3,h4
 {
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-  
+  font-family: "Open Sans", Arial,sans-serif;
+  color: #000;
+  letter-spacing: -1px;
 }
 
 #legend ul
