@@ -303,11 +303,12 @@ a
 
 .axis text {
     fill: #555;
-    font-size: 11.5px;
+    font-size: 11px;
+    stroke:none;
 }
 
 .axis line {	
-    stroke: #e7e7e7;
+    stroke: #000;
     shape-rendering: crispEdges;  
 } 
 

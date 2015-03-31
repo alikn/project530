@@ -23,23 +23,22 @@ define(["dataProcess","d3"], function (dataProcess,d3) {
 		var matEmissions = dataProcess.getMatEmissionForChosenSector();
 		$.each( matEmissions, function( key, value ) 
 		{
-  			console.log( key + ": " + value );
-  			value = Math.round(value);
-  			console.log( "Newly " + key + ": " + value );
-		});
+			//parse to number barchart expects integers
+  			value = parseInt(value);
+  		});
 
-           var data = new Object();
-                data["pm25"] = 40;
-                data["SOx"] = 10;
-
-
-		 var max_value = d3.max(d3.entries(matEmissions), function(d) { return Math.round(d.value); });
-		 //d3.max(data, function(array) {
-		 console.log("Max is " + max_value );
-		// return d3.max(array);
-		// });
-
-		var margin = {top: 20, right: 20, bottom: 30, left: 60},
+       //trial data to be removed later
+       var data = new Object();
+            data["pm25"] = 2;
+            data["pm10"] = 7.55;
+            data["tpm"] = 8.968269197;
+            data["SOx"] = 0.035;
+            data["voc"] = 89.697;
+               
+          
+		var max_value = d3.max(d3.entries(matEmissions), function(d) { return Math.round(d.value); });
+		
+		var margin = {top: 20, right: 20, bottom: 30, left: 50},
 		    width = 565 - margin.left - margin.right,
 		    height = 420 - margin.top - margin.bottom;
 
@@ -49,15 +48,17 @@ define(["dataProcess","d3"], function (dataProcess,d3) {
 
 		var x = d3.scale.ordinal()
 		    .rangeRoundBands([0, width], .1)
-		    .domain(d3.entries(data).map(function(d) { return d.key; }));
+		    .domain(d3.entries(matEmissions).map(function(d) { return d.key; }));
 
 		var xAxis = d3.svg.axis()
 		    .scale(x)
-		    .orient("bottom");
-
+		    .orient("bottom")
+		    .tickSize(5);
+		    
 		var yAxis = d3.svg.axis()
 		    .scale(y)
-		    .orient("left");
+		    .orient("left")
+		    .tickSize(5);
 
 		var svg = d3.select("#barChart").append("svg")
 		        .attr("width", width + margin.left + margin.right)
@@ -75,7 +76,7 @@ define(["dataProcess","d3"], function (dataProcess,d3) {
 		        .call(yAxis)
 		    .append("text")
 		        .attr("transform", "rotate(-90)")
-		        .attr("y", 6)
+		        .attr("y", -30)
 		        .attr("dy", ".71em")
 		        .style("text-anchor", "end")
 		        .text("Tonnes");
@@ -84,10 +85,10 @@ define(["dataProcess","d3"], function (dataProcess,d3) {
 		        .data(d3.entries(matEmissions))
 		    .enter().append("rect")
 		        .attr("material", (d3.entries(matEmissions), function(d) { return d.key; }))
-		        .attr("x", function(d) { console.log("X value is " + x(d.key)); return x(d.key) })
+		        .attr("x", function(d) { return x(d.key) })
 		        .attr("width", x.rangeBand())
-		        .attr("y", function(d) { return y(Math.round(d.value)); })
-		        .attr("height", function(d) { return height - y(Math.round(d.value)); })
+		        .attr("y", function(d) { return y(d.value) ; })
+		        .attr("height", function(d) { return height - y(d.value); })
 		        .style( "fill", "orange" )
 		        .on("click", rectClicked);
 
