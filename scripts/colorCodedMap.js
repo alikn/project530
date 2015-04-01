@@ -11,24 +11,32 @@ define(["worldmap", "dataProcess"], function(worldmap, dataProcess){
 					pm251: 'rgb(255,204,153)',
 					pm252: 'rgb(255,153,51)',
 					pm253: 'rgb(204,102,0)',
-					pm254: 'rgb(102,51,0)',
-					pm255: 'rgb(51,25,0)',
+					pm254: 'rgb(153,76,0)',
+					pm255: 'rgb(102,51,0)',
 					
 					// Color range for SOx
-					SOx0: 'rgb(255,255,153)',
-					SOx1: 'rgb(255,255,0)',
-					SOx2: 'rgb(204,204,0)',
-					SOx3: 'rgb(153,153,0)',
-					SOx4: 'rgb(102,102,0)',
-					SOx5: 'rgb(51,51,0)',
+					SOx0: 'rgb(255,255,204)',
+					SOx1: 'rgb(255,255,153)',
+					SOx2: 'rgb(255,255,0)',
+					SOx3: 'rgb(204,204,0)',
+					SOx4: 'rgb(153,153,0)',
+					SOx5: 'rgb(102,102,0)',
+					
+					// Color range for tpm
+					tpm0: 'rgb(204,255,255)',
+					tpm1: 'rgb(153,255,255)',
+					tpm2: 'rgb(0,255,255)',
+					tpm3: 'rgb(0,204,204)',
+					tpm4: 'rgb(0,153,153)',
+					tpm5: 'rgb(0,102,102)',
 					
 					// Color range for pm10
 					pm100: 'rgb(255,204,204)',
 					pm101: 'rgb(255,153,153)',
-					pm102: 'rgb(204,0,0)',
-					pm103: 'rgb(153,0,0)',
-					pm104: 'rgb(102,0,0)',
-					pm105: 'rgb(51,0,0)',
+					pm102: 'rgb(255,102,102)',
+					pm103: 'rgb(204,0,0)',
+					pm104: 'rgb(153,0,0)',
+					pm105: 'rgb(102,0,0)',
 					
 					// Color range for NOx
 					NOx0: 'rgb(229,255,204)',
@@ -39,12 +47,12 @@ define(["worldmap", "dataProcess"], function(worldmap, dataProcess){
 					NOx5: 'rgb(25,51,0)',
 					
 					// Color range for VOC
-					VOC0: 'rgb(255,204,229)',
-					VOC1: 'rgb(255,102,178)',
-					VOC2: 'rgb(204,0,102)',
-					VOC3: 'rgb(153,0,76)',
-					VOC4: 'rgb(102,0,51)',
-					VOC5: 'rgb(51,0,25)',
+					voc0: 'rgb(255,204,229)',
+					voc1: 'rgb(255,153,204)',
+					voc2: 'rgb(255,102,178)',
+					voc3: 'rgb(204,0,102)',
+					voc4: 'rgb(153,0,76)',
+					voc5: 'rgb(102,0,51)',
 					
 					// Color range for NH3
 					NH30: 'rgb(204,229,255)',

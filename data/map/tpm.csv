@@ -1,14 +1,14 @@
-Country,2011 Total emissions (kilotonnes),year,level,Code
-United States of America,12284,2011,5,USA
-Australia,2300,2011,2,AUS
-Russian Federation*,2081,2011,2,RSA
-Canada,2002,2011,2,CAN
-Japan,1574,2011,1,JPN
-Germany,1008,2011,1,DEU
-Italy,989,2011,1,GBR
-United Kingdom,752,2011,1,FRA
-France,734,2011,1,ITA
-Sweden,177,2011,0,SWE
+Country,Total emissions (kilotonnes),year,level,Code
+United States of America,0,2011,UNKNOWN,USA
+Australia,0,2011,UNKNOWN,AUS
+Russian Federation*,0,2011,UNKNOWN,RSA
+Canada,0,2011,UNKNOWN,CAN
+Japan,0,2011,UNKNOWN,JPN
+Germany,0,2011,UNKNOWN,DEU
+Italy,0,2011,UNKNOWN,GBR
+United Kingdom,0,2011,UNKNOWN,FRA
+France,0,2011,UNKNOWN,ITA
+Sweden,0,2011,UNKNOWN,SWE
 Greece,0,2008,UNKNOWN,GRC
 Austria,0,2008,UNKNOWN,AUT
 Belgium,0,2008,UNKNOWN,BEL
