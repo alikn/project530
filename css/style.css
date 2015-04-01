@@ -339,6 +339,7 @@ div.tooltip {
 .substance-title
 {
     float:left;
+    margin-bottom:30px;
 }
 
 .logo
@@ -356,4 +357,26 @@ div.tooltip {
 {
     clear:both; 
     margin-left:55px;
+}
+
+
+.form-control
+{
+  display:inline;
+  margin:0;
+  width: 60%;
+}
+
+.materialSelect
+{
+  width:300px;
+  margin-top:20px;
+}
+
+.materialSelect span
+{
+  font-family: "Georgia", Sans;
+  font-style:italic;
+  margin-left:10px;
+  display: inline-block;
 }

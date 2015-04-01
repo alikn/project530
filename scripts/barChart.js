@@ -76,7 +76,7 @@ define(["dataProcess","d3"], function (dataProcess,d3) {
 		        .call(yAxis)
 		    .append("text")
 		        .attr("transform", "rotate(-90)")
-		        .attr("y", -30)
+		        .attr("y", -60)
 		        .attr("dy", ".71em")
 		        .style("text-anchor", "end")
 		        .text("Tonnes");
