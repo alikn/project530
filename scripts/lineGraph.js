@@ -2,7 +2,7 @@ define(["dataProcess"], function (dataProcess) {
 
     var materials, rawData, sectorGroup, chosenMaterial, chosenSector;
 
-    var margin = {top: 20, right: 30, bottom: 30, left: 50};
+    var margin = {top: 20, right: 17, bottom: 30, left: 55};
     var w = 890;
     var width = w - margin.left - margin.right;
     var h = 550;
@@ -41,7 +41,7 @@ define(["dataProcess"], function (dataProcess) {
 //create the y axis
     var yAxis = d3.svg.axis()
             .scale(y)
-           // .tickPadding(2)           
+        .tickPadding(1)           
            // .tickSize(-width)            
             .orient("left");
 
@@ -92,7 +92,7 @@ define(["dataProcess"], function (dataProcess) {
                 .append("text")
                 .attr("class", "axis-label")
                 .attr("transform", "rotate(-90)")
-                .attr("y", (-margin.left) + 10)
+                .attr("y", (-margin.left) + 8)
                 .attr("x", -height)
                 .text('Tonnes');
         //label on the x axis
@@ -101,8 +101,8 @@ define(["dataProcess"], function (dataProcess) {
                 .append("text")
                 .attr("class", "axis-label")
                 .attr("text-anchor", "end")
-                .attr("x", width + 25)
-                .attr("y", height)
+                .attr("x", width + 10)
+                .attr("y", height + 30)
                 .text("Year");
 
         vis.append("clipPath")
@@ -235,12 +235,17 @@ define(["dataProcess"], function (dataProcess) {
 
         var tx = d3.event.translate[0];
         var ty = d3.event.translate[1];
-        console.log("y domain   " + y.domain()[0]);
+        console.log("y domain   " + y.domain()[0] + " height: " + height + " d3.event.translate[1]: " + d3.event.translate[1]
+                + " d3.event.translate[0]: " + d3.event.translate[0] + "d3 scale " + d3.event.scale);
         if (y.domain()[0] < 0) {
            // this.dispatchEvent(new Event('mousedown'));
             //this.dispatchEvent(new Event('mouseup'));
             ty = Math.min(0, Math.max(ty, height - Math.round(y(endAge) - y(0)), height - Math.round(y(endAge) - y(0)) * d3.event.scale));
-            zoomListener.translate([tx, ty]);
+            console.log("ty " + ty);
+            console.log("d3.event.scale " + d3.event.scale);
+            var tA = d3.event.translate[1]/((endAge-startAge)/(500*d3.event.scale)); 
+            console.log("y.domain()[0] " + ((endAge - y.domain()[0])/height) + "   " + y.domain()[1]);
+            zoomListener.translate([0, tA]);
           //  return;
           vis.select(".y.axis").call(yAxis);
             vis.selectAll("[ty='line']").attr('d', line);
