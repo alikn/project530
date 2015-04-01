@@ -22,22 +22,22 @@ body
 
 path {
     stroke: #999999;
-    stroke-width: 0.9;
+    stroke-width: 1.5;
     fill: none;
 }
 
 path.current,path.highlight.current {
     stroke: black;
-    stroke-width: 1.7;
+    stroke-width: 2.2;
 }
 
 path.selected{
     stroke: red !important;
-    stroke-width: 2 !important;
+    stroke-width: 3 !important;
 }
 
 .highlight {
-    stroke-width: 1px;
+    stroke-width: 1.5px;
 }
 
 line {
