@@ -1,14 +1,13 @@
 body
 {
-  margin:0;
-  padding:0;
-  background-size: 100%;
-  font-family:Arial,sans-serif;
-  color:#333333;
-  background-image: url("../images/background.jpg");
-  background-color: #fefefe;
-  background-repeat: no-repeat;  
-}
+    margin:0;
+    padding:0;
+    background-size: 100%;
+    font-family:Arial,sans-serif;
+    color:#333333;
+    background-image: url("../images/background.jpg");
+    background-color: #fff;
+    background-repeat: no-repeat;  }
 
 #vis {
     min-height: 550px;
@@ -91,11 +90,11 @@ text {
 
 
 .INS.highlight {
-   stroke:#993366;
+    stroke:#993366;
 }
 
 .NIS.highlight {
-   stroke:#ff3333;
+    stroke:#ff3333;
 }
 
 .MOS.highlight {
@@ -123,164 +122,163 @@ text {
     float:right;
 }
 
-
 .wrapper
 {
-  width:960px;
-  margin:0 auto;
-  border:1px solid #ff6600;
-  height:800px;
+    width:960px;
+    margin:0 auto;
+    border:1px solid #ff6600;
+    height:800px;
 }
 
 .page-header
 {
-  margin-top:0;
+    margin-top:0;
 }
 .page-header span
 {
-  margin:0 auto;
-  display: block;
-  font-style: italic;
-  font-family: "Georgia", Arial, sans-serif;
-  
+    margin:0 auto;
+    display: block;
+    font-style: italic;
+    font-family: "Georgia", Arial, sans-serif;
+
 }
 
 .page-header h1
 {
-  margin:0;
-  padding:0;
+    margin:0;
+    padding:0;
 }
 
 .btn
 {
-  background-color:#b6c8e0;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  color:#666;
-
+    background-color:#b6c8e0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    color:#666;
 }
 
 h1,h2,h3,h4
 {
-  font-family: "Open Sans", Arial,sans-serif;
-  color: #000;
-  letter-spacing: -1px;
+    font-family: "Open Sans", Arial,sans-serif;
+    color: #000;
+    letter-spacing: -1px;
 }
 
 #legend ul
 {
-  margin:0; 
-  padding:0;
-  list-style-type: none;
+    margin:0; 
+    padding:0;
+    list-style-type: none;
 }
 #legend ul li
 {
-  border-bottom:1px solid #f7f7f7;
-  padding:15px 5px;
+    border-bottom:1px solid #f7f7f7;
+    padding:15px 5px;
 }
 
 .circle 
 {
-  border-radius: 50%;
-  width: 30px;
-  height:30px;
-  background-color:#000;
-  float:left;
-  color:#fff;
-  text-align: center;
-  clear:both;
-  margin-right:5px;
-  margin-bottom:5px;
-  line-height: 30px;
+    border-radius: 50%;
+    width: 30px;
+    height:30px;
+    background-color:#000;
+    float:left;
+    color:#fff;
+    text-align: center;
+    clear:both;
+    margin-right:5px;
+    margin-bottom:5px;
+    line-height: 30px;
 
 }
 
 .circle:hover, .circleSelected
 {
-  border-width:3px;
-  line-height: 25px;
-  border-style: double;
+    border-width:3px;
+    line-height: 25px;
+    border-style: double;
 }
 .INS-default
 {
-  background-color: #993366
+    background-color: #993366
 }
 .INS-default:hover, .INS
 {
-  border-color: #993366;
-  color:#993366;
-  background-color: #fff
+    border-color: #993366;
+    color:#993366;
+    background-color: #fff
 
 }
 .NIS-default
 {
-  background-color: #ff3333
+    background-color: #ff3333
 }
 .NIS-default:hover, .NIS
 {
-  border-color: #ff3333;
-  color:#ff3333;
-  background-color: #fff
+    border-color: #ff3333;
+    color:#ff3333;
+    background-color: #fff
 }
 .OPS-default
 {
-  background-color: #3399cc
+    background-color: #3399cc
 }
 .OPS-default:hover, .OPS
 {
-  border-color: #3399cc;
-  color: #3399cc;
-  background-color: #fff
+    border-color: #3399cc;
+    color: #3399cc;
+    background-color: #fff
 }
 .MOS-default
 {
-  background-color: #f80a5e
+    background-color: #f80a5e
 }
 .MOS-default:hover, .MOS
 {
-  border-color: #f80a5e;
-  color:#f80a5e;
-  background-color: #fff
+    border-color: #f80a5e;
+    color:#f80a5e;
+    background-color: #fff
 }
 .INCS-default
 {
-  background-color: #ff9933
+    background-color: #ff9933
 }
 .INCS-default:hover,.INCS
 {
-  border-color: #ff9933;
-  color: #ff9933;
-  background-color: #fff
+    border-color: #ff9933;
+    color: #ff9933;
+    background-color: #fff
 }
 .NAS-default
 {
-  background-color:#669933
+    background-color:#669933
 }
 .NAS-default:hover,.NAS
 {
-  border-color:#669933;
-  color:#669933;
-  background-color: #fff
+    border-color:#669933;
+    color:#669933;
+    background-color: #fff
 }
 .MIS-default
 {
-  background-color:#84400d;
+    background-color:#84400d;
 }
 .MIS-default:hover, .MIS
 {
-  border-color:#84400d;
-  color:#84400d;
-  background-color:#fff;
+    border-color:#84400d;
+    color:#84400d;
+    background-color:#fff;
 }
 .footer
 {
-  padding:10px;
-  border-top:1px solid #ccc;
-  text-align: right;
+    padding:10px;
+    border-top:1px solid #ccc;
+    text-align: right;
 }
+
 a 
 {
-  color:#105D6D;
+    color:#105D6D;
 }
 
 /*ifeanyi's additions here */
@@ -292,14 +290,8 @@ a
 
 .grid path {
     stroke-width: 0;
-   
-}
 
-/*.axis path {
-    fill: none;
-    stroke: #bbb;
-    shape-rendering: crispEdges;
-} */
+}
 
 .axis text {
     fill: #555;
@@ -326,17 +318,18 @@ div.tooltip {
     text-align: center;	
     width: auto;	
     height: auto;		
-    padding: 5px;	
-    font: 10px sans-serif;	
-    background: lightsteelblue;	
+    padding: 5px;
+    color: #fff;
+    font: 14px sans-serif;	
+    background: black;	
     border: 0px;					
     border-radius: 5px;
 }
 
 #colorCodedMap {
-	display:block;
+    display:block;
     margin-top:-70px !important;
-	
+
 }
 
 #legend {
@@ -345,20 +338,22 @@ div.tooltip {
 
 .substance-title
 {
-  float:left;
+    float:left;
 }
 
 .logo
 {
-  float:left; 
-  margin-right:10px;
+    float:left; 
+    margin-right:10px;
 }
+
 .main-title
 {
-  float:left;
+    float:left;
 }
+
 .title-blurb
 {
-  clear:both; 
-  margin-left:55px;
+    clear:both; 
+    margin-left:55px;
 }
