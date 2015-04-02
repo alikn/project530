@@ -90,6 +90,7 @@ define(["dataProcess","d3"], function (dataProcess,d3) {
 		        .attr("y", function(d) { return y(d.value) ; })
 		        .attr("height", function(d) { return height - y(d.value); })
 		        .style( "fill", "orange" )
+		        .attr("class", "clickable")
 		        .on("click", rectClicked);
 
 
