@@ -167,7 +167,6 @@ define(["worldmap", "dataProcess"], function(worldmap, dataProcess){
         pollutant = newMaterial;
 		updateMap(pollutant);;
     }
-	
 	function updateMap(pollutant){
 		map.legend();
 		console.log("selected material: " + pollutant);

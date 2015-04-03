@@ -13,6 +13,14 @@ define(["d3"],function(d3){
             'NAS'   :   'Natural Sources'
             };
 
+    var materialNames = {
+        'pm25'      :   'Particulate Matter 2.5',
+        'pm10'      :   'Particulate Matter 10',
+        'tpm'       :   'Total Particulate Matter',
+        'SOx'       :   'Sulfur Oxide (SOx)',
+        'voc'       :   'Volatile Organic Compounds'
+    }
+
     var rawData = {};
 
     //an object with sectors' abbreviations as the key and sector group abbreviations as value
@@ -44,7 +52,7 @@ define(["d3"],function(d3){
                 sectorCodes[sectorLinesArray[i][1]] = sectorLinesArray[i][0];
             }
 
-            chosenSector = sectorLinesArray[1][1];
+            chosenSector = "WOI";
             console.log(chosenSector);
         });
     }
@@ -89,6 +97,18 @@ define(["d3"],function(d3){
         return materialValues;
     }
 
+    function getMaxValueForChosenMaterial(){
+        var maxValue = 0;
+        for(var j = 1; j < rawData[chosenMaterial].length - 1; j++){
+            rawData[chosenMaterial][j].forEach(function(val){
+                if(!isNaN(val) && parseInt(val) > maxValue){
+                    maxValue = parseInt(val);
+                }
+            })
+        }
+        return maxValue;
+    }
+
     function materialChanged(event, newMaterial){
         chosenMaterial = newMaterial;
     }
@@ -100,6 +120,10 @@ define(["d3"],function(d3){
 
     function getMaterials(){
     	return materials;
+    }
+
+    function getMaterialNames(){
+        return materialNames;
     }
 
     function getSectorGroup(){
@@ -133,6 +157,7 @@ define(["d3"],function(d3){
 	return{
 		init 							: 		init,
 		getMaterials 					: 		getMaterials,
+        getMaterialNames                :       getMaterialNames,
 		getSectorGroup 					: 		getSectorGroup,
 		getRawData 						: 		getRawData,
 		getSectorToSectorGroupHashMap 	: 		getSectorToSectorGroupHashMap,
@@ -140,7 +165,8 @@ define(["d3"],function(d3){
 		getChosenMaterial 				: 		getChosenMaterial,
 		getChosenSector					: 		getChosenSector,
         matEmissionForChosenSector      :       matEmissionForChosenSector,
-        getMatEmissionForChosenSector   :       getMatEmissionForChosenSector
+        getMatEmissionForChosenSector   :       getMatEmissionForChosenSector,
+        getMaxValueForChosenMaterial    :       getMaxValueForChosenMaterial
 
 	}
 })

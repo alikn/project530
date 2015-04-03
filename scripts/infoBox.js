@@ -12,8 +12,7 @@ define([], function(){
             if (newMaterial === "pm25" || newMaterial === "pm10" || newMaterial === "TPM" || newMaterial === "tpm") {               
                 $("#infoBox").html(data.pm);
             } else {              
-               $("#infoBox").html(data[newMaterial.toUpperCase()]);
-                
+               $("#infoBox").html(data[newMaterial.toUpperCase()]);                
             }
         });
     }
