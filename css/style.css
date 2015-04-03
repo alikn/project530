@@ -82,16 +82,6 @@ text {
     cursor: pointer;
 }
 
-#filters span
-{
-    border-bottom:1px solid #f7f7f7;
-    padding:15px 5px;
-    display: block;
-}
-
-
-
-
 .materialSelect{
     width: 10em;
     float:right;
@@ -145,41 +135,59 @@ p
   text-align: justify;
 
 }
-#legend ul
-{
-    margin:0; 
-    padding:0;
-    list-style-type: none;
-}
-#legend ul li
-{
-    border-bottom:1px solid #f7f7f7;
-    padding:15px 5px;
-}
 
 .circle 
 {
     border-radius: 50%;
     width: 40px;
     height:40px;
-    background-color:#000;
     float:left;
     color:#fff;
     text-align: center;
     clear:both;
-    margin-right:5px;
+    margin-right:
+    5px;
     margin-bottom:5px;
     line-height: 30px;
-    border-width:2px;
-    border-style:solid;
+    font-size: 0;
+    float:left;
+    
 
 }
 
-.circle:hover, .circleSelected
+.circle span
+{
+  margin-top:5px;
+  display: inline-block
+}
+#filters li .info
+{
+    float: left;
+    margin-left: 5px;
+    margin-top: 2px;
+    text-align: left;
+    width: 220px;
+}
+
+.source-info
+{
+  display: inline-block;
+  font-size: 11px;
+}
+.source-title
+{
+  margin-top:0;
+  font-family: "Georgia", Arial, sans;
+  color:#666;
+}
+.circle:hover, .circleDeSelected
 {
     border-width:3px;
     line-height: 25px;
     border-style: double;
+    background-image:none;
+    font-size:11px;
+    border-color: #fff;
 }
 
 .INS.highlight {
@@ -188,13 +196,13 @@ p
 
 .INS-default
 {
-    background-color: #40a4d8;
-    border-color:#3399cc;
+  background-image: url("../images/INS.png");
 }
 .INS-default:hover, .INS
 {
     border-color: #40a4d8;
     color:#40a4d8;
+    background-image: none;
     background-color: #fff
 
 }
@@ -205,17 +213,16 @@ p
 
 .NIS-default
 {
-    background-color: #33beb7;
-    border-color:#339999;
+    background-image: url("../images/NIS.png");
 }
 .NIS-default:hover, .NIS
 {
     border-color: #33beb7;
     color:#33beb7;
+    background-image: none;
     background-color: #fff
     
 }
-
 
 .OPS.highlight {
     stroke:#fecc2f;
@@ -223,17 +230,17 @@ p
 
 .OPS-default
 {
-    background-color: #fecc2f;
-    border-color:#e7b92b;;
+     background-image: url("../images/OPS.png");
 }
+
 .OPS-default:hover, .OPS
 {
     border-color: #fecc2f;
     color: #fecc2f;
+    background-image: none;
     background-color: #fff;
     
 }
-
 
 .MOS.highlight {
     stroke: #a364d9;
@@ -241,13 +248,13 @@ p
 
 .MOS-default
 {
-    background-color: #a364d9;
-    border-color:#8d43cc;
+    background-image: url("../images/MOS.png");
 }
 .MOS-default:hover, .MOS
 {
     border-color: #a364d9;
     color:#a364d9;
+    background-image: none;
     background-color: #fff;
     
   }
@@ -257,19 +264,17 @@ p
 }
 .INCS-default
 {
-    background-color: #ee6579;
-    border-color:#cc6666;
+    background-image: url("../images/INCS.png");
 }
 .INCS-default:hover,.INCS
 {
     border-color: #ee6579;
     color: #ee6579;
+    background-image: none;
     background-color: #fff;
     
 
 }
-
-
 .NAS.highlight {
     stroke: #99cc33;
 
@@ -277,31 +282,179 @@ p
 
 .NAS-default
 {
-    background-color:#99cc33;
-    border-color:#669900;
+     background-image: url("../images/NAS.png");
 }
 .NAS-default:hover,.NAS
 {
     border-color:#99cc33;
     color:#99cc33;
+    background-image: none;
     background-color: #fff
    
 }
-
 
 .MIS.highlight {
     stroke: #434145;
 }
 .MIS-default
 {
-    background-color:#434145;
+    background-image: url("../images/MIS.png");
 }
 .MIS-default:hover, .MIS
 {
     border-color:#434145;
     color:#434145;
     background-color:#fff;
+    background-image: none;
 }
+
+/**************** legend ul styling ********************/
+#filters
+{
+  margin:0;
+  padding:0;
+  list-style-type: none;
+}
+
+.ch-grid {
+  margin: 20px 0 0 0;
+  padding: 0;
+  list-style: none;
+  display: block;
+  text-align: center;
+  width: 100%;
+}
+
+.ch-grid:after,
+.ch-item:before {
+  content: '';
+    display: table;
+}
+
+.ch-grid:after {
+  clear: both;
+}
+
+.ch-grid li {
+  width: auto;
+  height: auto;
+  margin:  0 0 8px 0;
+  padding-bottom:8px;
+  overflow: auto;
+  border-bottom:1px dashed #ccc;
+  /*
+    width:40px;
+    height:40px;
+    margin:20px;
+  */
+}
+.ch-grid li:last-child
+{
+  border-bottom:none;
+}
+
+.ch-item {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: relative;
+  cursor: default;
+  -webkit-perspective: 900px;
+  -moz-perspective: 900px;
+  -o-perspective: 900px;
+  -ms-perspective: 900px;
+  perspective: 900px;
+}
+.ch-info{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+.ch-info > div {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-position: center center;
+  -webkit-transition: all 0.4s linear;
+  -moz-transition: all 0.4s linear;
+  -o-transition: all 0.4s linear;
+  -ms-transition: all 0.4s linear;
+  transition: all 0.4s linear;
+  -webkit-transform-origin: 50% 0%;
+  -moz-transform-origin: 50% 0%;
+  -o-transform-origin: 50% 0%;
+  -ms-transform-origin: 50% 0%;
+  transform-origin: 50% 0%;
+}
+
+.ch-info .ch-info-back span {
+  margin-top:8px;
+  display:inline-block;
+  
+  }
+
+.ch-info .ch-info-back {
+  -webkit-transform: translate3d(0,0,-40px) rotate3d(1,0,0,90deg);
+  -moz-transform: translate3d(0,0,-40px) rotate3d(1,0,0,90deg);
+  -o-transform: translate3d(0,0,-40px) rotate3d(1,0,0,90deg);
+  -ms-transform: translate3d(0,0,-40px) rotate3d(1,0,0,90deg);
+  transform: translate3d(0,0,-40px) rotate3d(1,0,0,90deg);
+  opacity: 0;
+  background-color: #fff;
+  border-width:2px;
+  border-style:solid;
+  margin-top:10px;
+
+}
+
+.ch-info .INS
+{
+  color: #40a4d8;
+  border-color:#3d99c9;
+}
+
+
+.ch-img-1 { 
+  background-image: url(../images/INS.png);
+}
+
+.ch-img-2 { 
+  background-image: url(../images/20.jpg);
+}
+
+.ch-img-3 { 
+  background-image: url(../images/21.jpg);
+}
+
+
+.ch-item:hover .ch-info-front {
+  -webkit-transform: translate3d(0,55px,0) rotate3d(1,0,0,-90deg);
+  -moz-transform: translate3d(0,55px,0) rotate3d(1,0,0,-90deg);
+  -o-transform: translate3d(0,55px,0) rotate3d(1,0,0,-90deg);
+  -ms-transform: translate3d(0,55px,0) rotate3d(1,0,0,-90deg);
+  transform: translate3d(0,55px,0) rotate3d(1,0,0,-90deg);
+  opacity: 0;
+}
+
+.ch-item:hover .ch-info-back {
+  -webkit-transform: rotate3d(1,0,0,0deg);
+  -moz-transform: rotate3d(1,0,0,0deg);
+  -o-transform: rotate3d(1,0,0,0deg);
+  -ms-transform: rotate3d(1,0,0,0deg);
+  transform: rotate3d(1,0,0,0deg);
+  opacity: 1;
+}
+
+
+
+/******************************************************/
 .footer
 {
     padding:10px;

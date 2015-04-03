@@ -54,32 +54,57 @@
                     <div id="vis"></div>
                 </div>
                 <div class="col-md-3" id="legend">
-                    <div id="filters" style="float:right">
-                        <span>
-                            <div class="circle clickable INS-default" id="INS">I</div>Industrial Sources
-                        </span>
-                        <span>
-                            <div class="circle clickable NIS-default" id="NIS">N</div>Non-industrial
-                        </span>
-                        <span>
-                            <div class="circle clickable NAS-default" id="NAS">N</div>Natural Sources
-                        </span>
-                        <span> 
-                            <div class="circle clickable OPS-default" id="OPS">O</div>Open Sources
-                        </span>
-                         <span>
-                            <div class="circle clickable INCS-default" id="INCS">I</div> Incineration Sources
-                        </span>
-                        <span>
-                            <div class="circle clickable MOS-default" id="MOS">M</div> Mobile Sources
-                        </span>
-                       
-                        
-                        
-                        <span>
-                            <div class="circle clickable MIS-default" id="MIS">M</div>Miscellaneous Sources
-                        </span>
-                    </div>
+                    <ul id="filters" style="float:right" class="ch-grid">
+                        <li>
+                            <div class="circle clickable INS-default" id="INS"><span>I</span></div>
+                            <div class="info">
+                                <span class="source-title">Industrial Sources</span>
+                                <span class="source-info">includes sources such as chemical industry, iron ore industry, wood industry.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="circle clickable NIS-default" id="NIS"><span>N</span></div>
+                             <div class="info">
+                                <span class="source-title">Non-industrial Sources</span>
+                                <span class="source-info">includes sources such as electric power generation, as well as residential and commercial fuel combustion</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="circle clickable NAS-default" id="NAS"><span>N</span></div>
+                             <div class="info">
+                                 <span class="source-title">Natural Sources</span>
+                                <span class="source-info">includes sources such forest fires and biogenics (vegetation,soils) </span>
+                            </div>
+                        </li>
+                        <li> 
+                            <div class="circle clickable OPS-default" id="OPS"><span>O</span></div>
+                             <div class="info">
+                                <span class="source-title">Open Sources</span>
+                                <span class="source-info">includes sources such as dust from paved and unpaved roads and dust from coal mining</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="circle clickable INCS-default" id="INCS"><span>I</span></div>
+                             <div class="info">
+                               <span class="source-title">Incineration Sources</span>
+                                <span class="source-info">includes sources such as Industrial & Commercial incineration</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="circle clickable MOS-default" id="MOS"><span>M</span></div>
+                             <div class="info">
+                                <span class="source-title">Mobile Sources</span>
+                                <span class="source-info">includes sources such as Heavy and Light-duty diesel truck and vehicles, Marine Transportation and Motorcycles</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="circle clickable MIS-default" id="MIS"><span>M</span></div>
+                             <div class="info">
+                                <span class="source-title">Miscellaneous Sources</span>
+                                <span class="source-info">includes sources such as Cigarette Smoking, Meat cooking and other Human factors</span>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
             <div class="row">

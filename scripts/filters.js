@@ -6,17 +6,17 @@ define(["d3"], function(d3){
     }
 
     function materialChanged(event, newMaterial){
-        $('#filters span div').removeClass("circleSelected")
+        $('#filters li div').removeClass("circleSelected")
                             .removeClass(function(){
                                 return $(this).attr("id");
                             });
     }
 	
 	function setupSectorGroupSelectors(){
-        $('#filters span .circle').on('click', function() {
+        $('#filters li .circle').on('click', function() {
             var sectorGroupId = $(this).attr("id");
             $(this).toggleClass(sectorGroupId);
-            $(this).toggleClass('circleSelected');
+            $(this).toggleClass('circleDeSelected');
             showSectorGroup(sectorGroupId);
         });
     }
