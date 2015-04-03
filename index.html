@@ -40,7 +40,7 @@
                 </div>    
             </div>
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12" style="padding-right:0;">
                     <h2 class="substance-title"></h2>
                     <div class="materialSelect pull-right">
                         <span>Select Substance</span> <select class="form-control"></select>                        
@@ -50,29 +50,32 @@
             </div>
 
             <div class="row">
-                <div id="lineGraph" class="col-md-10">
+                <div id="lineGraph" class="col-md-9">
                     <div id="vis"></div>
                 </div>
-                <div class="col-md-2" id="legend">
-                    <div id="filters">
+                <div class="col-md-3" id="legend">
+                    <div id="filters" style="float:right">
                         <span>
                             <div class="circle clickable INS-default" id="INS">I</div>Industrial Sources
                         </span>
                         <span>
-                            <div class="circle clickable NIS-default" id="NIS">N</div>Non-industrial Sources
-                        </span>
-                        <span>
-                            <div class="circle clickable MOS-default" id="MOS">M</div> Mobile Sources
-                        </span>
-                        <span>
-                            <div class="circle clickable INCS-default" id="INCS">I</div> Incineration Sources
-                        </span>
-                        <span> 
-                            <div class="circle clickable OPS-default" id="OPS">O</div>Open Sources
+                            <div class="circle clickable NIS-default" id="NIS">N</div>Non-industrial
                         </span>
                         <span>
                             <div class="circle clickable NAS-default" id="NAS">N</div>Natural Sources
                         </span>
+                        <span> 
+                            <div class="circle clickable OPS-default" id="OPS">O</div>Open Sources
+                        </span>
+                         <span>
+                            <div class="circle clickable INCS-default" id="INCS">I</div> Incineration Sources
+                        </span>
+                        <span>
+                            <div class="circle clickable MOS-default" id="MOS">M</div> Mobile Sources
+                        </span>
+                       
+                        
+                        
                         <span>
                             <div class="circle clickable MIS-default" id="MIS">M</div>Miscellaneous Sources
                         </span>
@@ -85,13 +88,7 @@
 
                     </div>
                 </div>
-                <div class="col-md-6">
-
-                    <div id="infoBox">
-                        <h3><span class="substance-title"></span></h3>
-                        <p>
-                        </p>
-                    </div>
+                <div id="infoBox" class="col-md-6">
                 </div>
             </div>
             <div class="row">

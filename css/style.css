@@ -13,6 +13,7 @@ body
     min-height: 550px;
 }
 
+
 #blurb {
     height: 60px;
     border-top: 1px solid #e2e2e2;
@@ -89,33 +90,7 @@ text {
 }
 
 
-.INS.highlight {
-    stroke:#993366;
-}
 
-.NIS.highlight {
-    stroke:#ff3333;
-}
-
-.MOS.highlight {
-    stroke: #f80a5e;
-}
-
-.INCS.highlight {
-    stroke: #ff9933;
-}
-
-.MIS.highlight {
-    stroke: #84400d;
-}
-
-.OPS.highlight {
-    stroke:#3399cc;
-}
-
-.NAS.highlight {
-    stroke: #669933;
-}
 
 .materialSelect{
     width: 10em;
@@ -162,8 +137,14 @@ h1,h2,h3,h4
     font-family: "Open Sans", Arial,sans-serif;
     color: #000;
     letter-spacing: -1px;
+    margin-bottom: 20px;
 }
 
+p
+{
+  text-align: justify;
+
+}
 #legend ul
 {
     margin:0; 
@@ -179,8 +160,8 @@ h1,h2,h3,h4
 .circle 
 {
     border-radius: 50%;
-    width: 30px;
-    height:30px;
+    width: 40px;
+    height:40px;
     background-color:#000;
     float:left;
     color:#fff;
@@ -189,6 +170,8 @@ h1,h2,h3,h4
     margin-right:5px;
     margin-bottom:5px;
     line-height: 30px;
+    border-width:2px;
+    border-style:solid;
 
 }
 
@@ -198,75 +181,125 @@ h1,h2,h3,h4
     line-height: 25px;
     border-style: double;
 }
+
+.INS.highlight {
+    stroke:#40a4d8;
+}
+
 .INS-default
 {
-    background-color: #993366
+    background-color: #40a4d8;
+    border-color:#3399cc;
 }
 .INS-default:hover, .INS
 {
-    border-color: #993366;
-    color:#993366;
+    border-color: #40a4d8;
+    color:#40a4d8;
     background-color: #fff
 
 }
+
+.NIS.highlight {
+    stroke:#33beb7;
+}
+
 .NIS-default
 {
-    background-color: #ff3333
+    background-color: #33beb7;
+    border-color:#339999;
 }
 .NIS-default:hover, .NIS
 {
-    border-color: #ff3333;
-    color:#ff3333;
+    border-color: #33beb7;
+    color:#33beb7;
     background-color: #fff
+    
 }
+
+
+.OPS.highlight {
+    stroke:#fecc2f;
+}
+
 .OPS-default
 {
-    background-color: #3399cc
+    background-color: #fecc2f;
+    border-color:#e7b92b;;
 }
 .OPS-default:hover, .OPS
 {
-    border-color: #3399cc;
-    color: #3399cc;
-    background-color: #fff
+    border-color: #fecc2f;
+    color: #fecc2f;
+    background-color: #fff;
+    
 }
+
+
+.MOS.highlight {
+    stroke: #a364d9;
+}
+
 .MOS-default
 {
-    background-color: #f80a5e
+    background-color: #a364d9;
+    border-color:#8d43cc;
 }
 .MOS-default:hover, .MOS
 {
-    border-color: #f80a5e;
-    color:#f80a5e;
-    background-color: #fff
+    border-color: #a364d9;
+    color:#a364d9;
+    background-color: #fff;
+    
+  }
+
+.INCS.highlight {
+    stroke: #ee6579;
 }
 .INCS-default
 {
-    background-color: #ff9933
+    background-color: #ee6579;
+    border-color:#cc6666;
 }
 .INCS-default:hover,.INCS
 {
-    border-color: #ff9933;
-    color: #ff9933;
-    background-color: #fff
+    border-color: #ee6579;
+    color: #ee6579;
+    background-color: #fff;
+    
+
 }
+
+
+.NAS.highlight {
+    stroke: #99cc33;
+
+}
+
 .NAS-default
 {
-    background-color:#669933
+    background-color:#99cc33;
+    border-color:#669900;
 }
 .NAS-default:hover,.NAS
 {
-    border-color:#669933;
-    color:#669933;
+    border-color:#99cc33;
+    color:#99cc33;
     background-color: #fff
+   
+}
+
+
+.MIS.highlight {
+    stroke: #434145;
 }
 .MIS-default
 {
-    background-color:#84400d;
+    background-color:#434145;
 }
 .MIS-default:hover, .MIS
 {
-    border-color:#84400d;
-    color:#84400d;
+    border-color:#434145;
+    color:#434145;
     background-color:#fff;
 }
 .footer
@@ -328,7 +361,7 @@ div.tooltip {
 
 #colorCodedMap {
     display:block;
-    margin-top:-70px !important;
+    margin-top:-20px !important;
 
 }
 

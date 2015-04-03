@@ -39,7 +39,7 @@ define(["dataProcess","d3"], function (dataProcess,d3) {
 		var max_value = d3.max(d3.entries(matEmissions), function(d) { return Math.round(d.value); });
 		
 		var margin = {top: 20, right: 20, bottom: 30, left: 60},
-		    width = 565 - margin.left - margin.right,
+		    width = 500 - margin.left - margin.right,
 		    height = 420 - margin.top - margin.bottom;
 
 		var y = d3.scale.linear()
