@@ -534,9 +534,10 @@ div.tooltip {
     padding: 1.5em 0 0 1.5em;
 }
 
-.substance-title
+#page-title
 {
-    
+    float:left;
+    margin-right:10px;
 }
 
 .logo
