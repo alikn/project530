@@ -248,8 +248,8 @@ define(["dataProcess"], function (dataProcess) {
 
         var tx = d3.event.translate[0];
         var ty = d3.event.translate[1];
-        console.log("y domain   " + y.domain()[0] + " height: " + height + " d3.event.translate[1]: " + d3.event.translate[1]
-                + " d3.event.translate[0]: " + d3.event.translate[0] + "d3 scale " + d3.event.scale);
+        /*console.log("y domain   " + y.domain()[0] + " height: " + height + " d3.event.translate[1]: " + d3.event.translate[1]
+                + " d3.event.translate[0]: " + d3.event.translate[0] + "d3 scale " + d3.event.scale);*/
         if (y.domain()[0] < 0) {
            // this.dispatchEvent(new Event('mousedown'));
             //this.dispatchEvent(new Event('mouseup'));

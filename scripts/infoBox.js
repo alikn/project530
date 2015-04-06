@@ -1,12 +1,16 @@
-define([], function(){
+define(["dataProcess"], function(dataProcess){
+
+    var newMaterial = dataProcess.getChosenMaterial(); 
 
 	function init(){
 		loadInfoBox();
 		$("body").on("materialChangeEvent", materialChanged);
 	}
 	
-	function loadInfoBox() {
-        var newMaterial = $(".materialSelect option:selected").text();        
+	function loadInfoBox(mat) {
+        if(mat){
+            newMaterial = mat;
+        }
         $.getJSON("data/materialdescriptions.json", function (data) {
             
             if (newMaterial === "pm25" || newMaterial === "pm10" || newMaterial === "TPM" || newMaterial === "tpm") {               
@@ -17,9 +21,9 @@ define([], function(){
         });
     }
 
-    function materialChanged(){
+    function materialChanged(event, mat){
     	//change the content in the infoBox        
-        loadInfoBox();
+        loadInfoBox(mat);
     }
 
 	return{

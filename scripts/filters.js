@@ -1,8 +1,13 @@
-define(["d3"], function(d3){
+define(["d3", "dataProcess"], function(d3, dataProcess){
+    var sectorGroupAverageObj;
+    //average truck with load weight in tonnes
+    var averageTruckWeight = 250;
 
 	function init(){
 		setupSectorGroupSelectors();
 		 $("body").on("materialChangeEvent", materialChanged);
+
+         $("li .source-title").hover(toggleInfoDetails);
     }
 
     function materialChanged(event, newMaterial){
@@ -10,6 +15,10 @@ define(["d3"], function(d3){
                             .removeClass(function(){
                                 return $(this).attr("id");
                             });
+
+        $(".removable").remove();
+        addAverageInfo();
+
     }
 	
 	function setupSectorGroupSelectors(){
@@ -19,6 +28,25 @@ define(["d3"], function(d3){
             $(this).toggleClass('circleDeSelected');
             showSectorGroup(sectorGroupId);
         });
+
+        addAverageInfo();
+    }
+
+    function toggleInfoDetails(){
+        $(this).closest("li").find(".toggleDisplay").slideToggle();
+    }
+
+    function addAverageInfo(){
+        //Adding the average and equivalent info
+        sectorGroupAverageObj = dataProcess.getAverageValueForSectorGroups();
+        for(var secGroup in sectorGroupAverageObj){
+            $("." + secGroup + "-li").find(".toggleDisplay")
+                                    .append($("<span>", {class: "removable"})
+                                                .text("Average:" + sectorGroupAverageObj[secGroup]["average"].toFixed(0) + " tonnes"))
+                                    .append($("<span>", {class: "removable"})
+                                                .text("Equivalent to " + (sectorGroupAverageObj[secGroup]["average"] /averageTruckWeight).toFixed(0) + " X ")
+                                                .append($("<img>", {class: "inlineTruckImg", "src" : "./images/truck.png"})));
+        }
     }
 
     function showSectorGroup(sectorCode) {

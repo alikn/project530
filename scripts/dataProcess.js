@@ -9,8 +9,7 @@ define(["d3"],function(d3){
             'MOS'   :   'Mobile Sources',
             'INCS'  :   'Incineration Sources',
             'MIS'   :   'Miscellaneous Sources',
-            'OPS'   :   'Open Sources',
-            'NAS'   :   'Natural Sources'
+            'OPS'   :   'Open Sources'
             };
 
     var materialNames = {
@@ -97,6 +96,37 @@ define(["d3"],function(d3){
         return materialValues;
     }
 
+
+    function getAverageValueForSectorGroups(){
+        var aveValObj = {};
+        var matData = rawData[chosenMaterial];
+
+        //summing up the value for all the years and 
+        //counting the total of number of values summed up for each sector group
+        for(var j = 1; j < matData.length; j++){
+            var currentSecGroup = sector_sectorGroup[matData[j][0]];
+            if(!aveValObj[currentSecGroup]){
+                aveValObj[currentSecGroup] = {"sum" : 0, "count" : 0, "average" : 0};
+            }
+            matData[j].forEach(function(val){
+                 if(val && !isNaN(val)){
+                    aveValObj[currentSecGroup]["sum"] += parseInt(val);
+                    //console.log("val is:\t" + val + " and after summation:\t" +  aveValObj[currentSecGroup]["sum"]);
+                    aveValObj[currentSecGroup]["count"]++;
+                 }
+            });
+        }
+
+        //calculating the average
+        for(var secGroupObj in aveValObj){
+            if(aveValObj[secGroupObj]["count"]){
+                aveValObj[secGroupObj]["average"] = aveValObj[secGroupObj]["sum"] / aveValObj[secGroupObj]["count"];
+            }
+        }
+
+        return aveValObj;
+    }
+
     function getMaxValueForChosenMaterial(){
         var maxValue = 0;
         for(var j = 1; j < rawData[chosenMaterial].length - 1; j++){
@@ -166,7 +196,8 @@ define(["d3"],function(d3){
 		getChosenSector					: 		getChosenSector,
         matEmissionForChosenSector      :       matEmissionForChosenSector,
         getMatEmissionForChosenSector   :       getMatEmissionForChosenSector,
-        getMaxValueForChosenMaterial    :       getMaxValueForChosenMaterial
+        getMaxValueForChosenMaterial    :       getMaxValueForChosenMaterial,
+        getAverageValueForSectorGroups  :       getAverageValueForSectorGroups
 
 	}
 })
