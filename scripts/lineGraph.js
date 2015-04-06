@@ -9,20 +9,19 @@ define(["dataProcess"], function (dataProcess) {
     var height = h - margin.top - margin.bottom;
 
     var startYear = 1985, endYear = 2012, minLevel = 0, maxLevel = 455000;
-    var years = d3.range(startYear, endYear+1);
+    var panExtent = {x: [startYear, endYear], y: [minLevel, maxLevel]};
+    var years = d3.range(startYear, endYear + 1);
 
-    
-
-    var vis, line, x, y, zoomListener, xAxis, yAxis, div;   
+    var vis, line, x, y, zoomListener, xAxis, yAxis, div;
 
     //an object with sectors' abbreviations as the key and sector group abbreviations as value
     var sector_sectorGroup = dataProcess.getSectorToSectorGroupHashMap();
 
     //an object with sectors' abbreviations as the key and sector full name as value
-    var sectorCodes = dataProcess.getSectorCodesHashMap(); 
+    var sectorCodes = dataProcess.getSectorCodesHashMap();
 
-    var materialNames = dataProcess.getMaterialNames();   
-  
+    var materialNames = dataProcess.getMaterialNames();
+
     function init() {
         setupD3();
         getData();
@@ -42,38 +41,35 @@ define(["dataProcess"], function (dataProcess) {
         console.log("Max values:");
         console.log(dataProcess.getMaxValueForChosenMaterial());
         maxLevel = dataProcess.getMaxValueForChosenMaterial() + 5000;
+        //update the pan extent variable
+        panExtent.y[1] = maxLevel;
+        
         x = d3.time.scale()
-            .domain([startYear, endYear])
-            .range([0, width]);
+                .domain([startYear, endYear])
+                .range([0, width]);
 
         y = d3.scale.linear()
-                .domain([minLevel, maxLevel])
-                //.clamp(true)
+                .domain([minLevel, maxLevel])              
                 .range([height, 0]);
 
         // create the zoom listener
         zoomListener = d3.behavior.zoom()
                 .y(y)
                 // .x(x)
-                .scaleExtent([1, 25])
+                .scaleExtent([1, 30])
                 .on("zoom", redraw);
 
         //create the x axis
         xAxis = d3.svg.axis()
                 .scale(x)
-                .tickSize(6)            
-                // .tickPadding(10)        
-                //  .tickFormat(d3.format(".0f"))
-                // .tickValues([])
-                .tickFormat(d3.format("0000"))         
-                // .ticks(d3.time.minute, 1)
+                .tickSize(6)
+                .tickFormat(d3.format("0000"))
                 .orient("bottom");
 
         //create the y axis
         yAxis = d3.svg.axis()
                 .scale(y)
-                .tickPadding(1)           
-                   // .tickSize(-width)            
+                .tickPadding(1)
                 .orient("left");
 
         //tooltip div
@@ -83,8 +79,8 @@ define(["dataProcess"], function (dataProcess) {
 
 
         vis = d3.select("#vis")
-                .append("svg")                                
-                .call(zoomListener)                
+                .append("svg")
+                .call(zoomListener)
                 .attr("width", w)
                 .attr("height", h)
                 .append("g")
@@ -92,8 +88,8 @@ define(["dataProcess"], function (dataProcess) {
 
         var xAxisLine = vis.append("g")
                 .attr("class", "x axis")
-                .attr("transform", "translate(0," + height + ")")               
-                .call(xAxis);                
+                .attr("transform", "translate(0," + height + ")")
+                .call(xAxis);
 
         vis.append("g")
                 .attr("class", "y axis")
@@ -110,7 +106,7 @@ define(["dataProcess"], function (dataProcess) {
                 .text('Tonnes');
         //label on the x axis
         vis.append("g")
-                .attr("class", "x axis")               
+                .attr("class", "x axis")
                 .append("text")
                 .attr("class", "axis-label")
                 .attr("text-anchor", "end")
@@ -120,9 +116,9 @@ define(["dataProcess"], function (dataProcess) {
 
         vis.append("clipPath")
                 .attr("id", "clip")
-                .append("rect")                
+                .append("rect")
                 .attr("width", width)
-                .attr("height", height); 
+                .attr("height", height);
 
         line = d3.svg.line()
                 .interpolate("basis") //change basis to linear to get back the straight line graph
@@ -131,17 +127,17 @@ define(["dataProcess"], function (dataProcess) {
                 })
                 .y(function (d) {
                     return y(d.y);
-                });         
-       
-        xAxisLine.selectAll('line').style({ 'stroke-width': '1px'});       
+                });
+
+        xAxisLine.selectAll('line').style({'stroke-width': '1px'});
     }
 
-    function getData(){
+    function getData() {
         materials = dataProcess.getMaterials(),
-        rawData = dataProcess.getRawData(),
-        sectorGroup = dataProcess.getSectorGroup(),
-        chosenMaterial = dataProcess.getChosenMaterial(),
-        chosenSector = dataProcess.getChosenSector();
+                rawData = dataProcess.getRawData(),
+                sectorGroup = dataProcess.getSectorGroup(),
+                chosenMaterial = dataProcess.getChosenMaterial(),
+                chosenSector = dataProcess.getChosenSector();
     }
 
     function drawAllPaths() {
@@ -200,7 +196,7 @@ define(["dataProcess"], function (dataProcess) {
     }
 
     function setupAxes() {
-    } 
+    }
 
     function pathClicked(d, i) {
         //d3.select(".selected").classed("selected", false);
@@ -244,30 +240,33 @@ define(["dataProcess"], function (dataProcess) {
         div.style("display", "none");
     }
 
-    function redraw() {        
+    function redraw() {
+        /* call the zoom.translate vector with the array returned from panLimit() */
+        zoomListener.translate(panLimit());
+        vis.select(".y.axis").call(yAxis);
+        vis.selectAll("[ty='line']").attr('d', line);
+    }
 
-        var tx = d3.event.translate[0];
-        var ty = d3.event.translate[1];
-        /*console.log("y domain   " + y.domain()[0] + " height: " + height + " d3.event.translate[1]: " + d3.event.translate[1]
-                + " d3.event.translate[0]: " + d3.event.translate[0] + "d3 scale " + d3.event.scale);*/
-        if (y.domain()[0] < 0) {
-           // this.dispatchEvent(new Event('mousedown'));
-            //this.dispatchEvent(new Event('mouseup'));
-            ty = Math.min(0, Math.max(ty, height - Math.round(y(maxLevel) - y(0)), height - Math.round(y(maxLevel) - y(0)) * d3.event.scale));
-            console.log("ty " + ty);
-            console.log("d3.event.scale " + d3.event.scale);
-            var tA = d3.event.translate[1]/((maxLevel-minLevel)/(500*d3.event.scale)); 
-            console.log("y.domain()[0] " + ((maxLevel - y.domain()[0])/height) + "   " + y.domain()[1]);
-            zoomListener.translate([0, tA]);
-          //  return;
-          vis.select(".y.axis").call(yAxis);
-            vis.selectAll("[ty='line']").attr('d', line);
-        } else {
-            vis.select(".y.axis").call(yAxis);
-            vis.selectAll("[ty='line']").attr('d', line);
-        }  
-    }    
-        
+    function panLimit() {
+
+        var divisor = {h: height / ((y.domain()[1] - y.domain()[0]) * zoomListener.scale()), w: width / ((x.domain()[1] - x.domain()[0]) * zoomListener.scale())},
+        minX = -(((x.domain()[0] - x.domain()[1]) * zoomListener.scale()) + (panExtent.x[1] - (panExtent.x[1] - (width / divisor.w)))),
+                minY = -(((y.domain()[0] - y.domain()[1]) * zoomListener.scale()) + (panExtent.y[1] - (panExtent.y[1] - (height * (zoomListener.scale()) / divisor.h)))) * divisor.h,
+                maxX = -(((x.domain()[0] - x.domain()[1])) + (panExtent.x[1] - panExtent.x[0])) * divisor.w * zoomListener.scale(),
+                maxY = (((y.domain()[0] - y.domain()[1]) * zoomListener.scale()) + (panExtent.y[1] - panExtent.y[0])) * divisor.h * zoomListener.scale(),
+                tx = x.domain()[0] < panExtent.x[0] ?
+                minX :
+                x.domain()[1] > panExtent.x[1] ?
+                maxX :
+                zoomListener.translate()[0],
+                ty = y.domain()[0] < panExtent.y[0] ?
+                minY :
+                y.domain()[1] > panExtent.y[1] ?
+                maxY :
+                zoomListener.translate()[1];
+        return [1, ty];
+    }
+
     return{
         init: init
     };
