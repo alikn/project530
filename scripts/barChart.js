@@ -93,6 +93,7 @@ define(["dataProcess","d3"], function (dataProcess,d3) {
 		        .attr("height", function(d) { return height - y(d.value); })
 		        .attr("class", "clickable testit")
 		        .attr("id", function(d) { if(d.key===chosenMaterial){ console.log("keys are " + d.key); return d.key} })
+		        .on("materialChangeEvent", function(d){console.log("hey material changed")})
 		        .on("click", rectClicked);
 
 
@@ -100,8 +101,6 @@ define(["dataProcess","d3"], function (dataProcess,d3) {
 	
 	function rectClicked(d, i) 
 	{
-        
-        
         chosenMaterial = d3.select(this).attr("material");
         $("body").trigger("materialChangeEvent", chosenMaterial);
     }
