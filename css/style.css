@@ -582,3 +582,8 @@ div.tooltip {
 .inlineTruckImg{
   width: 24px;
 }
+
+#infoBox
+{
+  height: 530px;
+}

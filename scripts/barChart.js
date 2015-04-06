@@ -40,7 +40,7 @@ define(["dataProcess","d3"], function (dataProcess,d3) {
 		
 		var margin = {top: 20, right: 20, bottom: 30, left: 60},
 		    width = 500 - margin.left - margin.right,
-		    height = 420 - margin.top - margin.bottom;
+		    height = 490 - margin.top - margin.bottom;
 
 		var y = d3.scale.linear()
 		   .domain([0,max_value])
@@ -89,7 +89,7 @@ define(["dataProcess","d3"], function (dataProcess,d3) {
 		        .attr("width", x.rangeBand())
 		        .attr("y", function(d) { return y(d.value) ; })
 		        .attr("height", function(d) { return height - y(d.value); })
-		        .style( "fill", "orange" )
+		        .style( "fill", "#ffd891" )
 		        .attr("class", "clickable")
 		        .on("click", rectClicked);
 
