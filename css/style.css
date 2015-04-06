@@ -237,7 +237,7 @@ p
 }
 
 .OPS.highlight {
-    stroke:#fecc2f;
+    stroke:#FED34C;
 }
 
 .OPS-default
@@ -247,8 +247,8 @@ p
 
 .OPS-default:hover, .OPS
 {
-    border-color: #fecc2f;
-    color: #fecc2f;
+    border-color: #FED34C;
+    color: #FED34C;
     background-image: none;
     background-color: #fff;
     
@@ -306,7 +306,7 @@ p
 }
 
 .MIS.highlight {
-    stroke: #434145;
+    stroke: #99cc33;
 }
 .MIS-default
 {
@@ -314,8 +314,8 @@ p
 }
 .MIS-default:hover, .MIS
 {
-    border-color:#434145;
-    color:#434145;
+    border-color:#99cc33;
+    color:#99cc33;
     background-color:#fff;
     background-image: none;
 }
