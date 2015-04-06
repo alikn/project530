@@ -41,6 +41,9 @@ define(["dataProcess"], function (dataProcess) {
         console.log("Max values:");
         console.log(dataProcess.getMaxValueForChosenMaterial());
         maxLevel = dataProcess.getMaxValueForChosenMaterial() + 5000;
+        //update the pan extent variable
+        panExtent.y[1] = maxLevel;
+        
         x = d3.time.scale()
                 .domain([startYear, endYear])
                 .range([0, width]);
