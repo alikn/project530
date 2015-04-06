@@ -587,3 +587,34 @@ div.tooltip {
 {
   height: 530px;
 }
+
+
+/********************* material colors ***********************/
+#barChart rect 
+{
+  fill:#ffd891
+}
+#barChart rect#pm25
+{
+  fill:#FF9933;
+}
+
+#barChart rect#pm10
+{
+  fill:#CC0000;
+}
+
+#barChart rect#SOx
+{
+  fill:#FFFF00;
+}
+
+#barChart rect#voc
+{
+  fill:#660033;
+}
+
+#barChart rect#tpm
+{
+  fill:#009999;
+}

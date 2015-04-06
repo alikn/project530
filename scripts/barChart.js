@@ -15,6 +15,8 @@ define(["dataProcess","d3"], function (dataProcess,d3) {
 	{
 		var sector_codes = dataProcess.getSectorCodesHashMap();
 		var sector_desc = sector_codes[newSector];
+		var chosenMaterial = dataProcess.getChosenMaterial();
+		console.log("Chosen material is ******************" + chosenMaterial);
 
 		$('#barChart').empty();
 		$('#barChart').append("<h3><span class='em-source'>"+ sector_desc + " Emissions" + "</span></h3>")
@@ -89,8 +91,8 @@ define(["dataProcess","d3"], function (dataProcess,d3) {
 		        .attr("width", x.rangeBand())
 		        .attr("y", function(d) { return y(d.value) ; })
 		        .attr("height", function(d) { return height - y(d.value); })
-		        .style( "fill", "#ffd891" )
-		        .attr("class", "clickable")
+		        .attr("class", "clickable testit")
+		        .attr("id", function(d) { if(d.key===chosenMaterial){ console.log("keys are " + d.key); return d.key} })
 		        .on("click", rectClicked);
 
 
