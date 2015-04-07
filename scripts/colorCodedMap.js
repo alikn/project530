@@ -7,20 +7,20 @@ define(["worldmap", "dataProcess"], function(worldmap, dataProcess){
 				element: document.getElementById('colorCodedMap'),
 				fills: {
 					// Color range for pm2.5
-					pm250: 'rgb(255,229,204)',
-					pm251: 'rgb(255,204,153)',
-					pm252: 'rgb(255,153,51)',
-					pm253: 'rgb(204,102,0)',
-					pm254: 'rgb(153,76,0)',
-					pm255: 'rgb(102,51,0)',
+					pm250: 'rgb(204,255,153)',
+					pm251: 'rgb(178,255,102)',
+					pm252: 'rgb(128,255,0)',
+					pm253: 'rgb(102,204,0)',
+					pm254: 'rgb(76,153,0)',
+					pm255: 'rgb(51,102,0)',
 					
 					// Color range for SOx
-					SOx0: 'rgb(255,255,204)',
-					SOx1: 'rgb(255,255,153)',
-					SOx2: 'rgb(255,255,0)',
-					SOx3: 'rgb(204,204,0)',
-					SOx4: 'rgb(153,153,0)',
-					SOx5: 'rgb(102,102,0)',
+					SOx0: 'rgb(153,204,255)',
+					SOx1: 'rgb(102,178,255)',
+					SOx2: 'rgb(51,153,255)',
+					SOx3: 'rgb(0,102,204)',
+					SOx4: 'rgb(0,76,153)',
+					SOx5: 'rgb(0,51,102)',
 					
 					// Color range for tpm
 					tpm0: 'rgb(204,255,255)',

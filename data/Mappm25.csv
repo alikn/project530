@@ -1,42 +1,183 @@
 Country,Annual mean PM2.5 ug/m3,Year,level,code
-Greece,27,2008,4,GRC
-Austria,20.4,2008,3,AUT
-Belgium,19.4,2008,1,BEL
-Switzerland,14.7,2008,1,CHE
-Czech Republic,18.8,2008,1,CZE
-Germany,16.9,2008,1,DEU
-Denmark,14.9,2008,1,DNK
-Estonia,5.4,2008,0,EST
-Spain,12.9,2008,1,ESP
-Finland,8.9,2008,0,FIN
-France,20.1,2008,2,FRA
-Italy,25.3,2008,2,ITA
-Latvia,19.4,2008,1,LVA
-Netherlands,17.3,2008,1,NLD
-Norway,9.3,2008,0,NOR
-Poland,28.7,2008,2,POL
-Portugal,10.8,2008,1,PRT
-Sweden,11.8,2008,2,SWE
-Slovakia,25.1,2008,2,SVK
-United Kingdom,13.5,2008,1,GBR
-Canada,7.6,2008,0,CAN
-United States of America,10.9,2008,1,USA
-Australia,7.9,2009,0,AUS
-Mongolia,63,2008,5,MNG
-Philippines,21,2007,2,PHL
-Singapore,19,2009,1,SGP
-Ghana,49.8,2008,4,GHA
-Madagascar,59,2003,5,MDG
-Mauritius,7,2009,0,MUS
-Senegal,38,2010,3,SEN
-Tanzania,23,2006,2,TZA
-Kuwait,51,2003,5,KWT
-Lebanon,31,2004,3,LBN
-Brazil,14.8,2009,1,BRA
-Chile,28.9,2008,2,CHL
-Ecuador,19.4,2009,1,ECU
-Mexico,25.1,2009,2,MEX
-Peru,32.8,2010,3,PER
-Australia,2350,2011,UNKNOWN,AUS
-Russian Federation*,1302,2011,UNKNOWN,RSA
-Japan,0,2011,UNKNOWN,JPN
+Greece,27,2010,1,GRC
+Austria,20.4,2010,1,AUT
+Belgium,19.4,2010,1,BEL
+Switzerland,14.7,2010,0,CHE
+Czech Republic,18.8,2010,1,CZE
+Germany,16.9,2010,1,DEU
+Denmark,14.9,2010,0,DNK
+Estonia,5.4,2010,0,EST
+Spain,12.9,2010,0,ESP
+Finland,8.9,2010,0,FIN
+France,20.1,2010,1,FRA
+Italy,25.3,2010,1,ITA
+Latvia,19.4,2010,1,LVA
+Netherlands,17.3,2010,1,NLD
+Norway,9.3,2010,0,NOR
+Poland,28.7,2010,1,POL
+Portugal,10.8,2010,0,PRT
+Sweden,11.8,2010,0,SWE
+Slovakia,25.1,2010,1,SVK
+United Kingdom,13.5,2010,0,GBR
+Canada,7.6,2010,0,CAN
+United States of America,10.9,2010,0,USA
+Australia,7.9,2010,0,AUS
+Mongolia,63,2010,4,MNG
+Philippines,21,2010,1,PHL
+Singapore,19,2010,1,SGP
+Ghana,49.8,2010,3,GHA
+Madagascar,59,2010,3,MDG
+Mauritius,7,2010,0,MUS
+Senegal,38,2010,2,SEN
+Tanzania,23,2010,1,TZA
+Kuwait,51,2010,3,KWT
+Lebanon,31,2010,2,LBN
+Brazil,14.8,2010,0,BRA
+Chile,28.9,2010,1,CHL
+Ecuador,19.4,2010,1,ECU
+Mexico,25.1,2010,1,MEX
+Peru,32.8,2010,2,PER
+Russian Federation*,9.6,2010,0,RUS
+Japan,21.81,2010,1,JPN
+United Arab Emirates,79.52,2010,5,ARE
+China,72.57,2010,5,CHN
+Qatar,69.03,2010,4,QAT
+Mauritania,65.18,2010,4,MRT
+Saudi Arabia,61.68,2010,4,SAU
+Bahrain,49.33,2010,3,BHR
+Turkmenistan,48.28,2010,3,TKM
+Pakistan,38.1,2010,2,PAK
+"Korea, South (D.P.R.O)",37.52,2010,2,PRK
+Libya,37.18,2010,2,LBY
+Niger,36.82,2010,2,NER
+Gambia,35.75,2010,2,GMB
+Oman,35.3,2010,2,OMN
+Mali,34.11,2010,2,MLI
+Chad,33.35,2010,2,TCD
+Nepal,32.66,2010,2,NPL
+"Egypt, Arab Rep",32.58,2010,2,EGY
+India,32.02,2010,2,IND
+"Korea, North",31.51,2010,2,KOR
+Guinea-Bissau,31.21,2010,2,GNB
+Bangladesh,31.13,2010,2,BGD
+Iraq,30.39,2010,2,IRQ
+"Yemen, rep.",30.16,2010,2,YEM
+Vietnam,29.8,2010,1,VNM
+"Iran, Islamic Rep.",29.69,2010,1,IRN
+Jordan,28.77,2010,1,JOR
+Burkina Faso,27.35,2010,1,BFA
+Nigeria,27.07,2010,1,NGA
+Djibouti,26.83,2010,1,DJI
+Israel,26.18,2010,1,ISR
+Syrian Arab Republic,25.99,2010,1,SYR
+Sudan,25.86,2010,1,SDN
+Eritrea,24.53,2010,1,ERI
+Afghanistan,23.89,2010,1,AFG
+Guinea,22.28,2010,1,GIN
+Cameroon,22.17,2010,1,CMR
+Uzbekistan,22.1,2010,1,UZB
+Algeria,22.04,2010,1,DZA
+Benin,21.92,2010,1,BEN
+Myanmar,21.77,2010,1,MMR
+Bhutan,21.72,2010,1,BTN
+Malta,21.3,2010,1,MLT
+Thailand,21.07,2010,1,THA
+Togo,20.98,2010,1,TGO
+Morocco,19.97,2010,1,MAR
+Barbados,19.41,2010,1,BRB
+Central African Republic,19.21,2010,1,CAF
+Tunsia,19.04,2010,1,TUN
+Cyprus,19.76,2010,1,CYP
+Armenia,18.73,2010,1,ARM
+Dominica,17.98,2010,1,DMA
+Sierra Leone,17.63,2010,1,SLE
+Antigua and Barbuda,17.45,2010,1,ATG
+Turkey,17.44,2010,1,TUR
+Cambodia,17.43,2010,1,KHM
+Azerbaijan,17.28,2010,1,AZE
+Romania,20.25,2010,1,ROU
+"Macedonia, FYR",16.85,2010,1,MKD
+Bulgaria,16.81,2010,1,BGR
+Tajikistan,16.68,2010,1,TJK
+Hungary,16.24,2010,1,HUN
+Kyrgyz Republic,15.98,2010,1,KGZ
+Montenegro,15.89,2010,1,MNE
+Serbia,15.89,2010,1,SRB
+Maldives,15.75,2010,1,MDV
+Ethiopia,15.41,2010,1,ETH
+Grenada,15.27,2010,1,GRD
+Cote d'lvoire,15.24,2010,1,CIV
+Slovenia,15.23,2010,1,SVN
+"Congo, Dem. Rep",15.13,2010,1,COD
+Croatia,14.36,2010,0,HRV
+Albania,14.29,2010,0,ALB
+Rwanda,14.16,2010,0,RWA
+"Congo, Rep.",14.02,2010,0,COG
+Indonesia,13.8,2010,0,IDN
+Moldova,13.79,2010,0,MDA
+Kazakhstan,13.39,2010,0,KAZ
+Luxembourg,13.29,2010,0,LUX
+Bahamas,13.02,2010,0,BHS
+Andorra,12.99,2010,0,AND
+Malaysia,12.94,2010,0,MYS
+Ukraine,12.67,2010,0,UKR
+Bosnia and Herzegovina,12.41,2010,0,BIH
+Georgia,12.01,2010,0,GEO
+Jamaica,11.96,2010,0,JAM
+Gutemala,11.85,2010,0,GTM
+Haiti,11.43,2010,0,HTI
+Burundi,11.24,2010,0,BDI
+Angola,11.23,2010,0,AGO
+Belarus,10.64,2010,0,BLR
+Lithuania,10.16,2010,0,LTU
+Uganda,10.04,2010,0,UGA
+Liberia,8.78,2010,0,LBR
+Ireland,8.67,2010,0,IRL
+Sri Lanka,8.61,2010,0,LKA
+Somalia,8.21,2010,0,SOM
+Costa Rica,8.19,2010,0,CRI
+Chile,8.14,2010,0,CHL
+"Venezuela, RB",8.09,2010,0,VEN
+Marshall Islands,7.85,2010,0,MHL
+South Africa,7.8,2010,0,ZAF
+Estonia,7.24,2010,0,EST
+Phillipines,7.06,2010,0,PHL
+Cuba,6.94,2010,0,CUB
+Equatorial Guinea,6.85,2010,0,GNQ
+Honduras,6.72,2010,0,HND
+Kiribati,6.42,2010,0,KIR
+Guyana,6.26,2010,0,GUY
+Gabon,6.09,2010,0,GAB
+BolIvia,6.04,2010,0,BOL
+Lesotho,5.93,2010,0,LSO
+Kenya,5.84,2010,0,KEN
+Iceland,5.83,2010,0,ISL
+Solomon Islands,5.81,2010,0,SLB
+Uruguay,5.8,2010,0,URY
+Zambia,5.64,2010,0,ZMB
+New Zealand,5.58,2010,0,NZL
+Belize,5.55,2010,0,BLZ
+Colombia,5.41,2010,0,COL
+Brunei Darussalam,5.4,2010,0,BRN
+Papua New Guinea,5.37,2010,0,PNG
+Fiji,5.35,2010,0,FJI
+Nicaragua,5.34,2010,0,NIC
+Panama,5.3,2010,0,PAN
+El Salvadar,5.24,2010,0,SLV
+Seychelles,5.24,2010,0,SYC
+Vanuatu,5.21,2010,0,VUT
+Botswana,5.17,2010,0,BWA
+Tonga,5.15,2010,0,TON
+Mozambique,5.11,2010,0,MOZ
+Suriname,5.05,2010,0,SUR
+Argentina,4.98,2010,0,ARG
+Sao Tome and Principe,4.97,2010,0,STP
+Samoa,4.92,2010,0,WSM
+Swaziland,4.91,2010,0,SWZ
+Malawi,4.87,2010,0,MWI
+Zimbabwe,4.77,2010,0,ZWE
+Comoros,4.72,2010,0,COM
+"Micronesia, Fed Sts",4.7,2010,0,FSM
+Paraguay,4.47,2010,0,PRY
+Nambia,4.44,2010,0,NAM
+Trinidad and Tobago,4.39,2010,0,TTO
