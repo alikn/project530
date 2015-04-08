@@ -9,22 +9,19 @@ define(["dataProcess","d3"], function (dataProcess,d3) {
 
 	function materialChanged(event, newMaterial)
 	{
-		console.log("new material is " + newMaterial);
-		var rects = $('rect');
+		
+		var selected = $('rect[material="'+newMaterial+'"]')
+		var rects = $('rect'); //get all bar chart elements
+		
 		for(i=0; i<rects.length; i++)
 			{
-				//console.log(rects[i]);
-				$(rects[i]).removeAttr('id');
+				
+				$(rects[i]).removeAttr('id'); //remove id attribute to change styling
 			}
-		//var selected = $( "rect[material='+newMaterial+']" )
-
-		var selected = $('rect[material="'+newMaterial+'"]')
-		selected.removeAttr("id");
-		//.removeAttr( "title" )
-		var classn = selected.attr('class');
-		selected.attr( "id", newMaterial);
-		//$('#test').attr('class'); 
-		console.log("Material Changed **************" + classn);
+		
+		selected.attr( "id", newMaterial); //assign id to current material rect to style
+		
+		
 	}
 
 	function sectorChanged(event, newSector)
