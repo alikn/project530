@@ -5,8 +5,7 @@ body
     background-size: 100%;
     font-family:Arial,sans-serif;
     color:#333333;
-    background-image: url("../images/background.jpg");
-    background-color: #fff;
+    background-color: #FCFCFC;
     background-repeat: no-repeat;  }
 
 #vis {
@@ -595,7 +594,7 @@ div.tooltip {
 }
 #barChart rect#pm25
 {
-  fill:#FF9933;
+  fill:#336600;
 }
 
 #barChart rect#pm10
@@ -605,7 +604,7 @@ div.tooltip {
 
 #barChart rect#SOx
 {
-  fill:#FFFF00;
+  fill:#003366;
 }
 
 #barChart rect#voc

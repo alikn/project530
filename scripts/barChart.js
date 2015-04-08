@@ -3,7 +3,28 @@ define(["dataProcess","d3"], function (dataProcess,d3) {
 
 	function init(){
 		$("body").on("sectorChangeEvent", sectorChanged);
+		$("body").on("materialChangeEvent", materialChanged)
 		drawBarGraph(dataProcess.getChosenSector());
+	}
+
+	function materialChanged(event, newMaterial)
+	{
+		console.log("new material is " + newMaterial);
+		var rects = $('rect');
+		for(i=0; i<rects.length; i++)
+			{
+				//console.log(rects[i]);
+				$(rects[i]).removeAttr('id');
+			}
+		//var selected = $( "rect[material='+newMaterial+']" )
+
+		var selected = $('rect[material="'+newMaterial+'"]')
+		selected.removeAttr("id");
+		//.removeAttr( "title" )
+		var classn = selected.attr('class');
+		selected.attr( "id", newMaterial);
+		//$('#test').attr('class'); 
+		console.log("Material Changed **************" + classn);
 	}
 
 	function sectorChanged(event, newSector)
@@ -93,7 +114,6 @@ define(["dataProcess","d3"], function (dataProcess,d3) {
 		        .attr("height", function(d) { return height - y(d.value); })
 		        .attr("class", "clickable testit")
 		        .attr("id", function(d) { if(d.key===chosenMaterial){ console.log("keys are " + d.key); return d.key} })
-		        .on("materialChangeEvent", function(d){console.log("hey material changed")})
 		        .on("click", rectClicked);
 
 
