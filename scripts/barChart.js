@@ -232,6 +232,9 @@ define(["dataProcess","d3"], function (dataProcess,d3) {
 		    .style("text-anchor", "middle")
 		    .style("fill", "white")
 		    .attr("class", "clickable")
+		    .attr("material", function(d) { return d.name; })
+		    .on("click", itemClicked)
+
 
 		elemEnter.append("text")
 		   .text( function(d) { 
@@ -252,9 +255,11 @@ define(["dataProcess","d3"], function (dataProcess,d3) {
 		    .attr("dy", "1.5em")
 		    .style("fill", "white")
 		    .attr("class", "clickable")
+		    .attr("material", function(d) { return d.name; })
+		    .on("click", itemClicked)
 
 		elemEnter.append("title")
-		    .text(function(d) { return materialNames[d.name] + " " +  Math.round(d.size) + " tonnes" })
+		    .text(function(d) { return materialNames[d.name] + ": " +  Math.round(d.size) + " tonnes" })
 		    .style("text-anchor", "middle")
 		    .attr("dy", "1.5em")
 		    .style("fill", "white")
@@ -272,8 +277,7 @@ define(["dataProcess","d3"], function (dataProcess,d3) {
 				    {
 						console.log("obj is " + obj[prop])
 						console.log("prop is " + prop)
-						dataPoint = obj[prop]
-						fullTitle =  dataPoint.source + ": " + dataPoint.title + ", " + dataPoint.em + " tonnes"  
+						dataPoint = obj[prop] 
 						newDataSet.push({name: prop, className: dataPoint.source, size: dataPoint});
 				    }
 				    return {children: newDataSet};

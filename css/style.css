@@ -180,6 +180,7 @@ p
   cursor: default;
   font-size: 16px;
 
+
 }
 
 .toggleDisplay span{
@@ -217,6 +218,10 @@ p
     background-color: #fff
 
 }
+.INS-title:hover
+{
+  color:#40a4d8;
+}
 
 .NIS.highlight {
     stroke:#33beb7;
@@ -234,6 +239,11 @@ p
     background-color: #fff
     
 }
+.NIS-title:hover
+{
+  color:#33beb7;
+}
+
 
 .OPS.highlight {
     stroke:#FED34C;
@@ -252,6 +262,11 @@ p
     background-color: #fff;
     
 }
+.OPS-title:hover
+{
+   color: #FED34C;
+}
+
 
 .MOS.highlight {
     stroke: #a364d9;
@@ -268,7 +283,11 @@ p
     background-image: none;
     background-color: #fff;
     
-  }
+}
+.MOS-title:hover
+{
+   color:#a364d9;
+}
 
 .INCS.highlight {
     stroke: #ee6579;
@@ -283,9 +302,13 @@ p
     color: #ee6579;
     background-image: none;
     background-color: #fff;
-    
-
 }
+
+.INCS-title:hover
+{
+   color: #ee6579;
+}
+
 .NAS.highlight {
     stroke: #99cc33;
 
@@ -318,11 +341,15 @@ p
     background-color:#fff;
     background-image: none;
 }
+.MIS-title:hover
+{
+   color:#99cc33;
+}
 
 /**************** legend ul styling ********************/
 #filters
 {
-  margin:0;
+  margin:50px 0 0 0;
   padding:0;
   list-style-type: none;
 }
@@ -352,12 +379,6 @@ p
   margin:  0 0 8px 0;
   padding-bottom:8px;
   overflow: auto;
-  border-bottom:1px dashed #ccc;
-  /*
-    width:40px;
-    height:40px;
-    margin:20px;
-  */
 }
 .ch-grid li:last-child
 {
@@ -629,7 +650,7 @@ div.tooltip {
   color:#fff;
 }
 
-#barChart text, #barChart text 
+#barChart text
 {
   margin-bottom: 5px;
   color:#fff;

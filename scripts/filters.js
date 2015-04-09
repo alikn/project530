@@ -42,9 +42,9 @@ define(["d3", "dataProcess"], function(d3, dataProcess){
         for(var secGroup in sectorGroupAverageObj){
             $("." + secGroup + "-li").find(".toggleDisplay")
                                     .append($("<span>", {class: "removable"})
-                                                .text("Average:" + sectorGroupAverageObj[secGroup]["average"].toFixed(0) + " tonnes"))
+                                                .text("Average: " + sectorGroupAverageObj[secGroup]["average"].toFixed(0) + " tonnes"))
                                     .append($("<span>", {class: "removable"})
-                                                .text("Equivalent to " + (sectorGroupAverageObj[secGroup]["average"] /averageTruckWeight).toFixed(0) + " X ")
+                                                .text("Equivalent to: " + (sectorGroupAverageObj[secGroup]["average"] /averageTruckWeight).toFixed(0) + " X ")
                                                 .append($("<img>", {class: "inlineTruckImg", "src" : "./images/truck.png"})));
         }
     }
