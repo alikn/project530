@@ -139,18 +139,18 @@ define(["dataProcess","d3"], function (dataProcess,d3) {
 		var sector_codes = dataProcess.getSectorCodesHashMap();
 		var sector_desc = sector_codes[newSector];
 		var chosenMaterial = dataProcess.getChosenMaterial();
-    	var materialNames = dataProcess.getMaterialNames();
+		var materialNames = dataProcess.getMaterialNames();
 
 		$('#barChart').empty();
 		$('#barChart').append("<h3><span class='em-source'>" + sector_desc + " Emissions" + "</span></h3>")
-		
+
 
 		var matEmissions = dataProcess.getMatEmissionForChosenSector();
 		$.each( matEmissions, function( key, value ) 
 		{
 			//parse to number barchart expects integers
-  			value = parseInt(value);
-  		});
+				value = parseInt(value);
+		});
 
 
 		// D3 Bubble Chart 
@@ -162,41 +162,61 @@ define(["dataProcess","d3"], function (dataProcess,d3) {
 		https://github.com/mbostock/d3/wiki/Pack-Layout
 		*/
 		var bubble = d3.layout.pack()
-					.size([400, 380])
-					.value(function(d) {return d.size;})
-			        .sort(function(a, b) {
-								return -(a.value - b.value)
-							}) 
-					.padding(5);
-	  
-	  // generate data with calculated layout values
-	  var nodes = bubble.nodes(processData(matEmissions))
-							.filter(function(d) { return !d.children;}); // filter out the outer bubble
+						.size([400, 380])
+						.value(function(d) {return d.size;})
+						.sort(function(a, b) {
+									return -(a.value - b.value)
+								}) 
+						.padding(5);
 
-	 
-	  var vis = svg.selectAll('g')
-	  					
+		// generate data with calculated layout values
+		var nodes = bubble.nodes(processData(matEmissions))
+						.filter(function(d) { return !d.children;}); // filter out the outer bubble
+
+
+		var vis = svg.selectAll('g')
 						.data(nodes);
-	  
-	  
 
-	   var elemEnter = vis.enter()
-	    .append("g")
-	    .attr('transform', function(d) { return 'translate(' + d.x + ',' + d.y + ')'; })					
-	  
+
+		var duration = 1000;
+		var delay = 100;
+
+		// update - this is created before enter.append. it only applies to updating nodes.
+		vis.transition()
+			.duration(duration)
+			.delay(function(d, i) {delay = i * 7; return delay;}) 
+			.attr('transform', function(d) { return 'translate(' + d.x + ',' + d.y + ')'; })
+			.attr('r', function(d) { return d.r; })
+			.style('opacity', 1); // force to 1, so they don't get stuck below 1 at enter()
+
+		var elemEnter = vis.enter()
+		.append("g")
+		.attr('transform', function(d) { return 'translate(' + d.x + ',' + d.y + ')'; })					
+
 		var circles = elemEnter.append('circle')	
 			.attr('r', function(d) { return d.r; })
 			.attr('class', function(d) { return d.className; })
 			.attr("class", "clickable")
 			.attr("id", function(d) { if(d.name===chosenMaterial){ console.log("chosen circle  " + d.name); return d.name} })
 			.attr("material", function(d) { return d.name; })
-			.on("click", itemClicked);
+			.on("click", itemClicked)
+			.style('opacity', 0) 
+			.transition()
+			.duration(duration * 1.2)
+			.style('opacity', 1);
 
-	 
-	    
-	    /* Create tooltip hover */
-	   elemEnter.append("text")
-	        .text( function(d) { 
+		// exit
+		vis.exit()
+			.transition()
+			.duration(duration + delay)
+			.style('opacity', 0)
+			.remove();
+
+
+
+		/* Create tooltip hover */
+		elemEnter.append("text")
+		    .text( function(d) { 
 		        	if (d.r >= 55 && d.r <=65) // only add text if circle radius can fit it 
 		        	{
 		        		if(materialNames[d.name] != "Volatile Organic Compounds") //VOC is longest title will only fit if radius is > 65
@@ -208,14 +228,14 @@ define(["dataProcess","d3"], function (dataProcess,d3) {
 		        		return materialNames[d.name] 
 		        	}
 
-	        	} )
-	        .style("text-anchor", "middle")
-	        .style("fill", "white")
-	        .attr("class", "clickable")
+		    	} )
+		    .style("text-anchor", "middle")
+		    .style("fill", "white")
+		    .attr("class", "clickable")
 
-	   elemEnter.append("text")
-	       .text( function(d) { 
-	        	
+		elemEnter.append("text")
+		   .text( function(d) { 
+		    	
 		        	if (d.r >= 55 && d.r <=65)
 		        	{
 		        		if(materialNames[d.name] != "Volatile Organic Compounds")
@@ -227,46 +247,19 @@ define(["dataProcess","d3"], function (dataProcess,d3) {
 		        		return Math.round(d.size) + " tonnes"
 		        	}
 
-	        	} )
-	        .style("text-anchor", "middle")
-	        .attr("dy", "1.5em")
-	        .style("fill", "white")
-	        .attr("class", "clickable")
+		    	} )
+		    .style("text-anchor", "middle")
+		    .attr("dy", "1.5em")
+		    .style("fill", "white")
+		    .attr("class", "clickable")
 
-	   elemEnter.append("title")
-	        .text(function(d) { return materialNames[d.name] + " " +  Math.round(d.size) + " tonnes" })
-	        .style("text-anchor", "middle")
-	        .attr("dy", "1.5em")
-	        .style("fill", "white")
-	        .attr("class", "clickable")
-
-
-
-	    /*
-	    var vis = svg.selectAll('circle')
-						.data(nodes);
-	  
-		 
-		 var circles = vis.enter().append('circle')
-					.attr('transform', function(d) { return 'translate(' + d.x + ',' + d.y + ')'; })
-					.attr('r', function(d) { return d.r; })
-					.attr('class', function(d) { return d.className; })
-					.attr("class", "clickable")
-					.attr("id", function(d) { if(d.name===chosenMaterial){ console.log("chosen circle  " + d.name); return d.name} })
-					.attr("material", function(d) { return d.name; })
-					.on("click", itemClicked);
-		*/
-
-		 
-		 /*   
-		    /* Create tooltip hover 
-		    vis.append("text")
-		        .text(function(d) {return d.name})
-		        .style("text-anchor", "middle")
-		 */
-				      
-				  
-				
+		elemEnter.append("title")
+		    .text(function(d) { return materialNames[d.name] + " " +  Math.round(d.size) + " tonnes" })
+		    .style("text-anchor", "middle")
+		    .attr("dy", "1.5em")
+		    .style("fill", "white")
+		    .attr("class", "clickable")
+				  				
 	}
 
 
