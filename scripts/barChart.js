@@ -217,7 +217,7 @@ define(["dataProcess","d3"], function (dataProcess,d3) {
 		/* Create tooltip hover */
 		elemEnter.append("text")
 		    .text( function(d) { 
-		        	if (d.r >= 55 && d.r <=65) // only add text if circle radius can fit it 
+		        	if (d.r >= 45 && d.r <=65) // only add text if circle radius can fit it 
 		        	{
 		        		if(materialNames[d.name] != "Volatile Organic Compounds") //VOC is longest title will only fit if radius is > 65
 		        			return materialNames[d.name] 
@@ -239,7 +239,7 @@ define(["dataProcess","d3"], function (dataProcess,d3) {
 		elemEnter.append("text")
 		   .text( function(d) { 
 		    	
-		        	if (d.r >= 55 && d.r <=65)
+		        	if (d.r >= 45 && d.r <=65) //anything with small radius than 45 can not fit full texts so dont add text
 		        	{
 		        		if(materialNames[d.name] != "Volatile Organic Compounds")
 		        			return Math.round(d.size) + " tonnes"
