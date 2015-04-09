@@ -588,31 +588,51 @@ div.tooltip {
 
 
 /********************* material colors ***********************/
-#barChart rect 
-{
-  fill:#ffd891
-}
-#barChart rect#pm25
-{
-  fill:#336600;
-}
-
-#barChart rect#pm10
+#barChart circle
 {
   fill:#CC0000;
+  text-transform: uppercase;
 }
 
-#barChart rect#SOx
+#barChart rect
+{
+  fill:#ffd891;
+
+}
+#barChart rect#pm25, #barChart circle#pm25
+{
+  fill:#336600;
+  color:#fff;
+}
+
+#barChart rect#pm10, #barChart circle#pm10
+{
+  fill:#CC0000;
+  color:#fff;
+}
+
+#barChart rect#SOx, #barChart circle#SOx
 {
   fill:#003366;
+  color:#fff;
 }
 
-#barChart rect#voc
+#barChart rect#voc, #barChart circle#voc
 {
   fill:#660033;
+  color:#fff;
 }
 
-#barChart rect#tpm
+#barChart rect#tpm, #barChart circle#tpm
 {
   fill:#009999;
+  color:#fff;
+}
+
+#barChart text, #barChart text 
+{
+  margin-bottom: 5px;
+  color:#fff;
+  font-size: 11px;
+  letter-spacing: normal;
 }
