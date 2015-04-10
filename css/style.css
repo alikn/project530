@@ -543,7 +543,7 @@ div.tooltip {
     font: 14px sans-serif;	
     background: black;	
     border: 0px;					
-    border-radius: 5px;
+    border-radius: 5px;  
 }
 
 #colorCodedMap {
