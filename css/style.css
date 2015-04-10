@@ -654,6 +654,10 @@ div.tooltip {
 {
   margin-bottom: 5px;
   color:#fff;
-  font-size: 11px;
-  letter-spacing: normal;
+  font-size: 12px;
+}
+
+#barChart text.text-title
+{
+  text-transform: uppercase;
 }

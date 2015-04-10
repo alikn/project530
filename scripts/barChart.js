@@ -217,21 +217,18 @@ define(["dataProcess","d3"], function (dataProcess,d3) {
 		/* Create tooltip hover */
 		elemEnter.append("text")
 		    .text( function(d) { 
-		        	if (d.r >= 45 && d.r <=65) // only add text if circle radius can fit it 
+		        	if (d.r >= 25) // only add text if circle radius can fit it 
 		        	{
-		        		if(materialNames[d.name] != "Volatile Organic Compounds") //VOC is longest title will only fit if radius is > 65
-		        			return materialNames[d.name] 
-
-		        	}
-		        	else if(d.r > 65)
-		        	{
-		        		return materialNames[d.name] 
+		        		if (d.name === 'pm25') //handle PM2.5 formatting issue
+		        			return "pm2.5"
+		        		else
+		        			return d.name
 		        	}
 
 		    	} )
 		    .style("text-anchor", "middle")
 		    .style("fill", "white")
-		    .attr("class", "clickable")
+		    .attr("class", "clickable text-title")
 		    .attr("material", function(d) { return d.name; })
 		    .on("click", itemClicked)
 
@@ -239,15 +236,11 @@ define(["dataProcess","d3"], function (dataProcess,d3) {
 		elemEnter.append("text")
 		   .text( function(d) { 
 		    	
-		        	if (d.r >= 45 && d.r <=65) //anything with small radius than 45 can not fit full texts so dont add text
+		        	if (d.r >= 45) //anything with radius smaller than 45 can not fit full texts so dont add text
 		        	{
-		        		if(materialNames[d.name] != "Volatile Organic Compounds")
+		        		
 		        			return Math.round(d.size) + " tonnes"
 
-		        	}
-		        	else if(d.r > 65)
-		        	{
-		        		return Math.round(d.size) + " tonnes"
 		        	}
 
 		    	} )
