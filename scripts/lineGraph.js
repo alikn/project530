@@ -43,20 +43,20 @@ define(["dataProcess"], function (dataProcess) {
         maxLevel = dataProcess.getMaxValueForChosenMaterial() + 5000;
         //update the pan extent variable
         panExtent.y[1] = maxLevel;
-        
+
         x = d3.time.scale()
                 .domain([startYear, endYear])
                 .range([0, width]);
 
         y = d3.scale.linear()
-                .domain([minLevel, maxLevel])              
+                .domain([minLevel, maxLevel])
                 .range([height, 0]);
 
         // create the zoom listener
         zoomListener = d3.behavior.zoom()
                 .y(y)
                 // .x(x)
-                .scaleExtent([1, 30])
+                .scaleExtent([1, Infinity])
                 .on("zoom", redraw);
 
         //create the x axis
@@ -69,6 +69,7 @@ define(["dataProcess"], function (dataProcess) {
         //create the y axis
         yAxis = d3.svg.axis()
                 .scale(y)
+                .tickSize(6)
                 .tickPadding(1)
                 .orient("left");
 
