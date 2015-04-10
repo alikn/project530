@@ -101,6 +101,7 @@ text {
 .page-header
 {
     margin-top:0;
+    overflow: auto;
 }
 
 .page-header span
@@ -564,6 +565,12 @@ div.tooltip {
 {
     float:left; 
     margin-right:10px;
+    margin-top:5px;
+}
+
+#page-title, .em-source, #map-title
+{
+  margin-left:55px;
 }
 
 .main-title
@@ -571,10 +578,10 @@ div.tooltip {
     float:left;
 }
 
-.title-blurb
+.page-header span.title-blurb
 {
     clear:both; 
-    margin-left:55px;
+    display: block;
 }
 
 
