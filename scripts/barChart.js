@@ -3,10 +3,10 @@ define(["dataProcess","d3"], function (dataProcess,d3) {
 
 	function init(){
 		$("body").on("sectorChangeEvent", sectorChanged);
-		//$("body").on("materialChangeEvent", materialChanged)
-		//drawBarGraph(dataProcess.getChosenSector());
-		$("body").on("materialChangeEvent", materialChangedCircle);
-		drawBubbleChart(dataProcess.getChosenSector());
+		$("body").on("materialChangeEvent", materialChanged)
+		drawBarGraph(dataProcess.getChosenSector());
+		//$("body").on("materialChangeEvent", materialChangedCircle);
+		//drawBubbleChart(dataProcess.getChosenSector());
 	}
 
 	function materialChanged(event, newMaterial)
@@ -43,8 +43,8 @@ define(["dataProcess","d3"], function (dataProcess,d3) {
 
 	function sectorChanged(event, newSector)
 	{
-		//drawBarGraph(newSector);
-		drawBubbleChart(newSector);
+		drawBarGraph(newSector);
+		//drawBubbleChart(newSector);
 	}
 
 	function drawBarGraph(newSector)

@@ -81,7 +81,7 @@ define(["d3"],function(d3){
     function matEmissionForChosenSector(){
         var materialValues = {};
         for(var mat in rawData){
-            for(var j = 1; j < rawData[mat].length - 1; j++){
+            for(var j = 1; j < rawData[mat].length; j++){
                 if (rawData[mat][j][0] == chosenSector){    
                     var ind = rawData[mat][j].length;
                     while(!materialValues[mat] && ind > 1){

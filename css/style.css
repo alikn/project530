@@ -32,7 +32,7 @@ path.current,path.highlight.current {
 
 path.selected{
     stroke: red !important;
-    stroke-width: 3 !important;
+    stroke-width: 3.5 !important;
 }
 
 .highlight {
@@ -102,6 +102,7 @@ text {
 {
     margin-top:0;
 }
+
 .page-header span
 {
     margin:0 auto;
