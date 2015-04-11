@@ -14,7 +14,7 @@ require(["dataProcess", "page", "lineGraph", "filters", "infoBox", "barChart", "
 		infoBox.init();
 		barChart.init();
 		colorCodedMap.init();
-                tour.init();
+        tour.init();
 	}
 
 })
