@@ -684,7 +684,8 @@ div.hoverinfo {
   font-size: 12px;
 }
 
-#barChart text.text-title
+#barChart text
 {
   text-transform: uppercase;
 }
+

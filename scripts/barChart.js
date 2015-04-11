@@ -64,13 +64,7 @@ define(["dataProcess","d3"], function (dataProcess,d3) {
   			value = parseInt(value);
   		});
 
-       //trial data to be removed later
-       var data = new Object();
-            data["pm25"] = 2;
-            data["pm10"] = 7.55;
-            data["tpm"] = 8.968269197;
-            data["SOx"] = 0.035;
-            data["voc"] = 89.697;
+      
                
           
 		var max_value = d3.max(d3.entries(matEmissions), function(d) { return Math.round(d.value); });
@@ -85,7 +79,18 @@ define(["dataProcess","d3"], function (dataProcess,d3) {
 
 		var x = d3.scale.ordinal()
 		    .rangeRoundBands([0, width], .1)
-		    .domain(d3.entries(matEmissions).map(function(d) { return d.key; }));
+		    .domain(d3.entries(matEmissions).map(function(d) { 
+		    	
+		    	var val;
+		    	//console.log("Type of " + typeof(d.key))
+		    	if(d.key === "pm10")
+		    		val = "pm12";
+		    	else
+		    		val = d.key; 
+		    	console.log("Type of " + typeof(val))
+		    	return val
+
+		    }));
 
 		var xAxis = d3.svg.axis()
 		    .scale(x)
