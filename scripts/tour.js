@@ -2,6 +2,7 @@ define([], function () {
 
     function init() {
         $("#tour").on("click", displayTour);
+        $("body").on("startTourEvent", displayTour);
     }
 
     function displayTour() {
@@ -10,58 +11,54 @@ define([], function () {
             storage: false,
             steps: [
                 {
-                    element: "#vis",
-                    title: "Graph",
-                    content: "The graph shows the total amount in tonnes of the \n\
-                            selected pollutant for the years 1985 - 2012 in Canada. \n\
-                            <br><br>You can <ul><li>Scroll up or down to zoom in or zoom out<li></ul>",
-                    placement: "right",
+                    element: ".materialSelect",
+                    title: "Select Material",
+                    content: "This is where you can select from the available pollutants. All the elements of the page show informattion about the selected material.\n\
+                                <br>Go ahead and change it to another pollutant.",
+                    placement: "bottom",
                     backdrop: true,
                     backdropPadding: 10
                 },
                 {
-                    element: ".materialSelect",
-                    title: "Select Material",
-                    content: "Use the select box to switch materials. The graph, \n\
-                            bar chart, text description and map change accordingly",
-                    placement: "bottom",
+                    element: "#vis",
+                    title: "Interactive Graph",
+                    content: "This graph shows the pollutant emission vs. time for various sectors. Sectors are in different groups shown by different colors. \n\
+                            <br>You can zoom in and out or drag the graph to find an interesting sector and then select it. \n\
+                            <br>Selecting a new sector changes the bar chart below. \n\
+                            <br>Go ahead and try it!",
+                    placement: "right",
                     backdrop: true,
                     backdropPadding: 10
                 },
                 {
                     element: "#filters",
                     title: "Graph Legend",
-                    content: "<p>This shows the legend of the graph.</p><p>You can <ul><li>Click on the\n\
-                            circular icons to remove the emphasis on any of the \n\
-                            pollutants (i.e. changes its line color on the \n\
-                            graph to grey)</li> \n\
-                            <li>Mouseover the text of the legend to display\n\
-                            additional description</li></ul></p>",
+                    content: "This is the legend for the graph. Hover over sector groups to see more info. Click on the circles to select/deselect them.",
                     placement: "left",
-                    backdrop: true,
-                    backdropPadding: 10
-                },
-                {
-                    element: "#infoBox",
-                    title: "Info Box",
-                    content: "This contains a detailed description of the \n\
-                            selected pollutant",
-                    placement: "top",
                     backdrop: true,
                     backdropPadding: 10
                 },
                 {
                     element: "#barChart",
                     title: "Bar Chart",
-                    content: "Expanation of what bar char does",
+                    content: "We have more info about the sector you chose on the line graph above! This is where you can see about the latest data on how thatt sector does on other pollutants. \n\
+                    <br> Go ahead and click on the bars and see what happens.",
+                    placement: "top",
+                    backdrop: true,
+                    backdropPadding: 10
+                },
+                {
+                    element: "#infoBox",
+                    title: "Info Box",
+                    content: "We know you want to know more about the pollutant you selected in the dropdown! That is why we have this info box! ",
                     placement: "top",
                     backdrop: true,
                     backdropPadding: 10
                 },
                 {
                     element: ".map",
-                    title: "Map",
-                    content: "Expanation of what the map shows",
+                    title: "Pollutant WorldMap",
+                    content: "So, how is Canada doing compared to other countries? Find out about it here!",
                     placement: "top",
                     backdrop: true,
                     backdropPadding: 10

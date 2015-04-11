@@ -1,4 +1,4 @@
-define(["dataProcess"], function(dataProcess){
+define(["dataProcess", "jquery.bootstrap", "jquery.cookie"], function(dataProcess){
 
 	var materials = dataProcess.getMaterials();
     var materialNames = dataProcess.getMaterialNames();
@@ -7,7 +7,12 @@ define(["dataProcess"], function(dataProcess){
 		setupMaterialSelector();
 
 		$("body").on("materialChangeEvent", materialChanged);
-		
+        var notFirstVisit = $.cookie("notFirstVisit");
+        if(!notFirstVisit){
+            //initialize the modal
+             $("#tourModal").modal();
+             $("#modalYesButton").on("click", startTour);
+		}
 	}
 	
 	function setupMaterialSelector(){
@@ -32,6 +37,12 @@ define(["dataProcess"], function(dataProcess){
 
     function materialChanged (event, newMateril){
     	 $(".materialSelect select").val(materialNames[newMateril]);
+    }
+
+    function startTour(){
+        $("body").trigger("startTourEvent");
+        $('#tourModal').modal('hide');
+        $.cookie("notFirstVisit", true);
     }
 
 	return{
