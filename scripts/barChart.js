@@ -81,14 +81,7 @@ define(["dataProcess","d3"], function (dataProcess,d3) {
 		    .rangeRoundBands([0, width], .1)
 		    .domain(d3.entries(matEmissions).map(function(d) { 
 		    	
-		    	var val;
-		    	//console.log("Type of " + typeof(d.key))
-		    	if(d.key === "pm10")
-		    		val = "pm12";
-		    	else
-		    		val = d.key; 
-		    	console.log("Type of " + typeof(val))
-		    	return val
+		    	return d.key
 
 		    }));
 
