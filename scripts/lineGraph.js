@@ -2,7 +2,7 @@ define(["dataProcess"], function (dataProcess) {
 
     var materials, rawData, sectorGroup, chosenMaterial, chosenSector;
 
-    var margin = {top: 20, right: 17, bottom: 30, left: 55};
+    var margin = {top: 20, right: 17, bottom: 30, left: 67};
     var w = 860;
     var width = w - margin.left - margin.right;
     var h = 550;
@@ -103,8 +103,8 @@ define(["dataProcess"], function (dataProcess) {
                 .attr("class", "axis-label")
                 .attr("transform", "rotate(-90)")
                 .attr("y", (-margin.left) + 8)
-                .attr("x", -height)
-                .text('Tonnes');
+                .attr("x", -height/2)
+                .text('Tonnes/Year');
         //label on the x axis
         vis.append("g")
                 .attr("class", "x axis")
