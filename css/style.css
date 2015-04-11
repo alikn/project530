@@ -564,6 +564,12 @@ div.hoverinfo {
     margin-top:-70px !important;
 }
 
+.datamap {
+	margin-left: auto;
+    margin-right: auto;
+	float:center !important;
+	overflow:visible !important;
+}
 #legend {
     padding: 1.5em 0 0 1.5em;
 }

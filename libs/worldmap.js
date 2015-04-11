@@ -61,6 +61,7 @@
       .attr('data-width', width || element.offsetWidth)
       .attr('class', 'datamap')
       .attr('height', height || element.offsetHeight)
+	  .style('float', 'right')
       .style('overflow', 'hidden'); // IE10+ doesn't respect height/width when map is zoomed in
 
     if (this.options.responsive) {
