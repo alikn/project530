@@ -7,12 +7,12 @@ define(["worldmap", "dataProcess"], function(worldmap, dataProcess){
 				element: document.getElementById('colorCodedMap'),
 				fills: {
 					// Color range for pm2.5
-					pm250: 'rgb(155,255,204)',
-					pm251: 'rgb(102,255,178)',
-					pm252: 'rgb(0,255,128)',
-					pm253: 'rgb(0,204,102)',
-					pm254: 'rgb(0,153,76)',
-					pm255: 'rgb(0,102,51)',
+					pm250: 'rgb(102,204,0)',
+					pm251: 'rgb(0,153,0)',
+					pm252: 'rgb(76,153,0)',
+					pm253: 'rgb(51,102,0)',
+					pm254: 'rgb(0,102,0)',
+					pm255: 'rgb(25,51,0)',
 					
 					// Color range for SOx
 					SOx0: 'rgb(153,204,255)',
@@ -159,7 +159,7 @@ define(["worldmap", "dataProcess"], function(worldmap, dataProcess){
 			  
 	function init(){
 		var pollutant = dataProcess.getChosenMaterial();
-		//console.log("selected material: " + pollutant);
+		console.log("selected material: " + pollutant);
 		updateMap(pollutant);
 		$("body").on("materialChangeEvent", materialChanged);
 	}
@@ -171,11 +171,11 @@ define(["worldmap", "dataProcess"], function(worldmap, dataProcess){
 	function updateMap(pollutant){
 		map.legend();
 		//console.log("selected material: " + pollutant);
-		d3.text('data/map' + pollutant.toLowerCase() + '.csv', 'text/csv', function(text) {
+		d3.text('data/map'+pollutant+'.csv', 'text/csv', function(text) {
 			//console.log("file path is : data/map"+pollutant+'.csv');
 			regions = d3.csv.parseRows(text);
 			for (i = 1; i < regions.length; i++) {
-				//console.log(regions[i]);
+				console.log(regions[i]);
 				if(regions[i][3] != 'UNKNOWN'){
 					regions[i][3] = pollutant+regions[i][3];
 				}
