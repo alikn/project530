@@ -545,6 +545,19 @@ div.tooltip {
     border-radius: 5px;
 }
 
+div.hoverinfo {
+	position: absolute;	
+    text-align: center;	
+    width: auto;	
+    height: auto;		
+    padding: 5px;
+    color: #fff;
+    font: 14px sans-serif;	
+    background: black;	
+    border: 0px;					
+    border-radius: 5px;
+}
+
 #colorCodedMap {
     display:block;
     margin-top:-70px !important;

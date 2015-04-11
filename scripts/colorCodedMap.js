@@ -7,12 +7,12 @@ define(["worldmap", "dataProcess"], function(worldmap, dataProcess){
 				element: document.getElementById('colorCodedMap'),
 				fills: {
 					// Color range for pm2.5
-					pm250: 'rgb(204,255,153)',
-					pm251: 'rgb(178,255,102)',
-					pm252: 'rgb(128,255,0)',
-					pm253: 'rgb(102,204,0)',
-					pm254: 'rgb(76,153,0)',
-					pm255: 'rgb(51,102,0)',
+					pm250: 'rgb(155,255,204)',
+					pm251: 'rgb(102,255,178)',
+					pm252: 'rgb(0,255,128)',
+					pm253: 'rgb(0,204,102)',
+					pm254: 'rgb(0,153,76)',
+					pm255: 'rgb(0,102,51)',
 					
 					// Color range for SOx
 					SOx0: 'rgb(153,204,255)',
@@ -84,6 +84,7 @@ define(["worldmap", "dataProcess"], function(worldmap, dataProcess){
 				done: function(datamap) {
 				}
 			});
+			
 	
 	//override updateChoropleth method of worldmap.js
 	map.updateChoropleth = function(data){
@@ -174,7 +175,7 @@ define(["worldmap", "dataProcess"], function(worldmap, dataProcess){
 			//console.log("file path is : data/map"+pollutant+'.csv');
 			regions = d3.csv.parseRows(text);
 			for (i = 1; i < regions.length; i++) {
-				//console.log(regions[i]);
+				console.log(regions[i]);
 				if(regions[i][3] != 'UNKNOWN'){
 					regions[i][3] = pollutant+regions[i][3];
 				}
