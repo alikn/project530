@@ -75,7 +75,7 @@ define(["dataProcess","d3"], function (dataProcess,d3) {
           
 		var max_value = d3.max(d3.entries(matEmissions), function(d) { return Math.round(d.value); });
 		
-		var margin = {top: 20, right: 20, bottom: 30, left: 60},
+		var margin = {top: 20, right: 20, bottom: 30, left: 78},
 		    width = 500 - margin.left - margin.right,
 		    height = 490 - margin.top - margin.bottom;
 
@@ -114,9 +114,9 @@ define(["dataProcess","d3"], function (dataProcess,d3) {
 		    .append("text")
                 .attr("class", "axis-label")
                 .attr("transform", "rotate(-90)")
-                .attr("y", (-margin.left) + 10)
-                .attr("x", -height)
-                .text('Tonnes');
+                .attr("y", (-margin.left) + 9)
+                .attr("x", -height/2)
+                .text('Tonnes/Year');
 
 		svg.selectAll(".barsuccess")
 		        .data(d3.entries(matEmissions))
