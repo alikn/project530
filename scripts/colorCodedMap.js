@@ -175,7 +175,7 @@ define(["worldmap", "dataProcess"], function(worldmap, dataProcess){
 			//console.log("file path is : data/map"+pollutant+'.csv');
 			regions = d3.csv.parseRows(text);
 			for (i = 1; i < regions.length; i++) {
-				console.log(regions[i]);
+				//console.log(regions[i]);
 				if(regions[i][3] != 'UNKNOWN'){
 					regions[i][3] = pollutant+regions[i][3];
 				}

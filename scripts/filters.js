@@ -7,7 +7,13 @@ define(["d3", "dataProcess"], function(d3, dataProcess){
 		setupSectorGroupSelectors();
 		 $("body").on("materialChangeEvent", materialChanged);
 
+         //filter highlighting
+         $("body").on("pathHoverIn", highlightFilter);
+         $("body").on("pathHoverOut", removeHighlightFilter);
+
          $("li .source-title").hover(toggleInfoDetails);
+
+
     }
 
     function materialChanged(event, newMaterial){
@@ -57,6 +63,14 @@ define(["d3", "dataProcess"], function(d3, dataProcess){
         else {
             sectors.classed('highlight', true);
         }
+    }
+
+    function highlightFilter(event, sectorGroup){
+        $("li." + sectorGroup + "-li").addClass("filterDistinct");
+    }
+
+    function removeHighlightFilter(event, sectorGroup){
+        $("li." + sectorGroup + "-li").removeClass("filterDistinct");
     }
 
 	return{
