@@ -12,6 +12,9 @@ body
     min-height: 550px;
 }
 
+#vis svg {
+    width: 100%
+}
 
 #blurb {
     height: 60px;
@@ -171,7 +174,7 @@ p
     margin-left: 5px;
     margin-top: 9px;
     text-align: left;
-    width: 210px;
+    width: 80%
 }
 
 .source-title
