@@ -17,7 +17,7 @@ define(["d3", "dataProcess"], function(d3, dataProcess){
     }
 
     function materialChanged(event, newMaterial){
-        $('#filters li div').removeClass("circleSelected")
+        $('#filters li div').removeClass("circleDeSelected")
                             .removeClass(function(){
                                 return $(this).attr("id");
                             });
