@@ -66,11 +66,11 @@ define(["d3", "dataProcess"], function(d3, dataProcess){
     }
 
     function highlightFilter(event, sectorGroup){
-        $("li." + sectorGroup + "-li").addClass("filterDistinct");
+        $("." + sectorGroup + "-li").addClass("filterDistinct");
     }
 
     function removeHighlightFilter(event, sectorGroup){
-        $("li." + sectorGroup + "-li").removeClass("filterDistinct");
+        $("." + sectorGroup + "-li").removeClass("filterDistinct");
     }
 
 	return{

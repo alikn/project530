@@ -211,6 +211,7 @@ p
 .INS-default
 {
   background-image: url("../images/INS.png");
+  background-position:0 0;
 }
 .INS-default:hover, .INS
 {
@@ -387,106 +388,10 @@ p
   border-bottom:none;
 }
 
-.ch-item {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  position: relative;
-  cursor: default;
-  -webkit-perspective: 900px;
-  -moz-perspective: 900px;
-  -o-perspective: 900px;
-  -ms-perspective: 900px;
-  perspective: 900px;
-}
-.ch-info{
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-transform-style: preserve-3d;
-  -moz-transform-style: preserve-3d;
-  -o-transform-style: preserve-3d;
-  -ms-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-}
-.ch-info > div {
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background-position: center center;
-  -webkit-transition: all 0.4s linear;
-  -moz-transition: all 0.4s linear;
-  -o-transition: all 0.4s linear;
-  -ms-transition: all 0.4s linear;
-  transition: all 0.4s linear;
-  -webkit-transform-origin: 50% 0%;
-  -moz-transform-origin: 50% 0%;
-  -o-transform-origin: 50% 0%;
-  -ms-transform-origin: 50% 0%;
-  transform-origin: 50% 0%;
-}
 
-.ch-info .ch-info-back span {
-  margin-top:8px;
-  display:inline-block;
-  
+.filterDistinct{
+  background-position:0px -40px;
   }
-
-.ch-info .ch-info-back {
-  -webkit-transform: translate3d(0,0,-40px) rotate3d(1,0,0,90deg);
-  -moz-transform: translate3d(0,0,-40px) rotate3d(1,0,0,90deg);
-  -o-transform: translate3d(0,0,-40px) rotate3d(1,0,0,90deg);
-  -ms-transform: translate3d(0,0,-40px) rotate3d(1,0,0,90deg);
-  transform: translate3d(0,0,-40px) rotate3d(1,0,0,90deg);
-  opacity: 0;
-  background-color: #fff;
-  border-width:2px;
-  border-style:solid;
-  margin-top:10px;
-
-}
-
-.ch-info .INS
-{
-  color: #40a4d8;
-  border-color:#3d99c9;
-}
-
-
-.ch-img-1 { 
-  background-image: url(../images/INS.png);
-}
-
-.ch-img-2 { 
-  background-image: url(../images/20.jpg);
-}
-
-.ch-img-3 { 
-  background-image: url(../images/21.jpg);
-}
-
-
-.ch-item:hover .ch-info-front {
-  -webkit-transform: translate3d(0,55px,0) rotate3d(1,0,0,-90deg);
-  -moz-transform: translate3d(0,55px,0) rotate3d(1,0,0,-90deg);
-  -o-transform: translate3d(0,55px,0) rotate3d(1,0,0,-90deg);
-  -ms-transform: translate3d(0,55px,0) rotate3d(1,0,0,-90deg);
-  transform: translate3d(0,55px,0) rotate3d(1,0,0,-90deg);
-  opacity: 0;
-}
-
-.ch-item:hover .ch-info-back {
-  -webkit-transform: rotate3d(1,0,0,0deg);
-  -moz-transform: rotate3d(1,0,0,0deg);
-  -o-transform: rotate3d(1,0,0,0deg);
-  -ms-transform: rotate3d(1,0,0,0deg);
-  transform: rotate3d(1,0,0,0deg);
-  opacity: 1;
-}
-
-
 
 /******************************************************/
 .footer
@@ -690,10 +595,4 @@ div.hoverinfo {
 }
 
 
-.filterDistinct{
-  background-color: #BADCE2;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
-  box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
-  padding: 0px;
-  margin: 0px;
-}
+
