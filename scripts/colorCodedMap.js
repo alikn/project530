@@ -191,9 +191,16 @@ define(["worldmap", "dataProcess"], function(worldmap, dataProcess){
 					regions[i][3] = pollutant+regions[i][3];
 				}
 				//console.log("level is : " + regions[i][3]);
-				map.updateChoropleth({
-					data: {subunit: regions[i][4], fillKey: regions[i][3], quantity: regions[i][1], title: regions[0][1]},
-				});
+				if ( regions[i][1] != 0 ) {
+					map.updateChoropleth({
+						data: {subunit: regions[i][4], fillKey: regions[i][3], quantity: regions[i][1], title: regions[0][1]},
+					});
+				}
+				else {
+					map.updateChoropleth({
+						data: {subunit: regions[i][4], fillKey: regions[i][3], quantity: 'UNKNOWN', title: ''},
+					});
+				}
 			}
 		});
 	}
