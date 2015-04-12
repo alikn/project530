@@ -110,7 +110,7 @@ define(["dataProcess","d3"], function (dataProcess,d3) {
 		        .attr("class", "y axis")
 		        .call(yAxis)
 		    .append("text")
-                .attr("class", "axis-label")
+                .attr("class", "axis-label lower")
                 .attr("transform", "rotate(-90)")
                 .attr("y", (-margin.left) + 9)
                 .attr("x", -height/2)

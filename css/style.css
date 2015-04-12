@@ -594,5 +594,10 @@ div.hoverinfo {
   text-transform: uppercase;
 }
 
+#barChart text.lower
+{
+  text-transform:none;
+}
+
 
 
