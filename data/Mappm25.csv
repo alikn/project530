@@ -1,180 +1,180 @@
-Country,Annual mean PM2.5 ug/m3,Year,level,code
-United Arab Emirates,80.00,2010,5,ARE
-China,73.00,2010,5,CHN
-Qatar,69.00,2010,5,QAT
-Mauritania,65.00,2010,5,MRT
-Saudi Arabia,62.00,2010,5,SAU
-Kuwait,50.00,2010,5,KWT
-Bahrain,49.00,2010,4,BHR
-Turkmenistan,48.00,2010,4,TKM
-Senegal,41.00,2010,4,SEN
-"Korea, South (D.P.R.O)",38.00,2010,3,PRK
-Pakistan,38.00,2010,3,PAK
-Libya,37.00,2010,3,LBY
-Niger,37.00,2010,3,NER
-Gambia,36.00,2010,3,GMB
-Oman,35.00,2010,3,OMN
-Mali,34.00,2010,3,MLI
-Chad,33.00,2010,3,TCD
-"Egypt, Arab Rep",33.00,2010,3,EGY
-Nepal,33.00,2010,3,NPL
-India,32.00,2010,3,IND
-"Korea, North",32.00,2010,3,KOR
-Bangladesh,31.00,2010,3,BGD
-Guinea-Bissau,31.00,2010,3,GNB
-"Iran, Islamic Rep.",30.00,2010,3,IRN
-Iraq,30.00,2010,3,IRQ
-Vietnam,30.00,2010,3,VNM
-"Yemen, rep.",30.00,2010,3,YEM
-Jordan,29.00,2010,2,JOR
-Burkina Faso,27.00,2010,2,BFA
-Djibouti,27.00,2010,2,DJI
-Nigeria,27.00,2010,2,NGA
-Israel,26.00,2010,2,ISR
-Sudan,26.00,2010,2,SDN
-Syrian Arab Republic,26.00,2010,2,SYR
-Eritrea,25.00,2010,2,ERI
-Afghanistan,24.00,2010,2,AFG
-Lebanon,24.00,2010,2,LBN
-Algeria,22.00,2010,2,DZA
-Benin,22.00,2010,2,BEN
-Bhutan,22.00,2010,2,BTN
-Cameroon,22.00,2010,2,CMR
-Guinea,22.00,2010,2,GIN
-Japan,22.00,2010,2,JPN
-Myanmar,22.00,2010,2,MMR
-Uzbekistan,22.00,2010,2,UZB
-Malta,21.00,2010,2,MLT
-Thailand,21.00,2010,2,THA
-Togo,21.00,2010,2,TGO
-Morocco,20.00,2010,2,MAR
-Singapore,20.00,2010,2,SGP
-Armenia,19.00,2010,1,ARM
-Barbados,19.00,2010,1,BRB
-Belgium,19.00,2010,1,BEL
-Central African Republic,19.00,2010,1,CAF
-Cyprus,19.00,2010,1,CYP
-Italy,19.00,2010,1,ITA
-Netherlands,19.00,2010,1,NLD
-Tunsia,19.00,2010,1,TUN
-Dominica,18.00,2010,1,DMA
-Ghana,18.00,2010,3,GHA
-Sierra Leone,18.00,2010,1,SLE
-Antigua and Barbuda,17.00,2010,1,ATG
-Azerbaijan,17.00,2010,1,AZE
-Bulgaria,17.00,2010,1,BGR
-Cambodia,17.00,2010,1,KHM
-Greece,17.00,2010,1,GRC
-"Macedonia, FYR",17.00,2010,1,MKD
-Mexico,17.00,2010,1,MEX
-Romania,17.00,2010,1,ROU
-Tajikistan,17.00,2010,1,TJK
-Turkey,17.00,2010,1,TUR
-Czech Republic,16.00,2010,1,CZE
-Germany,16.00,2010,1,DEU
-Hungary,16.00,2010,1,HUN
-Kyrgyz Republic,16.00,2010,1,KGZ
-Maldives,16.00,2010,1,MDV
-Montenegro,16.00,2010,1,MNE
-Poland,16.00,2010,1,POL
-Serbia,16.00,2010,1,SRB
-"Congo, Dem. Rep",15.00,2010,1,COD
-Cote d'lvoire,15.00,2010,1,CIV
-Ethiopia,15.00,2010,1,ETH
-Grenada,15.00,2010,1,GRD
-Slovakia,15.00,2010,1,SVK
-Slovenia,15.00,2010,1,SVN
-Albania,14.00,2010,1,ALB
-"Congo, Rep.",14.00,2010,1,COG
-Croatia,14.00,2010,1,HRV
-France,14.00,2010,1,FRA
-Indonesia,14.00,2010,1,IDN
-Moldova,14.00,2010,1,MDA
-Rwanda,14.00,2010,1,RWA
-Spain,14.00,2010,1,ESP
-Switzerland,14.00,2010,1,CHE
-United Kingdom,14.00,2010,1,GBR
-Andorra,13.00,2010,1,AND
-Austria,13.00,2010,1,AUT
-Bahamas,13.00,2010,1,BHS
-Kazakhstan,13.00,2010,1,KAZ
-Luxembourg,13.00,2010,1,LUX
-Malaysia,13.00,2010,1,MYS
-Portugal,13.00,2010,1,PRT
-Ukraine,13.00,2010,1,UKR
-United States of America,13.00,2010,1,USA
-Bosnia and Herzegovina,12.00,2010,1,BIH
-Denmark,12.00,2010,1,DNK
-Georgia,12.00,2010,1,GEO
-Jamaica,12.00,2010,1,JAM
+Country,ug/m3,Year,level,code
+United Arab Emirates,80,2010,5,ARE
+China,73,2010,5,CHN
+Qatar,69,2010,5,QAT
+Mauritania,65,2010,5,MRT
+Saudi Arabia,62,2010,5,SAU
+Kuwait,50,2010,5,KWT
+Bahrain,49,2010,4,BHR
+Turkmenistan,48,2010,4,TKM
+Senegal,41,2010,4,SEN
+"Korea, South (D.P.R.O)",38,2010,3,PRK
+Pakistan,38,2010,3,PAK
+Libya,37,2010,3,LBY
+Niger,37,2010,3,NER
+Gambia,36,2010,3,GMB
+Oman,35,2010,3,OMN
+Mali,34,2010,3,MLI
+Chad,33,2010,3,TCD
+"Egypt, Arab Rep",33,2010,3,EGY
+Nepal,33,2010,3,NPL
+India,32,2010,3,IND
+"Korea, North",32,2010,3,KOR
+Bangladesh,31,2010,3,BGD
+Guinea-Bissau,31,2010,3,GNB
+"Iran, Islamic Rep.",30,2010,3,IRN
+Iraq,30,2010,3,IRQ
+Vietnam,30,2010,3,VNM
+"Yemen, rep.",30,2010,3,YEM
+Jordan,29,2010,2,JOR
+Burkina Faso,27,2010,2,BFA
+Djibouti,27,2010,2,DJI
+Nigeria,27,2010,2,NGA
+Israel,26,2010,2,ISR
+Sudan,26,2010,2,SDN
+Syrian Arab Republic,26,2010,2,SYR
+Eritrea,25,2010,2,ERI
+Afghanistan,24,2010,2,AFG
+Lebanon,24,2010,2,LBN
+Algeria,22,2010,2,DZA
+Benin,22,2010,2,BEN
+Bhutan,22,2010,2,BTN
+Cameroon,22,2010,2,CMR
+Guinea,22,2010,2,GIN
+Japan,22,2010,2,JPN
+Myanmar,22,2010,2,MMR
+Uzbekistan,22,2010,2,UZB
+Malta,21,2010,2,MLT
+Thailand,21,2010,2,THA
+Togo,21,2010,2,TGO
+Morocco,20,2010,2,MAR
+Singapore,20,2010,2,SGP
+Armenia,19,2010,1,ARM
+Barbados,19,2010,1,BRB
+Belgium,19,2010,1,BEL
+Central African Republic,19,2010,1,CAF
+Cyprus,19,2010,1,CYP
+Italy,19,2010,1,ITA
+Netherlands,19,2010,1,NLD
+Tunsia,19,2010,1,TUN
+Dominica,18,2010,1,DMA
+Ghana,18,2010,3,GHA
+Sierra Leone,18,2010,1,SLE
+Antigua and Barbuda,17,2010,1,ATG
+Azerbaijan,17,2010,1,AZE
+Bulgaria,17,2010,1,BGR
+Cambodia,17,2010,1,KHM
+Greece,17,2010,1,GRC
+"Macedonia, FYR",17,2010,1,MKD
+Mexico,17,2010,1,MEX
+Romania,17,2010,1,ROU
+Tajikistan,17,2010,1,TJK
+Turkey,17,2010,1,TUR
+Czech Republic,16,2010,1,CZE
+Germany,16,2010,1,DEU
+Hungary,16,2010,1,HUN
+Kyrgyz Republic,16,2010,1,KGZ
+Maldives,16,2010,1,MDV
+Montenegro,16,2010,1,MNE
+Poland,16,2010,1,POL
+Serbia,16,2010,1,SRB
+"Congo, Dem. Rep",15,2010,1,COD
+Cote d'lvoire,15,2010,1,CIV
+Ethiopia,15,2010,1,ETH
+Grenada,15,2010,1,GRD
+Slovakia,15,2010,1,SVK
+Slovenia,15,2010,1,SVN
+Albania,14,2010,1,ALB
+"Congo, Rep.",14,2010,1,COG
+Croatia,14,2010,1,HRV
+France,14,2010,1,FRA
+Indonesia,14,2010,1,IDN
+Moldova,14,2010,1,MDA
+Rwanda,14,2010,1,RWA
+Spain,14,2010,1,ESP
+Switzerland,14,2010,1,CHE
+United Kingdom,14,2010,1,GBR
+Andorra,13,2010,1,AND
+Austria,13,2010,1,AUT
+Bahamas,13,2010,1,BHS
+Kazakhstan,13,2010,1,KAZ
+Luxembourg,13,2010,1,LUX
+Malaysia,13,2010,1,MYS
+Portugal,13,2010,1,PRT
+Ukraine,13,2010,1,UKR
+United States of America,13,2010,1,USA
+Bosnia and Herzegovina,12,2010,1,BIH
+Denmark,12,2010,1,DNK
+Georgia,12,2010,1,GEO
+Jamaica,12,2010,1,JAM
 Gutemala,11.85,2010,1,GTM
-Angola,11.00,2010,1,AGO
-Belarus,11.00,2010,1,BLR
-Burundi,11.00,2010,1,BDI
-Haiti,11.00,2010,1,HTI
-Canada,10.00,2010,1,CAN
-Lithuania,10.00,2010,1,LTU
-Peru,10.00,2010,1,PER
-Russian Federation*,10.00,2010,1,RUS
-Uganda,10.00,2010,1,UGA
-Ireland,9.00,2010,0,IRL
-Latvia,9.00,2010,0,LVA
-Liberia,9.00,2010,0,LBR
-Mongolia,9.00,2010,0,MNG
-Sri Lanka,9.00,2010,0,LKA
-Chile,8.00,2010,0,CHL
-Costa Rica,8.00,2010,0,CRI
-Marshall Islands,8.00,2010,0,MHL
-Somalia,8.00,2010,0,SOM
-South Africa,8.00,2010,0,ZAF
-"Venezuela, RB",8.00,2010,0,VEN
-Cuba,7.00,2010,0,CUB
-Equatorial Guinea,7.00,2010,0,GNQ
-Estonia,7.00,2010,0,EST
-Honduras,7.00,2010,0,HND
-Philippines,7.00,2010,0,PHL
-Australia,6.00,2010,0,AUS
-Belize,6.00,2010,0,BLZ
-BolIvia,6.00,2010,0,BOL
-Ecuador,6.00,2010,0,ECU
-Gabon,6.00,2010,0,GAB
-Guyana,6.00,2010,0,GUY
-Iceland,6.00,2010,0,ISL
-Kenya,6.00,2010,0,KEN
-Kiribati,6.00,2010,0,KIR
-Lesotho,6.00,2010,0,LSO
-New Zealand,6.00,2010,0,NZL
-Solomon Islands,6.00,2010,0,SLB
-Sweden,6.00,2010,0,SWE
-Uruguay,6.00,2010,0,URY
-Zambia,6.00,2010,0,ZMB
-Argentina,5.00,2010,0,ARG
-Botswana,5.00,2010,0,BWA
-Brazil,5.00,2010,0,BRA
-Brunei Darussalam,5.00,2010,0,BRN
-Colombia,5.00,2010,0,COL
-Comoros,5.00,2010,0,COM
-El Salvadar,5.00,2010,0,SLV
-Fiji,5.00,2010,0,FJI
-Finland,5.00,2010,0,FIN
-Madagascar,5.00,2010,0,MDG
-Malawi,5.00,2010,0,MWI
-Mauritius,5.00,2010,0,MUS
-"Micronesia, Fed Sts",5.00,2010,0,FSM
-Mozambique,5.00,2010,0,MOZ
-Nicaragua,5.00,2010,0,NIC
-Panama,5.00,2010,0,PAN
-Papua New Guinea,5.00,2010,0,PNG
-Samoa,5.00,2010,0,WSM
-Sao Tome and Principe,5.00,2010,0,STP
-Seychelles,5.00,2010,0,SYC
-Suriname,5.00,2010,0,SUR
-Swaziland,5.00,2010,0,SWZ
-Tanzania,5.00,2010,0,TZA
-Tonga,5.00,2010,0,TON
-Vanuatu,5.00,2010,0,VUT
-Zimbabwe,5.00,2010,0,ZWE
-Nambia,4.00,2010,0,NAM
-Norway,4.00,2010,0,NOR
-Paraguay,4.00,2010,0,PRY
-Trinidad and Tobago,4.00,2010,0,TTO
+Angola,11,2010,1,AGO
+Belarus,11,2010,1,BLR
+Burundi,11,2010,1,BDI
+Haiti,11,2010,1,HTI
+Canada,10,2010,1,CAN
+Lithuania,10,2010,1,LTU
+Peru,10,2010,1,PER
+Russian Federation*,10,2010,1,RUS
+Uganda,10,2010,1,UGA
+Ireland,9,2010,0,IRL
+Latvia,9,2010,0,LVA
+Liberia,9,2010,0,LBR
+Mongolia,9,2010,0,MNG
+Sri Lanka,9,2010,0,LKA
+Chile,8,2010,0,CHL
+Costa Rica,8,2010,0,CRI
+Marshall Islands,8,2010,0,MHL
+Somalia,8,2010,0,SOM
+South Africa,8,2010,0,ZAF
+"Venezuela, RB",8,2010,0,VEN
+Cuba,7,2010,0,CUB
+Equatorial Guinea,7,2010,0,GNQ
+Estonia,7,2010,0,EST
+Honduras,7,2010,0,HND
+Philippines,7,2010,0,PHL
+Australia,6,2010,0,AUS
+Belize,6,2010,0,BLZ
+BolIvia,6,2010,0,BOL
+Ecuador,6,2010,0,ECU
+Gabon,6,2010,0,GAB
+Guyana,6,2010,0,GUY
+Iceland,6,2010,0,ISL
+Kenya,6,2010,0,KEN
+Kiribati,6,2010,0,KIR
+Lesotho,6,2010,0,LSO
+New Zealand,6,2010,0,NZL
+Solomon Islands,6,2010,0,SLB
+Sweden,6,2010,0,SWE
+Uruguay,6,2010,0,URY
+Zambia,6,2010,0,ZMB
+Argentina,5,2010,0,ARG
+Botswana,5,2010,0,BWA
+Brazil,5,2010,0,BRA
+Brunei Darussalam,5,2010,0,BRN
+Colombia,5,2010,0,COL
+Comoros,5,2010,0,COM
+El Salvadar,5,2010,0,SLV
+Fiji,5,2010,0,FJI
+Finland,5,2010,0,FIN
+Madagascar,5,2010,0,MDG
+Malawi,5,2010,0,MWI
+Mauritius,5,2010,0,MUS
+"Micronesia, Fed Sts",5,2010,0,FSM
+Mozambique,5,2010,0,MOZ
+Nicaragua,5,2010,0,NIC
+Panama,5,2010,0,PAN
+Papua New Guinea,5,2010,0,PNG
+Samoa,5,2010,0,WSM
+Sao Tome and Principe,5,2010,0,STP
+Seychelles,5,2010,0,SYC
+Suriname,5,2010,0,SUR
+Swaziland,5,2010,0,SWZ
+Tanzania,5,2010,0,TZA
+Tonga,5,2010,0,TON
+Vanuatu,5,2010,0,VUT
+Zimbabwe,5,2010,0,ZWE
+Nambia,4,2010,0,NAM
+Norway,4,2010,0,NOR
+Paraguay,4,2010,0,PRY
+Trinidad and Tobago,4,2010,0,TTO

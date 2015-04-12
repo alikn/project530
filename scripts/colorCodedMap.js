@@ -68,7 +68,7 @@ define(["worldmap", "dataProcess"], function(worldmap, dataProcess){
 				data: {
 					USA: {
 						fillKey: 'MEDIUM',
-						numberOfThings: 10381
+						quantity: 10381
 					}
 				},
 				geographyConfig: {
@@ -78,6 +78,7 @@ define(["worldmap", "dataProcess"], function(worldmap, dataProcess){
 					popupTemplate: function(geo, data) {
 						return ['<div class="hoverinfo"><strong>',
 								geo.properties.name,
+                        ': ' + data.quantity + ' ' + data.title,
 							'</strong></div>'].join('');
 					}
 				},
@@ -99,12 +100,22 @@ define(["worldmap", "dataProcess"], function(worldmap, dataProcess){
 				.transition()
 				.style('fill', color);
 			//if it's an object, overriding the previous data
-			/*if ( subunitData === Object(subunitData) ) {
-				this.options.data[subunit] = defaults(subunitData, this.options.data[subunit] || {});
+			if ( subunitData === Object(subunitData) ) {
+				this.options.data[subunit] = map.defaults(subunitData, this.options.data[subunit] || {});
 				var geo = this.svg.select('.' + subunit).attr('data-info', JSON.stringify(this.options.data[subunit]));
-			}*/
+			}
 	}
-	
+
+	map.defaults = function(obj) {
+		Array.prototype.slice.call(arguments, 1).forEach(function(source) {
+		  if (source) {
+			for (var prop in source) {
+			  if (obj[prop] == null) obj[prop] = source[prop];
+			}
+		  }
+		});
+		return obj;
+	}
 	//override the legend method of worldmap.js
 	map.legend = function (layer, data, options) {
 		var material = dataProcess.getChosenMaterial();
@@ -181,7 +192,7 @@ define(["worldmap", "dataProcess"], function(worldmap, dataProcess){
 				}
 				//console.log("level is : " + regions[i][3]);
 				map.updateChoropleth({
-					data: {subunit: regions[i][4], fillKey: regions[i][3]},
+					data: {subunit: regions[i][4], fillKey: regions[i][3], quantity: regions[i][1], title: regions[0][1]},
 				});
 			}
 		});
