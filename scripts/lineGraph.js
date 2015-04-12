@@ -3,7 +3,7 @@ define(["dataProcess"], function (dataProcess) {
     var materials, rawData, sectorGroup, chosenMaterial, chosenSector;
 
     var margin = {top: 20, right: 17, bottom: 30, left: 67};
-    var w = 860;
+    var w = 850;
     var width = w - margin.left - margin.right;
     var h = 550;
     var height = h - margin.top - margin.bottom;

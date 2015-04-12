@@ -118,15 +118,15 @@ define(["dataProcess","d3"], function (dataProcess,d3) {
 
 		svg.selectAll(".barsuccess")
 		        .data(d3.entries(matEmissions))
-		    .enter().append("rect")
-		        .attr("material", (d3.entries(matEmissions), function(d) { return d.key; }))
-		        .attr("x", function(d) { return x(d.key) })
-		        .attr("width", x.rangeBand())
-		        .attr("y", function(d) { return y(d.value) ; })
-		        .attr("height", function(d) { return height - y(d.value); })
-		        .attr("class", "clickable")
-		        .attr("id", function(d) { if(d.key===chosenMaterial){ return d.key} })
-		        .on("click", itemClicked);
+		    	.enter().append("rect")
+			        .attr("material", (d3.entries(matEmissions), function(d) { return d.key; }))
+			        .attr("x", function(d) { return x(d.key) })
+			        .attr("width", x.rangeBand())
+			        .attr("y", function(d) { return y(d.value) ; })
+			        .attr("height", function(d) { return height - y(d.value); })
+			        .attr("class", "clickable")
+			        .attr("id", function(d) { if(d.key===chosenMaterial){ return d.key} })
+			        .on("click", itemClicked);
 
 
 	}
