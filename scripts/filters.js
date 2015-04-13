@@ -46,7 +46,7 @@ define(["d3", "dataProcess"], function(d3, dataProcess){
         //Adding the average and equivalent info
         sectorGroupAverageObj = dataProcess.getAverageValueForSectorGroups();
         for(var secGroup in sectorGroupAverageObj){
-            $("." + secGroup + "-li").find(".toggleDisplay")
+            $("." + secGroup + "-container").find(".toggleDisplay")
                                     .append($("<span>", {class: "removable"})
                                                 .text("Average: " + sectorGroupAverageObj[secGroup]["average"].toFixed(0) + " tonnes"))
                                     .append($("<span>", {class: "removable"})
