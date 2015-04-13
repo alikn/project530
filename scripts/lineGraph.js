@@ -227,6 +227,9 @@ define(["dataProcess"], function (dataProcess) {
         div.html(sectorCodes[sectorCode])
                 .style("left", (d3.event.pageX) + "px")
                 .style("top", (d3.event.pageY - 28) + "px");
+
+        $("body").trigger("pathHoverIn", sector_sectorGroup[sectorCode]);
+
     }
 
     function onmouseout(d, i) {
@@ -239,6 +242,10 @@ define(["dataProcess"], function (dataProcess) {
 
         //hide tooltip
         div.style("display", "none");
+
+        //filter highlight removal
+        var sectorCode = $(this).attr("sector");
+        $("body").trigger("pathHoverOut", sector_sectorGroup[sectorCode]);
     }
 
     function redraw() {
