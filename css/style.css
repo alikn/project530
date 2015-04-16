@@ -439,7 +439,9 @@ a
 
 .axis-label {
     margin-right: 5px;
-    font-size: 11px;
+    font-size: 12px !important;
+    font-weight: bolder;
+    font-family: Verdana;
 }
 
 div.tooltip {

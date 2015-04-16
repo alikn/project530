@@ -102,7 +102,7 @@ define(["dataProcess"], function (dataProcess) {
                 .append("text")
                 .attr("class", "axis-label")
                 .attr("transform", "rotate(-90)")
-                .attr("y", (-margin.left) + 8)
+                .attr("y", (-margin.left) + 9)
                 .attr("x", -height/2)
                 .text('Tonnes/Year');
         //label on the x axis
@@ -111,7 +111,7 @@ define(["dataProcess"], function (dataProcess) {
                 .append("text")
                 .attr("class", "axis-label")
                 .attr("text-anchor", "end")
-                .attr("x", width + 10)
+                .attr("x", width/2 + 12)
                 .attr("y", height + 30)
                 .text("Year");
 
