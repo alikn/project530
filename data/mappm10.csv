@@ -1,0 +1,184 @@
+Country,ug/m3,Year,level,code
+Afghanistan,41.27,2006,2,AFG
+Albania,43.9,2006,2,ALB
+Algeria,71.1,2006,3,DZA
+Andorra,25.2,2006,1,AND
+Angola,65.85,2006,3,AGO
+Antigua and Barbuda,12.16,2006,0,ATG
+Argentina,73.11,2006,3,ARG
+Armenia,59.45,2006,3,ARM
+Australia,15.39,2006,0,AUS
+Australia,15.39,2006,0,AUS
+Austria,33.03,2006,2,AUT
+Azerbaijan,70.07,2006,3,AZE
+Bahamas,0,2006,UNKNOWN,BHS
+Bahrain,67.7,2006,3,BHR
+Bangladesh,135.43,2006,4,BGD
+Barbados,39.97,2006,2,BRB
+Belarus,6.48,2006,0,BLR
+Belgium,22.47,2006,1,BEL
+Belize,15.06,2006,0,BLZ
+Benin,46,2006,2,BEN
+Bhutan,26.17,2006,1,BTN
+BolIvia,94.06,2006,3,BOL
+Bosnia and Herzegovina,19,2006,1,BIH
+Botswana,67.1,2006,3,BWA
+Brazil,23.34,2006,1,BRA
+Brunei Darussalam,54.04,2006,3,BRN
+Bulgaria,57.41,2006,3,BGR
+Burkina Faso,84.44,2006,3,BFA
+Burundi,29.04,2006,1,BDI
+Cambodia,45.7,2006,2,KHM
+Cameroon,61.96,2006,3,CMR
+Canada,17.39,2006,1,CAN
+Central African Republic,44.02,2006,2,CAF
+Chad,109.4,2006,4,TCD
+Chile,47.8,2006,2,CHL
+China,73.01,2006,3,CHN
+Colombia,22.41,2006,1,COL
+Comoros,33.19,2006,2,COM
+"Congo, Dem. Rep",0,2006,UNKNOWN,COD
+"Congo, Rep.",0,2006,UNKNOWN,COG
+Costa Rica,36.25,2006,2,CRI
+Cote d'lvoire,0,2006,UNKNOWN,CIV
+Croatia,30.49,2006,2,HRV
+Cuba,17.48,2006,1,CUB
+Cyprus,43.58,2006,2,CYP
+Czech Republic,20.95,2006,1,CZE
+Denmark,18.68,2006,1,DNK
+Djibouti,45.36,2006,2,DJI
+Dominica,25.75,2006,1,DMA
+Ecuador,24.76,2006,1,ECU
+"Egypt, Arab Rep",119.21,2006,4,EGY
+El Salvadar,33.26,2006,2,SLV
+Equatorial Guinea,8,2006,0,GNQ
+Eritrea,56.22,2006,3,ERI
+Estonia,12.95,2006,0,EST
+Ethiopia,67.74,2006,3,ETH
+Fiji,21.61,2006,1,FJI
+Finland,17.8,2006,1,FIN
+France,13.38,2006,0,FRA
+Gabon,7.52,2006,0,GAB
+Gambia,85.81,2006,3,GMB
+Georgia,46.51,2006,2,GEO
+Germany,18.58,2006,1,DEU
+Ghana,34.46,2006,2,GHA
+Greece,35.97,2006,2,GRC
+Grenada,20.05,2006,1,GRD
+Guinea,70.25,2006,3,GIN
+Guinea-Bissau,71.9,2006,3,GNB
+Gutemala,62.03,2006,3,GTM
+Guyana,30.49,2006,2,GUY
+Haiti,37,2006,2,HTI
+Honduras,43.07,2006,2,HND
+Hungary,18.64,2006,1,HUN
+Iceland,18.25,2006,1,ISL
+India,64.92,2006,3,IND
+Indonesia,82.88,2006,3,IDN
+"Iran, Islamic Rep.",50.61,2006,3,IRN
+Iraq,115.25,2006,4,IRQ
+Ireland,15.6,2006,0,IRL
+Israel,31.47,2006,2,ISR
+Italy,26.71,2006,1,ITA
+Jamaica,43.31,2006,2,JAM
+Japan,29.64,2006,1,JPN
+Jordan,44.68,2006,2,JOR
+Kazakhstan,18.78,2006,1,KAZ
+Kenya,36.4,2006,2,KEN
+Kiribati,0,2006,UNKNOWN,KIR
+"Korea, North",34.72,2006,2,KOR
+"Korea, South (D.P.R.O)",0,2006,UNKNOWN,PRK
+Kuwait,97.31,2006,3,KWT
+Kyrgyz Republic,0,2006,UNKNOWN,KGZ
+Latvia,15.55,2006,0,LVA
+Lebanon,36.36,2006,2,LBN
+Lesotho,40.86,2006,2,LSO
+Liberia,39.99,2006,2,LBR
+Libya,87.63,2006,3,LBY
+Lithuania,18.99,2006,1,LTU
+Luxembourg,14.68,2006,0,LUX
+"Macedonia, FYR",21.01,2006,1,MKD
+Madagascar,33.84,2006,2,MDG
+Malawi,33.08,2006,2,MWI
+Malaysia,22.89,2006,1,MYS
+Maldives,31.61,2006,2,MDV
+Mali,151.95,2006,5,MLI
+Malta,0,2006,UNKNOWN,MLT
+Marshall Islands,0,2006,UNKNOWN,MHL
+Mauritania,86.42,2006,3,MRT
+Mauritius,17.6,2006,1,MUS
+Mexico,36.45,2006,2,MEX
+"Micronesia, Fed Sts",0,2006,UNKNOWN,FSM
+Moldova,36.1,2006,2,MDA
+Mongolia,110.45,2006,4,MNG
+Montenegro,0,2006,UNKNOWN,MNE
+Morocco,21.02,2006,1,MAR
+Mozambique,28,2006,1,MOZ
+Myanmar,0,2006,UNKNOWN,MMR
+Nambia,47.17,2006,2,NAM
+Nepal,34.47,2006,2,NPL
+Netherlands,33.71,2006,2,NLD
+New Zealand,14.35,2006,0,NZL
+Nicaragua,27.55,2006,1,NIC
+Niger,132.23,2006,4,NER
+Nigeria,44.99,2006,2,NGA
+Norway,14.8,2006,0,NOR
+Oman,108.36,2006,4,OMN
+Pakistan,120.26,2006,4,PAK
+Panama,35.04,2006,2,PAN
+Papua New Guinea,21.45,2006,1,PNG
+Paraguay,77.21,2006,3,PRY
+Peru,54.48,2006,3,PER
+Philippines,22.83,2006,1,PHL
+Phillipines,22.83,2006,1,PHL
+Poland,37.37,2006,2,POL
+Portugal,23.33,2006,1,PRT
+Qatar,51.25,2006,3,QAT
+Romania,14.49,2006,0,ROU
+Russian Federation*,17.74,2006,1,RUS
+Rwanda,26.02,2006,1,RWA
+Samoa,0,2006,UNKNOWN,WSM
+Sao Tome and Principe,39.27,2006,2,STP
+Saudi Arabia,112.91,2006,4,SAU
+Senegal,95.01,2006,3,SEN
+Serbia,0,2006,UNKNOWN,SRB
+Seychelles,0,2006,UNKNOWN,SYC
+Sierra Leone,49.76,2006,2,SLE
+Singapore,40.97,2006,2,SGP
+Slovakia,30.05,2006,2,SVK
+Slovenia,30.05,2006,2,SVN
+Solomon Islands,36.52,2006,2,SLB
+Somalia,31.34,2006,2,SOM
+South Africa,20.54,2006,1,ZAF
+Spain,31.61,2006,2,ESP
+Sri Lanka,82.12,2006,3,LKA
+Sudan,165.03,2006,5,SDN
+Suriname,27.64,2006,1,SUR
+Swaziland,32.84,2006,2,SWZ
+Sweden,11.62,2006,0,SWE
+Switzerland,25.51,2006,1,CHE
+Syrian Arab Republic,74.76,2006,3,SYR
+Tajikistan,49.98,2006,2,TJK
+Tanzania,25.39,2006,1,TZA
+Thailand,70.9,2006,3,THA
+Togo,35.28,2006,2,TGO
+Tonga,0,2006,UNKNOWN,TON
+Trinidad and Tobago,100.96,2006,4,TTO
+Tunsia,30.09,2006,2,TUN
+Turkey,39.72,2006,2,TUR
+Turkmenistan,55.02,2006,3,TKM
+Uganda,11.87,2006,0,UGA
+Ukraine,20.54,2006,1,UKR
+United Arab Emirates,127.11,2006,4,ARE
+United Kingdom,15.49,2006,0,GBR
+United States of America,21.34,2006,1,USA
+Uruguay,174.67,2006,5,URY
+Uzbekistan,54.55,2006,3,UZB
+Vanuatu,17.7,2006,1,VUT
+"Venezuela, RB",10.54,2006,0,VEN
+Vietnam,55.32,2006,3,VNM
+"Yemen, rep.",0,2006,UNKNOWN,YEM
+Zambia,39.84,2006,2,ZMB
+Greenland,0,2006,UNKNOWN,GRL
+South Sudan,0,2006,UNKNOWN,SSD
+Zimbabwe,26.81,2006,1,ZWE
