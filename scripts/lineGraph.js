@@ -7,6 +7,7 @@ define(["dataProcess"], function (dataProcess) {
     var width = w - margin.left - margin.right;
     var h = 550;
     var height = h - margin.top - margin.bottom;
+    var transitionSpeed = 1000;
 
     var startYear = 1985, endYear = 2012, minLevel = 0, maxLevel = 455000;
     var panExtent = {x: [startYear, endYear], y: [minLevel, maxLevel]};
@@ -33,7 +34,7 @@ define(["dataProcess"], function (dataProcess) {
         //highlighting the preselected sector
         d3.select("[sector=" + chosenSector + "]").classed("selected", true);
 
-        $("body").on("materialChangeEvent", materialChanged);
+        $("body").on("materialChangeEvent", materialChanged);        
         $("body").on("sectorChangeEvent", sectorChanged);
     }
 
@@ -251,8 +252,23 @@ define(["dataProcess"], function (dataProcess) {
     function redraw() {
         /* call the zoom.translate vector with the array returned from panLimit() */
         zoomListener.translate(panLimit());
-        vis.select(".y.axis").call(yAxis);
-        vis.selectAll("[ty='line']").attr('d', line);
+        vis.select(".y.axis")
+                .transition().duration(transitionSpeed)
+                .ease("sin-in-out").call(yAxis);
+        vis.selectAll("[ty='line']")
+                .transition().duration(transitionSpeed).ease("sin-in-out")
+                .attr('d', line);
+    }
+    
+    function rescale(max) {       
+        y.domain([y.domain()[0], max]);
+        zoomListener.translate(panLimit());
+        vis.select(".y.axis")
+                .transition().duration(transitionSpeed).ease("sin-in-out")
+                .call(yAxis);
+        vis.selectAll("[ty='line']")
+                .transition().duration(transitionSpeed).ease("sin-in-out")
+                .attr('d', line);
     }
 
     function panLimit() {
