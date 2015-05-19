@@ -218,6 +218,7 @@ define(["dataProcess"], function (dataProcess) {
     }
 
     function rescaleLineGraph(){
+        console.log("rescaling graph max " + dataProcess.getMaxValueForDisplayingSectorsOfChosenMaterial());
         rescale(dataProcess.getMaxValueForDisplayingSectorsOfChosenMaterial());
     }
 
@@ -281,9 +282,9 @@ define(["dataProcess"], function (dataProcess) {
                 .attr('d', line);
     }
     
-    function rescale(max) {       
+    function rescale(max) {         
         y.domain([y.domain()[0], max]);
-        zoomListener.translate(panLimit());
+        //zoomListener.translate(panLimit());
         vis.select(".y.axis")
                 .transition().duration(transitionSpeed).ease("sin-in-out")
                 .call(yAxis);
