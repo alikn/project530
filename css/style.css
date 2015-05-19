@@ -409,8 +409,7 @@ path.highlight{
 /******************************************************/
 .footer
 {
-    padding:10px;
-    border-top:1px solid #ccc;
+    padding:20px;
     text-align: right;
 }
 
@@ -535,8 +534,11 @@ div.hoverinfo {
 #infoBox
 {
   border-top:1px solid #666;
-  padding-top: 20px;
+  padding-top: 40px;
   margin-top:40px;
+  -webkit-column-count: 2; /* Chrome, Safari, Opera */
+  -moz-column-count: 2; /* Firefox */
+  column-count: 2;
 }
 
 
