@@ -5,6 +5,7 @@
         <title>CICS 530- Group 5</title>
 
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:Light' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
         <link href="css/bootstrap.min.css" rel="stylesheet" />
         <link href="css/bootstrap-tour.min.css" rel="stylesheet" />
         <link href="css/style.css" type="text/css" rel="stylesheet" />
@@ -20,7 +21,7 @@
 
     </head>
     <body>
-        <div id="tourModal" class="modal fade">
+        <div id="tourModal" class="modal fadey">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -42,95 +43,107 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="row">
-                        <div class="col-md-12">
-                            <span class="pull-right"><button class="btn" id="tour">Take a tour</button></span>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
+                        <div class="col-md-7">
                             <div class="page-header">
-                                <img src="images/logo-ehatlas.png" class="logo" />
                                 <div class="pull-left">
-                                    <h1 class="main-title">Trends in Airborne Pollutants in Canada</h1>
+                                    <h2 class="main-title">Trends in Airborne Pollutants in Canada</h2>
                                     <span class="title-blurb">National Emission Trends for Key Air Pollutants, 1985-2012</span>
                                 </div>             
                             </div>
                         </div>
+                        <div class="col-md-5 nopadding">
+                             <div class="pull-right materialSelect shadow">
+                                <span class="btn select">SELECT</span> <select class="form-control pull-right"></select>
+                            </div>
+                            <span class="pull-right"><button class="btn shadow" id="tour">TAKE A GUIDED TOUR</button></span>
+                        </div>      
                     </div>
                 </div>    
             </div>
             <div class="row">
-                <div class="col-md-12" style="padding-right:0;">
-                    <h2 id ="page-title" class="substance-title"></h2>
-                    <div class="materialSelect pull-right">
-                        <span>Select Pollutant</span> <select class="form-control"></select>                        
-                    </div>
+                <div class="col-md-12 nopadding">
+                  
+                        
+                                               
+                   
                 </div>             
 
             </div>
 
             <div class="row">
-                <div id="lineGraph" class="col-md-9">
-                    <div id="vis"></div>
-                </div>
-                <div class="col-md-3" id="legend">
-                    <ul id="filters" class="ch-grid">
-                        <li class="INS-container">
-                            <div class="circle clickable INS-default INS-li" id="INS"><span>I</span></div>
-                            <div class="info">
-                                <span class="source-title INS-title">Industrial Sources</span>
-                                <div class="toggleDisplay">
-                                    <span class="source-info">includes sources such as chemical industry, iron ore industry, wood industry.</span>
+                <div class="col-md-12">
+                    <div id="lineGraph" class="col-md-9 pull-left shadow">
+                        <h4 id ="page-title" class="substance-title"></h4>
+                        <div id="vis"></div>
+                    </div>
+                    <div class="col-md-3 pull-right shadow" id="legend">
+                        <h4>Sources of Pollution</h4>
+                        <ul id="filters" class="ch-grid">
+                             <li class="SAS-container">
+                                <div class="circle clickable SAS-default SAS-li" id="SAS"></div>
+                                <div class="info">
+                                    <span class="source-title INS-title">Select All</span>
+                                    <div class="toggleDisplay">
+                                        <span class="source-info">select all sources</span>
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
-                        <li class="NIS-container">
-                            <div class="circle clickable NIS-default NIS-li" id="NIS"><span>N</span></div>
-                            <div class="info">
-                                <span class="source-title NIS-title">Non-industrial Sources</span>
-                                <div class="toggleDisplay">
-                                    <span class="source-info">includes sources such as electric power generation, as well as residential and commercial fuel combustion</span>
+                            </li>
+                            <li class="INS-container">
+                                <div class="circle clickable INS-default INS-li" id="INS"></div>
+                                <div class="info">
+                                    <span class="source-title INS-title">Industrial Sources</span>
+                                    <div class="toggleDisplay">
+                                        <span class="source-info">includes sources such as chemical industry, iron ore industry, wood industry.</span>
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
-                        <li class="OPS-container"> 
-                            <div class="circle clickable OPS-default OPS-li" id="OPS"><span>O</span></div>
-                            <div class="info">
-                                <span class="source-title OPS-title">Open Sources</span>
-                                <div class="toggleDisplay">
-                                    <span class="source-info">includes sources such as dust from paved and unpaved roads and dust from coal mining</span>
+                            </li>
+                            <li class="NIS-container">
+                                <div class="circle clickable NIS-default NIS-li" id="NIS"></div>
+                                <div class="info">
+                                    <span class="source-title NIS-title">Non-industrial Sources</span>
+                                    <div class="toggleDisplay">
+                                        <span class="source-info">includes sources such as electric power generation, as well as residential and commercial fuel combustion</span>
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
-                        <li class="INCS-container">
-                            <div class="circle clickable INCS-default INCS-li" id="INCS"><span>I</span></div>
-                            <div class="info">
-                                <span class="source-title INCS-title">Incineration Sources</span>
-                                <div class="toggleDisplay">
-                                    <span class="source-info">includes sources such as Industrial & Commercial incineration</span>
+                            </li>
+                            <li class="OPS-container"> 
+                                <div class="circle clickable OPS-default OPS-li" id="OPS"></div>
+                                <div class="info">
+                                    <span class="source-title OPS-title">Open Sources</span>
+                                    <div class="toggleDisplay">
+                                        <span class="source-info">includes sources such as dust from paved and unpaved roads and dust from coal mining</span>
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
-                        <li class="MOS-container">
-                            <div class="circle clickable MOS-default MOS-li" id="MOS"><span>M</span></div>
-                            <div class="info">
-                                <span class="source-title MOS-title">Mobile Sources</span>
-                                <div class="toggleDisplay">
-                                    <span class="source-info">includes sources such as Heavy and Light-duty diesel truck and vehicles, Marine Transportation and Motorcycles</span>
+                            </li>
+                            <li class="INCS-container">
+                                <div class="circle clickable INCS-default INCS-li" id="INCS"></div>
+                                <div class="info">
+                                    <span class="source-title INCS-title">Incineration Sources</span>
+                                    <div class="toggleDisplay">
+                                        <span class="source-info">includes sources such as Industrial & Commercial incineration</span>
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
-                        <li class="MIS-container">
-                            <div class="circle clickable MIS-default MIS-li" id="MIS"><span>M</span></div>
-                            <div class="info">
-                                <span class="source-title MIS-title">Miscellaneous Sources</span>
-                                <div class="toggleDisplay">
-                                    <span class="source-info">includes sources such as Cigarette Smoking, Meat cooking and other Human factors</span>
+                            </li>
+                            <li class="MOS-container">
+                                <div class="circle clickable MOS-default MOS-li" id="MOS"></div>
+                                <div class="info">
+                                    <span class="source-title MOS-title">Mobile Sources</span>
+                                    <div class="toggleDisplay">
+                                        <span class="source-info">includes sources such as Heavy and Light-duty diesel truck and vehicles, Marine Transportation and Motorcycles</span>
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+                            </li>
+                            <li class="MIS-container">
+                                <div class="circle clickable MIS-default MIS-li" id="MIS"></div>
+                                <div class="info">
+                                    <span class="source-title MIS-title">Miscellaneous Sources</span>
+                                    <div class="toggleDisplay">
+                                        <span class="source-info">includes sources such as Cigarette Smoking, Meat cooking and other Human factors</span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
             </div>
             <div class="row">
                 <div class="col-md-6">

@@ -3,13 +3,15 @@ body
     margin:0;
     padding:0;
     background-size: 100%;
-    font-family:Arial,sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color:#333333;
-    background-color: #f6f6f6;
-    background-repeat: no-repeat;  }
+    background-repeat:repeat-x;
+    background-image: url("../images/ehatlas_body_bg.png")
+  }
 
-#vis {
-    min-height: 550px;
+.container
+{
+  margin-top:20px;
 }
 
 #vis svg {
@@ -21,7 +23,15 @@ body
     border-top: 1px solid #e2e2e2;
     padding-top: 20px;
 }
+#lineGraph
+{
+  width:74%;
+}
 
+#lineGraph, #legend
+{
+  background-color: #fff;
+}
 path {
     stroke: #999999;
     stroke-width: 1.5;
@@ -88,11 +98,6 @@ text {
   cursor: default;
 }
 
-.materialSelect{
-    width: 10em;
-    float:right;
-}
-
 .wrapper
 {
     width:960px;
@@ -105,6 +110,7 @@ text {
 {
     margin-top:0;
     overflow: auto;
+    border:none;
 }
 
 .page-header span
@@ -116,26 +122,52 @@ text {
 
 }
 
-.page-header h1
+.page-header h2
 {
     margin:0;
     padding:0;
 }
 
+.shadow
+{
+   box-shadow: 2px 2px 5px #888888;
+}
+
 .btn
 {
-    background-color:#b6c8e0;
-    border-top-left-radius: 0;
+    background-color:#737373;
     border-top-right-radius: 0;
-    color:#666;
+    border-bottom-right-radius: 0;
+    color:#fff;
+    font-size:12px;
+    margin-right:5px;
+}
+.select
+{
+    background-color:#698a97;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    color:#fff;
+    font-size:12px;
+    margin-right:5px;
+    margin:0;
+}
+.form-control
+{
+  border:1px solid #999;
+  border-radius:0;
+  height:31px;
+  font-size: 11px;
+  width:19em;
 }
 
 h1,h2,h3,h4
 {
-    font-family: "Open Sans", Arial,sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color: #000;
     letter-spacing: -1px;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
+    font-weight: normal;
 }
 
 p
@@ -147,14 +179,13 @@ p
 .circle 
 {
     border-radius: 50%;
-    width: 40px;
-    height:40px;
+    width: 35px;
+    height:35px;
     float:left;
     color:#fff;
     text-align: center;
     clear:both;
-    margin-right:
-    5px;
+    margin-right:5px;
     margin-bottom:5px;
     line-height: 30px;
     font-size: 0;
@@ -180,10 +211,9 @@ p
 .source-title
 {
   margin-top: 0px;
-  font-family: "Georgia", Arial, sans;
   color:#666;
   cursor: default;
-  font-size: 16px;
+  font-size: 14px;
 
 
 }
@@ -197,14 +227,10 @@ p
   display: none;
 }
 
-.circle:hover, .circleDeSelected
+.circle:hover
 {
-    border-width:3px;
-    line-height: 25px;
-    border-style: double;
-    background-image:none;
-    font-size:11px;
-    border-color: #fff;
+    background-position: 0 -35px;
+    opacity: 1.0
 }
 
 path.linegraphPath {
@@ -214,7 +240,21 @@ path.linegraphPath {
 path.highlight{
   display: inline;
 }
+.circleDeSelected
+{
+  opacity: 0.5;
+}
 
+.SAS-default
+{
+  background-image: url("../images/SAS.png");
+  background-position:0 0;
+}
+
+.SAS-title:hover
+{
+  color:#999;
+}
 
 .INS.highlight {
     stroke:#40a4d8;
@@ -225,14 +265,7 @@ path.highlight{
   background-image: url("../images/INS.png");
   background-position:0 0;
 }
-.INS-default:hover, .INS
-{
-    border-color: #40a4d8;
-    color:#40a4d8;
-    background-image: none;
-    background-color: #fff
 
-}
 .INS-title:hover
 {
   color:#40a4d8;
@@ -246,14 +279,7 @@ path.highlight{
 {
     background-image: url("../images/NIS.png");
 }
-.NIS-default:hover, .NIS
-{
-    border-color: #33beb7;
-    color:#33beb7;
-    background-image: none;
-    background-color: #fff
-    
-}
+
 .NIS-title:hover
 {
   color:#33beb7;
@@ -269,14 +295,7 @@ path.highlight{
      background-image: url("../images/OPS.png");
 }
 
-.OPS-default:hover, .OPS
-{
-    border-color: #FED34C;
-    color: #FED34C;
-    background-image: none;
-    background-color: #fff;
-    
-}
+
 .OPS-title:hover
 {
    color: #FED34C;
@@ -291,14 +310,7 @@ path.highlight{
 {
     background-image: url("../images/MOS.png");
 }
-.MOS-default:hover, .MOS
-{
-    border-color: #a364d9;
-    color:#a364d9;
-    background-image: none;
-    background-color: #fff;
-    
-}
+
 .MOS-title:hover
 {
    color:#a364d9;
@@ -311,13 +323,7 @@ path.highlight{
 {
     background-image: url("../images/INCS.png");
 }
-.INCS-default:hover,.INCS
-{
-    border-color: #ee6579;
-    color: #ee6579;
-    background-image: none;
-    background-color: #fff;
-}
+
 
 .INCS-title:hover
 {
@@ -333,14 +339,7 @@ path.highlight{
 {
      background-image: url("../images/NAS.png");
 }
-.NAS-default:hover,.NAS
-{
-    border-color:#99cc33;
-    color:#99cc33;
-    background-image: none;
-    background-color: #fff
-   
-}
+
 
 .MIS.highlight {
     stroke: #99cc33;
@@ -349,13 +348,7 @@ path.highlight{
 {
     background-image: url("../images/MIS.png");
 }
-.MIS-default:hover, .MIS
-{
-    border-color:#99cc33;
-    color:#99cc33;
-    background-color:#fff;
-    background-image: none;
-}
+
 .MIS-title:hover
 {
    color:#99cc33;
@@ -364,13 +357,13 @@ path.highlight{
 /**************** legend ul styling ********************/
 #filters
 {
-  margin:50px 0 0 0;
+  margin:20px 0 0 0;
   padding:0;
   list-style-type: none;
 }
 
 .ch-grid {
-  margin: 20px 0 0 0;
+  margin: 40px 0 0 0;
   padding: 0;
   list-style: none;
   display: block;
@@ -391,8 +384,8 @@ path.highlight{
 .ch-grid li {
   width: auto;
   height: auto;
-  margin:  0 0 8px 0;
-  padding-bottom:8px;
+  margin:  0 0 0px 0;
+  padding-bottom:5px;
   overflow: auto;
 }
 .ch-grid li:last-child
@@ -402,7 +395,7 @@ path.highlight{
 
 
 .filterDistinct{
-  background-position:0px -40px;
+  background-position:0px -35px;
   }
 
 /******************************************************/
@@ -436,7 +429,7 @@ a
     stroke:none;
 }
 
-.axis line {	
+.axis line {  
     stroke: #000;
     shape-rendering: crispEdges;  
 } 
@@ -453,28 +446,28 @@ a
 }
 
 div.tooltip {
-    position: absolute;	
-    text-align: center;	
-    width: auto;	
-    height: auto;		
+    position: absolute; 
+    text-align: center; 
+    width: auto;  
+    height: auto;   
     padding: 5px;
     color: #fff;
-    font: 14px sans-serif;	
-    background: black;	
-    border: 0px;					
+    font: 14px sans-serif;  
+    background: black;  
+    border: 0px;          
     border-radius: 5px;  
 }
 
 div.hoverinfo {
-	position: absolute;	
-    text-align: center;	
-    width: auto;	
-    height: auto;		
+  position: absolute; 
+    text-align: center; 
+    width: auto;  
+    height: auto;   
     padding: 5px;
     color: #fff;
-    font: 14px sans-serif;	
-    background: black;	
-    border: 0px;					
+    font: 14px sans-serif;  
+    background: black;  
+    border: 0px;          
     border-radius: 5px;
 }
 
@@ -484,13 +477,14 @@ div.hoverinfo {
 }
 
 .datamap {
-	margin-left: auto;
+  margin-left: auto;
     margin-right: auto;
-	float:center !important;
-	overflow:visible !important;
+  float:center !important;
+  overflow:visible !important;
 }
-#legend {
-    padding: 1.5em 0 0 1.5em;
+#legend 
+{
+    min-height: 445px;
 }
 
 #page-title
@@ -508,7 +502,7 @@ div.hoverinfo {
 
 #page-title, .em-source, #map-title
 {
-  margin-left:55px;
+  /*margin-left:55px;*/
 }
 
 .main-title
@@ -522,32 +516,14 @@ div.hoverinfo {
     display: block;
 }
 
-
-.form-control
-{
-  display:inline;
-  margin:0;
-  width: 16em;
-}
-
-.materialSelect
-{
-  width:345px;
-  margin-top:20px;
-}
-
-.materialSelect span
-{
-  font-family: "Georgia", Sans;
-  font-style:italic;
-  margin-left:10px;
-  display: inline-block;
-}
-
 .inlineTruckImg{
   width: 24px;
 }
 
+.nopadding
+{
+  padding:0;
+}
 #infoBox
 {
   height: 530px;
