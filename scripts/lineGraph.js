@@ -7,7 +7,7 @@ define(["dataProcess"], function (dataProcess) {
     var width = w - margin.left - margin.right;
     var h = 550;
     var height = h - margin.top - margin.bottom;
-    var transitionSpeed = 1000;
+    var transitionSpeed = 500;
 
     var startYear = 1985, endYear = 2012, minLevel = 0, maxLevel = 455000;
     var panExtent = {x: [startYear, endYear], y: [minLevel, maxLevel]};
@@ -36,6 +36,8 @@ define(["dataProcess"], function (dataProcess) {
 
         $("body").on("materialChangeEvent", materialChanged);        
         $("body").on("sectorChangeEvent", sectorChanged);
+
+        $("body").on("selectedSectorGroupsChange", selectedSectorGroupsChange);
     }
 
     function setupD3() {
@@ -166,7 +168,7 @@ define(["dataProcess"], function (dataProcess) {
                     .append("path")
                     .attr("clip-path", "url(#clip)")
                     .attr("sector", pathsArray[i][0])
-                    .attr("class", sector_sectorGroup[pathsArray[i][0]] + " highlight")
+                    .attr("class", sector_sectorGroup[pathsArray[i][0]] + " highlight linegraphPath")
                     .attr("ty", "line")
                     .attr("d", line)
                     .on("mouseover", onmouseover)
@@ -198,6 +200,25 @@ define(["dataProcess"], function (dataProcess) {
     }
 
     function setupAxes() {
+    }
+
+    function selectedSectorGroupsChange(event, changedSectorCode){
+        changeDisplayingSectorGroups(changedSectorCode);
+        rescaleLineGraph();
+    }
+
+     function changeDisplayingSectorGroups(sectorCode) {
+        var sectors = d3.selectAll("path." + sectorCode);
+        if (sectors.classed('highlight')) {
+            sectors.classed("highlight", false);
+        } 
+        else {
+            sectors.classed('highlight', true);
+        }
+    }
+
+    function rescaleLineGraph(){
+        rescale(dataProcess.getMaxValueForDisplayingSectorsOfChosenMaterial());
     }
 
     function pathClicked(d, i) {

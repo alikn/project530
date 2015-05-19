@@ -1,4 +1,4 @@
-define(["d3"],function(d3){
+define(["d3", "utilities"],function(d3, utilities){
 	"use strict";
 
 	var materials = ['pm25', 'pm10', 'tpm', 'SOx', 'voc'];
@@ -19,6 +19,9 @@ define(["d3"],function(d3){
         'SOx'       :   'Sulfur Oxide (SOx)',
         'voc'       :   'Volatile Organic Compounds'
     }
+
+    //an object which keeps track of the selected sector groups which are visible on the lineGraph
+    var displayingSectorGroups = utilities.returnKeysOfObject(sectorGroup);
 
     var rawData = {};
 
@@ -127,6 +130,20 @@ define(["d3"],function(d3){
         return aveValObj;
     }
 
+    function getMaxValueForDisplayingSectorsOfChosenMaterial(){
+        var maxValue = 0;
+        for(var j = 1; j < rawData[chosenMaterial].length - 1; j++){
+            if(displayingSectorGroups.indexOf(sector_sectorGroup[rawData[chosenMaterial][j][0]]) > 0){
+                rawData[chosenMaterial][j].forEach(function(val){
+                    if(!isNaN(val) && parseInt(val) > maxValue){
+                        maxValue = parseInt(val);
+                    }
+                })
+            }
+        }
+        return maxValue;
+    }
+
     function getMaxValueForChosenMaterial(){
         var maxValue = 0;
         for(var j = 1; j < rawData[chosenMaterial].length - 1; j++){
@@ -139,6 +156,7 @@ define(["d3"],function(d3){
         return maxValue;
     }
 
+
     function materialChanged(event, newMaterial){
         chosenMaterial = newMaterial;
     }
@@ -148,6 +166,17 @@ define(["d3"],function(d3){
         console.log(matEmissionForChosenSector());
     }
 
+    function resetDisplayingSectorGroups(){
+        displayingSectorGroups = returnKeysOfObject(sectorGroup);
+    }
+
+
+    
+    //------------Getters---------------
+    function getDisplayingSectorGroups(){
+        return displayingSectorGroups;
+    }
+    
     function getMaterials(){
     	return materials;
     }
@@ -186,6 +215,7 @@ define(["d3"],function(d3){
 
 	return{
 		init 							: 		init,
+        getDisplayingSectorGroups       :       getDisplayingSectorGroups,
 		getMaterials 					: 		getMaterials,
         getMaterialNames                :       getMaterialNames,
 		getSectorGroup 					: 		getSectorGroup,
@@ -197,7 +227,9 @@ define(["d3"],function(d3){
         matEmissionForChosenSector      :       matEmissionForChosenSector,
         getMatEmissionForChosenSector   :       getMatEmissionForChosenSector,
         getMaxValueForChosenMaterial    :       getMaxValueForChosenMaterial,
-        getAverageValueForSectorGroups  :       getAverageValueForSectorGroups
+        getAverageValueForSectorGroups  :       getAverageValueForSectorGroups,
+        resetDisplayingSectorGroups     :       resetDisplayingSectorGroups,
+        getMaxValueForDisplayingSectorsOfChosenMaterial :   getMaxValueForDisplayingSectorsOfChosenMaterial
 
 	}
 })

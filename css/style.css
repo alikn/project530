@@ -207,6 +207,14 @@ p
     border-color: #fff;
 }
 
+path.linegraphPath {
+  display: none;
+}
+
+path.highlight{
+  display: inline;
+}
+
 
 .INS.highlight {
     stroke:#40a4d8;

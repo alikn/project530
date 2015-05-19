@@ -1,4 +1,4 @@
-define(["d3", "dataProcess"], function(d3, dataProcess){
+define(["d3", "dataProcess", "utilities"], function(d3, dataProcess, utilities){
     var sectorGroupAverageObj;
     //average truck with load weight in tonnes
     var averageTruckWeight = 250;
@@ -29,10 +29,24 @@ define(["d3", "dataProcess"], function(d3, dataProcess){
 	
 	function setupSectorGroupSelectors(){
         $('#filters li .circle').on('click', function() {
-            var sectorGroupId = $(this).attr("id");
-            $(this).toggleClass(sectorGroupId);
-            $(this).toggleClass('circleDeSelected');
-            showSectorGroup(sectorGroupId);
+            $this = $(this);
+            var sectorGroupId = $this.attr("id");
+            var displayingSectorGroups = dataProcess.getDisplayingSectorGroups();
+            
+            //keeping track of the displaying sector groups in dataProcess.displayingSctorGroups array
+            if($this.hasClass(sectorGroupId)){
+                displayingSectorGroups.push(sectorGroupId);
+            } else {
+                utilities.removeElementFromArray(displayingSectorGroups, sectorGroupId);
+            }
+            $("body").trigger("selectedSectorGroupsChange", sectorGroupId);
+
+            //toggeling the classes of the circles in the legend
+            $this.toggleClass(sectorGroupId);
+            $this.toggleClass('circleDeSelected');
+
+            //changing if paths in lineGraph are displayed 
+            //showSectorGroup(sectorGroupId);
         });
 
         addAverageInfo();
@@ -52,16 +66,6 @@ define(["d3", "dataProcess"], function(d3, dataProcess){
                                     .append($("<span>", {class: "removable"})
                                                 .text("Equivalent to: " + (sectorGroupAverageObj[secGroup]["average"] /averageTruckWeight).toFixed(0) + " X ")
                                                 .append($("<img>", {class: "inlineTruckImg", "src" : "./images/truck.png"})));
-        }
-    }
-
-    function showSectorGroup(sectorCode) {
-        var sectors = d3.selectAll("path." + sectorCode);
-        if (sectors.classed('highlight')) {
-            sectors.classed("highlight", false);
-        } 
-        else {
-            sectors.classed('highlight', true);
         }
     }
 
