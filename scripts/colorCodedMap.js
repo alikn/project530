@@ -1,42 +1,42 @@
 define(["worldmap", "dataProcess"], function(worldmap, dataProcess){
 	
 	var map = new Datamap({
-				height: 580,
-				width: 1000,
+				height: 340,
+				width: 600,
 				projection: 'equirectangular',
 				element: document.getElementById('colorCodedMap'),
 				fills: {
 					// Color range for pm2.5
-					pm250: 'rgb(102,204,0)',
-					pm251: 'rgb(0,153,0)',
-					pm252: 'rgb(76,153,0)',
-					pm253: 'rgb(51,102,0)',
-					pm254: 'rgb(0,102,0)',
-					pm255: 'rgb(25,51,0)',
+					pm250: 'rgb(103,166,186)',
+					pm251: 'rgb(73,140,161)',
+					pm252: 'rgb(73,140,165)',
+					pm253: 'rgb(58,111,128)',
+					pm254: 'rgb(54,103,119)',
+					pm255: 'rgb(42,79,91)',
 					
 					// Color range for SOx
-					SOx0: 'rgb(153,204,255)',
-					SOx1: 'rgb(102,178,255)',
-					SOx2: 'rgb(51,153,255)',
-					SOx3: 'rgb(0,102,204)',
-					SOx4: 'rgb(0,76,153)',
-					SOx5: 'rgb(0,51,102)',
+					SOx0: 'rgb(182,140,78)',
+					SOx1: 'rgb(159,118,81)',
+					SOx2: 'rgb(159,120,57)',
+					SOx3: 'rgb(130,99,39)',
+					SOx4: 'rgb(122,94,42)',
+					SOx5: 'rgb(91,64,33)',
 					
 					// Color range for tpm
-					tpm0: 'rgb(204,255,255)',
-					tpm1: 'rgb(153,255,255)',
-					tpm2: 'rgb(0,255,255)',
-					tpm3: 'rgb(0,204,204)',
-					tpm4: 'rgb(0,153,153)',
-					tpm5: 'rgb(0,102,102)',
+					tpm0: 'rgb(117,153,99)',
+					tpm1: 'rgb(90,132,75)',
+					tpm2: 'rgb(97,135,81)',
+					tpm3: 'rgb(71,105,57)',
+					tpm4: 'rgb(68,102,52)',
+					tpm5: 'rgb(53,77,44)',
 					
 					// Color range for pm10
-					pm100: 'rgb(255,204,204)',
-					pm101: 'rgb(255,153,153)',
-					pm102: 'rgb(255,102,102)',
-					pm103: 'rgb(204,0,0)',
-					pm104: 'rgb(153,0,0)',
-					pm105: 'rgb(102,0,0)',
+					pm100: 'rgb(179,87,83)',
+					pm101: 'rgb(154,57,58)',
+					pm102: 'rgb(159,55,56)',
+					pm103: 'rgb(128,46,40)',
+					pm104: 'rgb(125,48,41)',
+					pm105: 'rgb(89,33,30)',
 					
 					// Color range for NOx
 					NOx0: 'rgb(229,255,204)',
@@ -47,12 +47,12 @@ define(["worldmap", "dataProcess"], function(worldmap, dataProcess){
 					NOx5: 'rgb(25,51,0)',
 					
 					// Color range for VOC
-					voc0: 'rgb(255,204,229)',
-					voc1: 'rgb(255,153,204)',
-					voc2: 'rgb(255,102,178)',
-					voc3: 'rgb(204,0,102)',
-					voc4: 'rgb(153,0,76)',
-					voc5: 'rgb(102,0,51)',
+					voc0: 'rgb(160,101,149)',
+					voc1: 'rgb(136,69,123)',
+					voc2: 'rgb(133,70,116)',
+					voc3: 'rgb(110,55,95)',
+					voc4: 'rgb(108,55,89)',
+					voc5: 'rgb(81,37,69)',
 					
 					// Color range for NH3
 					NH30: 'rgb(204,229,255)',

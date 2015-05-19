@@ -41,8 +41,6 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
-                    <div class="row">
                         <div class="col-md-7">
                             <div class="page-header">
                                 <div class="pull-left">
@@ -57,21 +55,8 @@
                             </div>
                             <span class="pull-right"><button class="btn shadow" id="tour">TAKE A GUIDED TOUR</button></span>
                         </div>      
-                    </div>
-                </div>    
-            </div>
+            </div>            
             <div class="row">
-                <div class="col-md-12 nopadding">
-                  
-                        
-                                               
-                   
-                </div>             
-
-            </div>
-
-            <div class="row">
-                <div class="col-md-12">
                     <div id="lineGraph" class="col-md-9 pull-left shadow">
                         <h4 id ="page-title" class="substance-title"></h4>
                         <div id="vis"></div>
@@ -146,19 +131,18 @@
                     </div>
             </div>
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4 shadow med-container">
                     <div id="barChart">
 
                     </div>
                 </div>
-                <div id="infoBox" class="col-md-6">
-                </div>
+                <div class="col-md-8 map shadow med-container pull-right" id="mapContainer">
+                    <h4 id="map-title">World Figures :  <span class="substance-title">PM2.5</span></h4>
+                    <div id="colorCodedMap"></div>
+                </div>               
             </div>
             <div class="row">
-                <div class="col-md-12 map">
-                    <h3 id="map-title">World Figures :  <span class="substance-title">PM2.5</span></h3>
-                    <div id="colorCodedMap" style="text-align:center">
-                    </div>
+                 <div id="infoBox" class="col-md-12">
                 </div>
             </div>
             <footer class="footer">

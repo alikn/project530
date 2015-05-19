@@ -54,7 +54,7 @@ define(["dataProcess","d3"], function (dataProcess,d3) {
 		var chosenMaterial = dataProcess.getChosenMaterial();
 
 		$('#barChart').empty();
-		$('#barChart').append("<h3><span class='em-source'>"+ sector_desc + " Emissions" + "</span></h3>")
+		$('#barChart').append("<h4><span class='em-source'>"+ sector_desc + " Emissions" + "</span></h4>")
 		
 
 		var matEmissions = dataProcess.getMatEmissionForChosenSector();
@@ -70,8 +70,8 @@ define(["dataProcess","d3"], function (dataProcess,d3) {
 		var max_value = d3.max(d3.entries(matEmissions), function(d) { return Math.round(d.value); });
 		
 		var margin = {top: 20, right: 20, bottom: 30, left: 78},
-		    width = 500 - margin.left - margin.right,
-		    height = 490 - margin.top - margin.bottom;
+		    width = 380 - margin.left - margin.right,
+		    height = 340 - margin.top - margin.bottom;
 
 		var y = d3.scale.linear()
 		   .domain([0,max_value])
@@ -140,7 +140,7 @@ define(["dataProcess","d3"], function (dataProcess,d3) {
 		var materialNames = dataProcess.getMaterialNames();
 
 		$('#barChart').empty();
-		$('#barChart').append("<h3><span class='em-source'>" + sector_desc + " Emissions" + "</span></h3>")
+		$('#barChart').append("<h4><span class='em-source'>" + sector_desc + " Emissions" + "</span></h4>")
 
 
 		var matEmissions = dataProcess.getMatEmissionForChosenSector();

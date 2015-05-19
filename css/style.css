@@ -14,6 +14,11 @@ body
   margin-top:20px;
 }
 
+.med-container
+{
+  margin-top: 20px;
+  background-color: #fff;
+}
 #vis svg {
     width: 100%
 }
@@ -26,6 +31,10 @@ body
 #lineGraph
 {
   width:74%;
+}
+#mapContainer
+{
+  width:65.8%;
 }
 
 #lineGraph, #legend
@@ -57,7 +66,6 @@ line {
 }
 
 text {
-    font-family: Helvetica,Arial,sans-serif;
     font-size: 11px;
 }
 
@@ -442,7 +450,6 @@ a
     margin-right: 5px;
     font-size: 12px !important;
     font-weight: bolder;
-    font-family: Verdana;
 }
 
 div.tooltip {
@@ -473,7 +480,8 @@ div.hoverinfo {
 
 #colorCodedMap {
     display:block;
-    margin-top:-70px !important;
+    margin-top:-35px !important;
+    margin-left:10%;
 }
 
 .datamap {
@@ -526,7 +534,9 @@ div.hoverinfo {
 }
 #infoBox
 {
-  height: 530px;
+  border-top:1px solid #666;
+  padding-top: 20px;
+  margin-top:40px;
 }
 
 
@@ -544,31 +554,31 @@ div.hoverinfo {
 }
 #barChart rect#pm25, #barChart circle#pm25
 {
-  fill:#336600;
+  fill:#498ca1;
   color:#fff;
 }
 
 #barChart rect#pm10, #barChart circle#pm10
 {
-  fill:#CC0000;
+  fill:#9C3838;
   color:#fff;
 }
 
 #barChart rect#SOx, #barChart circle#SOx
 {
-  fill:#003366;
+  fill:#9B7434;
   color:#fff;
 }
 
 #barChart rect#voc, #barChart circle#voc
 {
-  fill:#660033;
+  fill:#86477A;
   color:#fff;
 }
 
 #barChart rect#tpm, #barChart circle#tpm
 {
-  fill:#009999;
+  fill:#5D824D;
   color:#fff;
 }
 
