@@ -34,7 +34,7 @@ define(["dataProcess"], function (dataProcess) {
         //highlighting the preselected sector
         d3.select("[sector=" + chosenSector + "]").classed("selected", true);
 
-        $("body").on("materialChangeEvent", materialChanged);        
+        $("body").on("materialChangeEvent", materialChanged);
         $("body").on("sectorChangeEvent", sectorChanged);
 
         $("body").on("selectedSectorGroupsChange", selectedSectorGroupsChange);
@@ -106,7 +106,7 @@ define(["dataProcess"], function (dataProcess) {
                 .attr("class", "axis-label")
                 .attr("transform", "rotate(-90)")
                 .attr("y", (-margin.left) + 9)
-                .attr("x", -height/2)
+                .attr("x", -height / 2)
                 .text('Tonnes/Year');
         //label on the x axis
         vis.append("g")
@@ -114,7 +114,7 @@ define(["dataProcess"], function (dataProcess) {
                 .append("text")
                 .attr("class", "axis-label")
                 .attr("text-anchor", "end")
-                .attr("x", width/2 + 12)
+                .attr("x", width / 2 + 12)
                 .attr("y", height + 30)
                 .text("Year");
 
@@ -202,22 +202,22 @@ define(["dataProcess"], function (dataProcess) {
     function setupAxes() {
     }
 
-    function selectedSectorGroupsChange(event, changedSectorCode){
+    function selectedSectorGroupsChange(event, changedSectorCode) {
         changeDisplayingSectorGroups(changedSectorCode);
         rescaleLineGraph();
     }
 
-     function changeDisplayingSectorGroups(sectorCode) {
+    function changeDisplayingSectorGroups(sectorCode) {
         var sectors = d3.selectAll("path." + sectorCode);
         if (sectors.classed('highlight')) {
             sectors.classed("highlight", false);
-        } 
+        }
         else {
             sectors.classed('highlight', true);
         }
     }
 
-    function rescaleLineGraph(){
+    function rescaleLineGraph() {
         console.log("rescaling graph max " + dataProcess.getMaxValueForDisplayingSectorsOfChosenMaterial());
         rescale(dataProcess.getMaxValueForDisplayingSectorsOfChosenMaterial());
     }
@@ -273,6 +273,8 @@ define(["dataProcess"], function (dataProcess) {
 
     function redraw() {
         /* call the zoom.translate vector with the array returned from panLimit() */
+        console.log("On rescale the limit is min:" + y.domain()[0] + " max:" + y.domain()[1]);
+         console.log("On rescale the panExtent is min:" + panExtent.y[0] + " max:" + panExtent.y[1]);
         zoomListener.translate(panLimit());
         vis.select(".y.axis")
                 .transition().duration(transitionSpeed)
@@ -281,10 +283,20 @@ define(["dataProcess"], function (dataProcess) {
                 .transition().duration(transitionSpeed).ease("sin-in-out")
                 .attr('d', line);
     }
-    
-    function rescale(max) {         
-        y.domain([y.domain()[0], max]);
-        //zoomListener.translate(panLimit());
+
+    function rescale(max) {        
+        panExtent.y[1] = max;
+        panExtent.y[0] = y.domain()[0];
+        maxLevel = max;
+        zoomListener.translate(panLimit());
+        
+        if (y.domain()[0] >= 0) {
+            y.domain([y.domain()[0], max]);
+        } else {
+            y.domain()[0] = 0;
+            y.domain([y.domain()[0], max]);
+        }
+        
         vis.select(".y.axis")
                 .transition().duration(transitionSpeed).ease("sin-in-out")
                 .call(yAxis);
