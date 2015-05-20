@@ -218,8 +218,9 @@ define(["dataProcess"], function (dataProcess) {
     }
 
     function rescaleLineGraph() {
-        console.log("rescaling graph max " + dataProcess.getMaxValueForDisplayingSectorsOfChosenMaterial());
-        rescale(dataProcess.getMaxValueForDisplayingSectorsOfChosenMaterial());
+        var maxVal = dataProcess.getMaxValueForDisplayingSectorsOfChosenMaterial();
+        console.log("rescaling graph max " + maxVal);
+        rescale(maxVal);
     }
 
     function pathClicked(d, i) {
@@ -273,8 +274,8 @@ define(["dataProcess"], function (dataProcess) {
 
     function redraw() {
         /* call the zoom.translate vector with the array returned from panLimit() */
-        console.log("On rescale the limit is min:" + y.domain()[0] + " max:" + y.domain()[1]);
-         console.log("On rescale the panExtent is min:" + panExtent.y[0] + " max:" + panExtent.y[1]);
+        //console.log("On rescale the limit is min:" + y.domain()[0] + " max:" + y.domain()[1]);
+        //console.log("On rescale the panExtent is min:" + panExtent.y[0] + " max:" + panExtent.y[1]);
         zoomListener.translate(panLimit());
         vis.select(".y.axis")
                 .transition().duration(transitionSpeed)

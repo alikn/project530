@@ -132,8 +132,9 @@ define(["d3", "utilities"],function(d3, utilities){
 
     function getMaxValueForDisplayingSectorsOfChosenMaterial(){
         var maxValue = 0;
+        console.log(displayingSectorGroups);
         for(var j = 1; j < rawData[chosenMaterial].length - 1; j++){
-            if(displayingSectorGroups.indexOf(sector_sectorGroup[rawData[chosenMaterial][j][0]]) > 0){
+            if(displayingSectorGroups.indexOf(sector_sectorGroup[rawData[chosenMaterial][j][0]]) >= 0){
                 rawData[chosenMaterial][j].forEach(function(val){
                     if(!isNaN(val) && parseInt(val) > maxValue){
                         maxValue = parseInt(val);
