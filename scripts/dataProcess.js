@@ -160,6 +160,7 @@ define(["d3", "utilities"],function(d3, utilities){
 
     function materialChanged(event, newMaterial){
         chosenMaterial = newMaterial;
+        resetDisplayingSectorGroups();
     }
 
     function sectorChanged(event, newSector){
@@ -168,7 +169,7 @@ define(["d3", "utilities"],function(d3, utilities){
     }
 
     function resetDisplayingSectorGroups(){
-        displayingSectorGroups = returnKeysOfObject(sectorGroup);
+        displayingSectorGroups = utilities.returnKeysOfObject(sectorGroup);
     }
 
 

@@ -17,36 +17,44 @@ define(["d3", "dataProcess", "utilities"], function(d3, dataProcess, utilities){
     }
 
     function materialChanged(event, newMaterial){
+        
+        removeDeselectedStateFromFilters();
+        $(".removable").remove();
+        addAverageInfo();
+
+    }
+
+    function removeDeselectedStateFromFilters(){
         $('#filters li div').removeClass("circleDeSelected")
                             .removeClass(function(){
                                 return $(this).attr("id");
                             });
-
-        $(".removable").remove();
-        addAverageInfo();
-
     }
 	
 	function setupSectorGroupSelectors(){
         $('#filters li .circle').on('click', function() {
             $this = $(this);
             var sectorGroupId = $this.attr("id");
-            var displayingSectorGroups = dataProcess.getDisplayingSectorGroups();
-            
-            //keeping track of the displaying sector groups in dataProcess.displayingSctorGroups array
-            if($this.hasClass(sectorGroupId)){
-                displayingSectorGroups.push(sectorGroupId);
+            //difrentiating between select all butoon and others
+            if(sectorGroupId != "SAS"){
+                var displayingSectorGroups = dataProcess.getDisplayingSectorGroups();
+                
+                //keeping track of the displaying sector groups in dataProcess.displayingSctorGroups array
+                if($this.hasClass(sectorGroupId)){
+                    displayingSectorGroups.push(sectorGroupId);
+                } else {
+                    utilities.removeElementFromArray(displayingSectorGroups, sectorGroupId);
+                }
+                $("body").trigger("selectedSectorGroupsChange", sectorGroupId);
+
+                //toggeling the classes of the circles in the legend
+                $this.toggleClass(sectorGroupId);
+                $this.toggleClass('circleDeSelected');
             } else {
-                utilities.removeElementFromArray(displayingSectorGroups, sectorGroupId);
+                removeDeselectedStateFromFilters();
+                dataProcess.resetDisplayingSectorGroups();
+                $("body").trigger("selectedSectorGroupsReset");
             }
-            $("body").trigger("selectedSectorGroupsChange", sectorGroupId);
-
-            //toggeling the classes of the circles in the legend
-            $this.toggleClass(sectorGroupId);
-            $this.toggleClass('circleDeSelected');
-
-            //changing if paths in lineGraph are displayed 
-            //showSectorGroup(sectorGroupId);
         });
 
         addAverageInfo();

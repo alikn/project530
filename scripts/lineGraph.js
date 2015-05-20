@@ -38,6 +38,7 @@ define(["dataProcess"], function (dataProcess) {
         $("body").on("sectorChangeEvent", sectorChanged);
 
         $("body").on("selectedSectorGroupsChange", selectedSectorGroupsChange);
+        $("body").on("selectedSectorGroupsReset", selectedSectorGroupsReset);
     }
 
     function setupD3() {
@@ -204,6 +205,12 @@ define(["dataProcess"], function (dataProcess) {
 
     function selectedSectorGroupsChange(event, changedSectorCode) {
         changeDisplayingSectorGroups(changedSectorCode);
+        rescaleLineGraph();
+    }
+
+    function selectedSectorGroupsReset(){
+        var sectors = d3.selectAll("path");
+        sectors.classed('highlight', true);
         rescaleLineGraph();
     }
 
