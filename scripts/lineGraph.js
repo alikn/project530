@@ -208,7 +208,7 @@ define(["dataProcess"], function (dataProcess) {
         rescaleLineGraph();
     }
 
-    function selectedSectorGroupsReset(){
+    function selectedSectorGroupsReset() {
         var sectors = d3.selectAll("path");
         sectors.classed('highlight', true);
         rescaleLineGraph();
@@ -292,25 +292,50 @@ define(["dataProcess"], function (dataProcess) {
                 .attr('d', line);
     }
 
-    function rescale(max) {        
+    function rescale(max) {
         panExtent.y[1] = max;
         panExtent.y[0] = y.domain()[0];
         maxLevel = max;
-        zoomListener.translate(panLimit());
-        
+        // zoomListener.translate(panLimit());
+
         if (y.domain()[0] >= 0) {
             y.domain([y.domain()[0], max]);
         } else {
             y.domain()[0] = 0;
             y.domain([y.domain()[0], max]);
         }
-        
+
+
+
         vis.select(".y.axis")
                 .transition().duration(transitionSpeed).ease("sin-in-out")
                 .call(yAxis);
         vis.selectAll("[ty='line']")
                 .transition().duration(transitionSpeed).ease("sin-in-out")
                 .attr('d', line);
+
+        y = d3.scale.linear()
+                .domain([minLevel, maxLevel])
+                .range([height, 0]);
+
+        // recreate the zoom listener
+        zoomListener = d3.behavior.zoom()
+                .y(y)
+                .scaleExtent([1, Infinity])
+                .on("zoom", redraw);
+
+        yAxis = d3.svg.axis()
+                .scale(y)
+                .tickSize(6)
+                .tickPadding(1)
+                .orient("left");
+
+        vis = d3.select("#vis")
+                // .append("svg")
+                .call(zoomListener);
+
+
+
     }
 
     function panLimit() {
