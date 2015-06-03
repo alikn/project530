@@ -1,8 +1,8 @@
 define(["worldmap", "dataProcess"], function(worldmap, dataProcess){
 	
 	var map = new Datamap({
-				height: 340,
-				width: 600,
+				height: 310,
+				width: 680,
 				projection: 'equirectangular',
 				element: document.getElementById('colorCodedMap'),
 				fills: {
@@ -122,6 +122,7 @@ define(["worldmap", "dataProcess"], function(worldmap, dataProcess){
 		var container = d3.select(this.options.element);
 		container.select('svg')
 			.style("float", "left")
+			.style("margin-top", "40px")
 			.style("position", "relative");
 					
 		//remove the previous legend

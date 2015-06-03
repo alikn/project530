@@ -34,7 +34,7 @@ body
 }
 #mapContainer
 {
-  width:65.8%;
+  width:74%;
 }
 
 #lineGraph, #legend
@@ -432,8 +432,9 @@ a
 
 .axis text {
     fill: #555;
-    font-size: 11px;
+    font-size: 10px;
     stroke:none;
+    font-family: Helvetica, Arial, sans-serif;
 }
 
 .axis line {  
@@ -588,7 +589,7 @@ div.hoverinfo {
 {
   margin-bottom: 5px;
   color:#fff;
-  font-size: 12px;
+  font-size: 10px;
 }
 
 #barChart text

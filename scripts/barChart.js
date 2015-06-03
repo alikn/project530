@@ -5,8 +5,7 @@ define(["dataProcess","d3"], function (dataProcess,d3) {
 		$("body").on("sectorChangeEvent", sectorChanged);
 		$("body").on("materialChangeEvent", materialChanged)
 		drawBarGraph(dataProcess.getChosenSector());
-		//$("body").on("materialChangeEvent", materialChangedCircle);
-		//drawBubbleChart(dataProcess.getChosenSector());
+		
 	}
 
 	function materialChanged(event, newMaterial)
@@ -69,9 +68,9 @@ define(["dataProcess","d3"], function (dataProcess,d3) {
           
 		var max_value = d3.max(d3.entries(matEmissions), function(d) { return Math.round(d.value); });
 		
-		var margin = {top: 20, right: 20, bottom: 30, left: 78},
-		    width = 380 - margin.left - margin.right,
-		    height = 340 - margin.top - margin.bottom;
+		var margin = {top: 20, right: 20, bottom: 30, left: 70},
+		    width = 280 - margin.left - margin.right,
+		    height = 355 - margin.top - margin.bottom;
 
 		var y = d3.scale.linear()
 		   .domain([0,max_value])
