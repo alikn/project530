@@ -1,8 +1,8 @@
 define(["worldmap", "dataProcess"], function(worldmap, dataProcess){
 	
 	var map = new Datamap({
-				height: 310,
-				width: 680,
+				height: 335,
+				width: 720,
 				projection: 'equirectangular',
 				element: document.getElementById('colorCodedMap'),
 				fills: {
@@ -122,7 +122,6 @@ define(["worldmap", "dataProcess"], function(worldmap, dataProcess){
 		var container = d3.select(this.options.element);
 		container.select('svg')
 			.style("float", "left")
-			.style("margin-top", "40px")
 			.style("position", "relative");
 					
 		//remove the previous legend
@@ -163,9 +162,6 @@ define(["worldmap", "dataProcess"], function(worldmap, dataProcess){
 			html += '</dl>';
 			var hoverover = d3.select(this.options.element).append('div')
 				.attr('class', 'datamaps-legend')
-				 .style('float', 'left')
-				//.style('background-color', 'rgb(128,128,128)')
-				.style("position", "relative")
 				.html(html);
 			 }
 			  

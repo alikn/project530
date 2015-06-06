@@ -411,7 +411,6 @@ path.highlight{
 /******************************************************/
 .footer
 {
-    padding:20px;
     text-align: right;
 }
 
@@ -482,9 +481,10 @@ div.hoverinfo {
 
 #colorCodedMap {
     display:block;
-    margin-top:-35px !important;
-    margin-left:10%;
+    margin:0 auto;
+    width:720px;
 }
+
 
 .datamap {
   margin-left: auto;
@@ -492,6 +492,15 @@ div.hoverinfo {
   float:center !important;
   overflow:visible !important;
 }
+.datamaps-legend
+{
+  margin:0 auto 5px auto;
+  width:320px;
+  clear:both;
+  height:auto;
+  overflow: auto;
+}
+
 #legend 
 {
     min-height: 445px;
@@ -542,6 +551,15 @@ div.hoverinfo {
   -webkit-column-count: 2; /* Chrome, Safari, Opera */
   -moz-column-count: 2; /* Firefox */
   column-count: 2;
+  -webkit-column-gap: 30px; /* Chrome, Safari, Opera */
+  -moz-column-gap: 30px; /* Firefox */
+  column-gap: 30px;
+}
+
+#infoBox h4
+{
+  margin-top:0;
+  margin-bottom:5px;
 }
 
 
