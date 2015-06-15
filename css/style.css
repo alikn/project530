@@ -9,17 +9,20 @@ body
     background: -o-linear-gradient(#c8e0e2, #ebe9dc); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(#c8e0e2, #ebe9dc); /* For Firefox 3.6 to 15 */
     background: linear-gradient(#c8e0e2, #ebe9dc); 
+
 }
 
 .container
 {
   margin-top:20px;
+  min-width: 1200px;
 }
 
 .med-container
 {
   margin-top: 20px;
   background-color: #fff;
+  min-height: 389px;
 }
 #vis svg {
     width: 100%
@@ -37,12 +40,14 @@ body
 #mapContainer
 {
   width:74%;
-
+  min-height: 389px;
+  background-color: white;
 }
 
 #lineGraph, #legend
 {
   background-color: #fff;
+  min-height: 444px;
 }
 path {
     stroke: #999999;
@@ -548,12 +553,16 @@ div.hoverinfo {
   border-top:1px solid #666;
   padding-top: 40px;
   margin-top:40px;
+  border-bottom:1px solid #666;
+  padding-bottom: 40px;
+  margin-bottom:40px;
   -webkit-column-count: 2; /* Chrome, Safari, Opera */
   -moz-column-count: 2; /* Firefox */
   column-count: 2;
   -webkit-column-gap: 30px; /* Chrome, Safari, Opera */
   -moz-column-gap: 30px; /* Firefox */
   column-gap: 30px;
+  min-height: 80px;
 }
 
 #infoBox h4
@@ -622,5 +631,8 @@ div.hoverinfo {
   text-transform:none;
 }
 
+#infoBox img{
+  width:50px;
+}
 
 

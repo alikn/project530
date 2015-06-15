@@ -73,7 +73,7 @@ define(["d3", "dataProcess", "utilities"], function(d3, dataProcess, utilities){
                                                 .text("Average: " + sectorGroupAverageObj[secGroup]["average"].toFixed(0) + " tonnes"))
                                     .append($("<span>", {class: "removable"})
                                                 .text("Equivalent to: " + (sectorGroupAverageObj[secGroup]["average"] /averageTruckWeight).toFixed(0) + " X ")
-                                                .append($("<img>", {class: "inlineTruckImg", "src" : "./images/truck.png"})));
+                                                .append($("<img>", {class: "inlineTruckImg", "src" : "./images/truck-small.png"})));
         }
     }
 

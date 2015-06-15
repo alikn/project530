@@ -41,7 +41,7 @@
 
         <div class="container">
             <div class="row">
-                        <div class="col-md-7">
+                        <div class="col-xs-7">
                             <div class="page-header">
                                 <div class="pull-left">
                                     <h2 class="main-title">Trends in Airborne Pollutants in Canada</h2>
@@ -49,7 +49,7 @@
                                 </div>             
                             </div>
                         </div>
-                        <div class="col-md-5 nopadding">
+                        <div class="col-xs-5 nopadding">
                              <div class="pull-right materialSelect shadow">
                                 <span class="btn select">SELECT</span> <select class="form-control pull-right"></select>
                             </div>
@@ -57,11 +57,11 @@
                         </div>      
             </div>            
             <div class="row">
-                    <div id="lineGraph" class="col-md-9 pull-left shadow">
+                    <div id="lineGraph" class="col-xs-9 pull-left shadow">
                         <h4 id ="page-title" class="substance-title"></h4>
                         <div id="vis"></div>
                     </div>
-                    <div class="col-md-3 pull-right shadow" id="legend">
+                    <div class="col-xs-3 pull-right shadow" id="legend">
                         <h4>Sources of Pollution</h4>
                         <ul id="filters" class="ch-grid">
                              <li class="SAS-container">
@@ -78,7 +78,7 @@
                                 <div class="info">
                                     <span class="source-title INS-title">Industrial Sources</span>
                                     <div class="toggleDisplay">
-                                        <span class="source-info">includes chemical industry, iron ore industry, wood industry.</span>
+                                        <span class="source-info">include chemical, iron ore and wood industries, as well as other industries.</span>
                                     </div>
                                 </div>
                             </li>
@@ -87,7 +87,7 @@
                                 <div class="info">
                                     <span class="source-title NIS-title">Non-industrial Sources</span>
                                     <div class="toggleDisplay">
-                                        <span class="source-info">includes electric power generation, as well as residential and commercial fuel combustion</span>
+                                        <span class="source-info">include electric power generation, as well as residential and commercial fuel combustion.</span>
                                     </div>
                                 </div>
                             </li>
@@ -96,7 +96,7 @@
                                 <div class="info">
                                     <span class="source-title OPS-title">Open Sources</span>
                                     <div class="toggleDisplay">
-                                        <span class="source-info">includes dust from paved and unpaved roads and dust from coal mining</span>
+                                        <span class="source-info">include dust from roads and coal mining.</span>
                                     </div>
                                 </div>
                             </li>
@@ -105,7 +105,7 @@
                                 <div class="info">
                                     <span class="source-title INCS-title">Incineration Sources</span>
                                     <div class="toggleDisplay">
-                                        <span class="source-info">includes Industrial & Commercial incineration</span>
+                                        <span class="source-info">Include pollution from industrial and commercial incineration.</span>
                                     </div>
                                 </div>
                             </li>
@@ -114,7 +114,7 @@
                                 <div class="info">
                                     <span class="source-title MOS-title">Mobile Sources</span>
                                     <div class="toggleDisplay">
-                                        <span class="source-info">includes Heavy and Light-duty diesel truck and vehicles, Marine Transportation and Motorcycles</span>
+                                        <span class="source-info">include heavy and light-duty diesel trucks and vehicles, marine transportation and motorcycles.</span>
                                     </div>
                                 </div>
                             </li>
@@ -123,7 +123,7 @@
                                 <div class="info">
                                     <span class="source-title MIS-title">Miscellaneous Sources</span>
                                     <div class="toggleDisplay">
-                                        <span class="source-info">includes Cigarette Smoking, Meat cooking and other Human factors</span>
+                                        <span class="source-info">include cigarette smoke, cooking and other human activities.</span>
                                     </div>
                                 </div>
                             </li>
@@ -131,26 +131,24 @@
                     </div>
             </div>
             <div class="row">
-                <div class="col-md-3 shadow med-container">
+                <div class="col-xs-3 shadow med-container">
                     <div id="barChart">
 
                     </div>
                 </div>
-                <div class="col-md-9 map shadow med-container pull-right" id="mapContainer">
+                <div class="col-xs-9 map shadow med-container pull-right" id="mapContainer">
                     <h4 id="map-title">World Figures :  <span class="substance-title">PM2.5</span></h4>
                     <div id="colorCodedMap"></div>
                 </div>               
             </div>
             <div class="row">
-                 <div id="infoBox" class="col-md-12">
+                 <div id="infoBox" class="col-xs-12">
                 </div>
-                <p>
-                <div class="col-md-12 text-right"><img src="images/truck-small.png" style="margin-right:5px;"><small>equivalent to 250 tonnes</small></div>
-                </p>
+
             </div>
             <footer class="footer">
-                <div class="pull-left">
-                    <p>
+                <div class="row">
+                    <p class="col-xs-6">
                         <strong>Data Sources</strong><br/>
                         <small><a href="http://data.worldbank.org/indicator/EN.ATM.PM25.MC.M3">http://data.worldbank.org/indicator/EN.ATM.PM25.MC.M3</a></small><br/>
                         <small><a href="https://www.ec.gc.ca/air/default.asp?lang=En&n=7C43740B-1">https://www.ec.gc.ca/air/default.asp?lang=En&n=7C43740B-1</a></small><br/>
@@ -159,6 +157,12 @@
                         <small><a href="http://www.ec.gc.ca/inrp-npri/default.asp?lang=en&n=0EC58C98-#sommaires">http://www.ec.gc.ca/inrp-npri/default.asp?lang=en&n=0EC58C98-#sommaires</a></small><br/>
                         <small><a href="https://www.ec.gc.ca/indicateurs-indicators/default.asp?lang=en&n=0B0E77F5-1">https://www.ec.gc.ca/indicateurs-indicators/default.asp?lang=en&n=0B0E77F5-1</a></small><br/>
                         <small><a href="http://www.nationsencyclopedia.com/WorldStats/WDI-emissions-pm10-country-level.html">http://www.nationsencyclopedia.com/WorldStats/WDI-emissions-pm10-country-level.html</a></small>
+                    </p>
+                    <p class="col-xs-6">
+                        <strong>Pollution Emissions in Perspective:</strong>
+
+                        Quantifying the sources and types of pollutants that are emitted across a country is important to public health, but they are estimates of true emissions. The largest sources of pollution aren't necessarily the most important ones.  For example, the two largest sources of PM<sub>2.5</sub> in Canada are dust from unpaved roads and construction, but these aren’t necessarily the most hazardous types of pollution.  It is often the sources “closest to home” - like exposure to second hand smoke or motor vehicle emissions in a city - that can cause the most harm.  The fraction of emissions that are actually inhaled by a person is called the &#34;intake fraction&#34;.
+
                     </p>
                 </div>
                 <div class="pull-right">
