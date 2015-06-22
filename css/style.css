@@ -584,35 +584,36 @@ div.hoverinfo {
   fill:#c0c0c0;
 
 }
-#barChart rect#pm25, #barChart circle#pm25
+#barChart rect#pm25, #barChart circle#pm25, #barChart rect[material="pm25"]:hover
 {
   fill:#498ca1;
   color:#fff;
 }
 
-#barChart rect#pm10, #barChart circle#pm10
+#barChart rect#pm10, #barChart circle#pm10, #barChart rect[material="pm10"]:hover
 {
   fill:#9C3838;
   color:#fff;
 }
 
-#barChart rect#SOx, #barChart circle#SOx
+#barChart rect#SOx, #barChart circle#SOx, #barChart rect[material="SOx"]:hover
 {
   fill:#9B7434;
   color:#fff;
 }
 
-#barChart rect#voc, #barChart circle#voc
+#barChart rect#voc, #barChart circle#voc, #barChart rect[material="voc"]:hover
 {
   fill:#86477A;
   color:#fff;
 }
 
-#barChart rect#tpm, #barChart circle#tpm
+#barChart rect#tpm, #barChart circle#tpm, #barChart rect[material="tpm"]:hover
 {
   fill:#5D824D;
   color:#fff;
 }
+
 
 #barChart text
 {
@@ -634,5 +635,4 @@ div.hoverinfo {
 #infoBox img{
   width:50px;
 }
-
 
